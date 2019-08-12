@@ -7,7 +7,13 @@ import { GoogleMapsWrapper } from './services/googlemaps-wrapper';
  *
  * ### Usage
  * @example
- * <gmtv-map [data]="objectArray"></gmtv-map>
+ * <gmtv-map [data]="objectArray" [template]="infowindow">
+ *  <ng-template #infowindow let-o>
+ *   <div id="root">
+ *     <h4>{{o.name}}</h4>
+ *   </div>
+ *  </ng-template>
+ * </gmtv-map>
  */
 @Component({
   selector: 'gmtv-map',
@@ -18,6 +24,8 @@ import { GoogleMapsWrapper } from './services/googlemaps-wrapper';
 export class NgxGooglemapsTrackingViewComponent implements OnInit {
   @ViewChild('map') mapDiv: ElementRef;
   protected _data: TrackedObject[] = [];
+
+  @Input() options: google.maps.MapOptions;
 
   /** Infowindow's template */
   @Input() template: TemplateRef<any>;
@@ -40,7 +48,7 @@ export class NgxGooglemapsTrackingViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.googlemapsWrapper.initMap(this.mapDiv.nativeElement);
+    this.googlemapsWrapper.initMap(this.mapDiv.nativeElement, this.options);
   }
 
   trackById(_index: number, item: TrackedObject) {

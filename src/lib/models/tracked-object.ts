@@ -6,7 +6,7 @@
 export interface TrackedObject {
   color?: string;
   /** In degrees from north */
-  heading?: number;
+  heading: number;
   id: string;
   name?: string;
   isOnline?: boolean;

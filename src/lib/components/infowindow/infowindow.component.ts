@@ -16,26 +16,35 @@ import { GoogleMapsWrapper } from '../../services/googlemaps-wrapper';
 
 @Component({
   selector: 'gmtv-infowindow',
-  template: `	<ng-template #defaultTemplate>
-								<div [ngClass]=[cssClass]>
-									<ng-content></ng-content>
-								</div>
-							</ng-template>
-							<ng-container #vc></ng-container>`
+  template: `	<div style="display: none;" #root>
+                <ng-template #defaultTemplate>
+                  <div [ngClass]=[cssClass]>
+                    <ng-content></ng-content>
+                  </div>
+                </ng-template>
+                <ng-container #vc></ng-container>
+              </div>`
 })
 export class InfowindowComponent implements AfterContentInit, OnDestroy {
+  @ViewChild('root') root: ElementRef;
   @ViewChild('defaultTemplate') defaultTemplateRef: TemplateRef<any>;
   @ViewChild('vc', { read: ViewContainerRef }) vc: ViewContainerRef;
+  /** When infowindow has closed */
   @Output() closed = new EventEmitter<void>();
+  /** Triggered on clicking on the X button */
   @Output() closeclick = new EventEmitter<void>();
 
   @Input() noPadding = false;
   @Input() padding = false;
+  /** Unique infowindow identifier */
   @Input() id: string;
   @Input() cssClass = '';
+  /** Template for infowindow content */
   @Input('template') contentTemplateRef: TemplateRef<any>;
+  /** Implicit context for content template */
   @Input('context') ctx: any;
   @Input() closeOnMapClick = true;
+
   content: Node;
   view: EmbeddedViewRef<any>;
   subscription = new Subscription();
@@ -76,7 +85,7 @@ export class InfowindowComponent implements AfterContentInit, OnDestroy {
 
   open(anchor: google.maps.MVCObject | google.maps.LatLng) {
     if (this.vc && this.view && !this.view.destroyed) this.vc.insert(this.view);
-    this.content = this.view && this.view.rootNodes[1];
+    this.content = this.view && this.view.rootNodes[0];
     this.googleMaps.openInfowindow(anchor, this.content, this.id);
   }
 
