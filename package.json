@@ -1,11 +1,15 @@
 {
   "name": "ngx-googlemaps-tracking-view",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
   },
   "devDependencies": {
+    "@compodoc/compodoc": "^1.1.10",
     "@types/googlemaps": "^3.37.3"
+  },
+  "scripts": {
+    "compodoc": "npx compodoc -p ./tsconfig.lib.json -d docs"
   }
 }
