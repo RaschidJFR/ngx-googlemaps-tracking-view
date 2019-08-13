@@ -1,24 +1,100 @@
-# NgxGooglemapsTrackingView
+# Angular Google Maps Tracking View
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+A General-purpose embedded Angular map for tracking objects in real time using [Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial).
 
-## Code scaffolding
+<!-- ![Example Gif](./example.gif) -->
 
-Run `ng generate component component-name --project ngx-googlemaps-tracking-view` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-googlemaps-tracking-view`.
-> Note: Don't forget to add `--project ngx-googlemaps-tracking-view` or else it will be added to the default project in your `angular.json` file. 
+## 🌎 Usage
 
-## Build
+```html
+<!-- component.html -->
+<gmtv-map [data]="objectsToTrack"></gmtv-map>
+```
 
-Run `ng build ngx-googlemaps-tracking-view` to build the project. The build artifacts will be stored in the `dist/` directory.
+```ts
+// component.ts
+import { TrackedObject } from 'ngx-googlemaps-tracking-view';
 
-## Publishing
+objectsToTrack: TrackedObject[] = [
+  {
+    id: '1',
+    color: 'blue',
+    heading: 45,
+    name: 'Test object #1',
+    position: new google.maps.LatLng(19.53124, -96.91589),
+  },
+  {
+    id: '2',
+    color: 'red',
+    heading: -30,
+    name: 'Test object #2',
+    position: new google.maps.LatLng(19.53144, -96.91523),
+  },
+  ...
+]
 
-After building your library with `ng build ngx-googlemaps-tracking-view`, go to the dist folder `cd dist/ngx-googlemaps-tracking-view` and run `npm publish`.
+```
 
-## Running unit tests
+## 🛠 Set Up
 
-Run `ng test ngx-googlemaps-tracking-view` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Install package: `$ npm i ngx-googlemaps-tracking-view`
+2. Import the directive into your desired module (usually `app.module.ts`):
 
-## Further help
+    ```ts
+    //app.module.ts
+    import { NgxGooglemapsTrackingViewModule } from 'ngx-googlemaps-tracking-view';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    @NgModule({
+      imports: [
+        NgxGooglemapsTrackingViewModule,
+        ...
+    ```
+
+3. Get an [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key) and add the SDK to your `index.html` (just before closing `<head>` tag). Note the final part `&libraries=geometry`, this is needed to load the Geometry library.
+
+    ```html
+    <!-- index.html -->
+    <head>
+      ...
+      <script src="https://maps.googleapis.com/maps/api/js?key=**YOUR_API_KEY**&libraries=geometry"></script>
+    </head>
+    ```
+
+>See *[
+Get Started with Google Maps Platform](https://developers.google.com/maps/gmp-get-started)* for more info.
+
+## 🧩 API
+
+See full documentation at https://raschidjfr.github.io/ngx-googlemaps-tracking-view.
+
+| Param      | Type                                                                                               | Required? | Description                                                                                                                            |
+| ---------- | -------------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| data       | `TrackedObject[]`| Required  | Array of objects to draw on the map. They must implement the interface `TrackedObject`. |
+| mapOptions | [MapOptions](https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions) | Optional  | GoogleMaps initialization options.                                                                                                     |
+| template   | [TemplateRef](https://angular.io/api/core/TemplateRef)                                             | Optional  | An Angular template for rendering the infowindow. If non provided, a default infowindow template will be used.                         |
+
+### Example
+
+```html
+<!-- component.html -->
+<gmtv-map [data]="objectsToTrack" [template]="infowindow" [mapOptions]="mapOptions">
+
+  <ng-template #infowindow let-o>
+    <div id="rootNode">
+      <h3>{{o.name}}</h3>
+      <p>
+        <strong>ID:</strong> {{o.id}}<br>
+        <strong>Position:</strong> {{o.position?.toJSON() | json}}<br>
+        <strong>Heading:</strong> {{o.heading | number:'1.0-1'}}°<br>
+      </p>
+    </div>
+  </ng-template>
+</gmtv-map>
+```
+
+## Credits
+Raschid JF. Rafaelly
+
+<me@raschidjfr.dev>
+
+https://raschidjfr.dev
