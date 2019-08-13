@@ -26,17 +26,24 @@ const LOD = {
   templateUrl: './tracked-object.component.html',
 })
 export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDestroy {
-  polygon: google.maps.Polygon;
   vectorLine: google.maps.Polyline;
   dotMarker: google.maps.Marker;
   hoverDotListeners: google.maps.MapsEventListener[] = [];
   hoverPolygonListeners: google.maps.MapsEventListener[] = [];
   zoomListener: google.maps.MapsEventListener;
   subscription = new Subscription();
+  defaultColor = 'red';
+  polygon = new google.maps.Polygon({
+    strokeColor: this.color,
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: this.color,
+    fillOpacity: !this.offline ? .55 : 0,
+    draggable: false
+  });
 
   @Input() trackedObject: TrackedObject;
-  @Input() color = 'red';
-  @Input() online = true;
+  // tslint:disable-next-line: no-any
   @Input() template: TemplateRef<any>;
   drawSpeedVector = false;
 
@@ -69,13 +76,15 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
     if (this.zoomListener) this.zoomListener.remove();
   }
 
-  get hasValidMeasures(): boolean {
-    return true;
-  }
+  /**
+   * Current color for the current tracked object
+   */
+  get color(): string { return this.trackedObject && this.trackedObject.color || this.defaultColor; }
 
-  get isMoving(): boolean {
-    return this.trackedObject.speed !== 0;
-  }
+  protected get isMoving(): boolean { return !!this.trackedObject && this.trackedObject.speed !== 0; }
+  protected get offline(): boolean { return this.trackedObject && this.trackedObject.isOnline === false; }
+  protected get hasValidMeasures(): boolean { return true; }
+
 
   /**
    * Adaptive scale according to current zoom
@@ -83,7 +92,7 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
   protected get scale(): number {
     const zoom = this.googleMaps && this.googleMaps.map && this.googleMaps.map.getZoom() || 1;
     const s = Math.ceil(LOD.scaleTriangle - zoom);
-    return Math.pow(2, s);
+    return Math.pow(2, s) * 1.5;
   }
 
   /**
@@ -185,20 +194,6 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
       this.zoomListener = this.googleMaps.map.addListener('zoom_changed', () => this.onZoomChanged());
   }
 
-  protected initPolygon() {
-    if (this.polygon) this.polygon.setMap(null);
-
-    this.polygon = new google.maps.Polygon({
-      strokeColor: this.color,
-      strokeOpacity: 0.8,
-      strokeWeight: 2,
-      fillColor: this.color,
-      fillOpacity: this.online ? .35 : 0,
-      draggable: false
-    });
-
-  }
-
   /**
 	 * Returns the series of icons according to the current zoom level
 	 */
@@ -278,9 +273,9 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
       },
       icon: {
         path: google.maps.SymbolPath.CIRCLE,
-        fillColor: this.color = this.color,
+        fillColor: this.color,
         fillOpacity: 0.6,
-        strokeColor: this.color = this.color,
+        strokeColor: this.color,
         strokeOpacity: 0.9,
         strokeWeight: 1,
         scale: 5,
@@ -327,7 +322,6 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
   }
 
   drawObject() {
-    if (!this.polygon) this.initPolygon();
     if (!this.dotMarker) this.initDotaMarker();
     this.initSpeedPolyline();
 
@@ -342,10 +336,15 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
     if (showTriangle) {
       const polygonPath = this.getTrianglePath();
       if (polygonPath.length) {
-        this.polygon.setOptions({ fillOpacity: this.online ? .35 : 0 });
+        this.polygon.setOptions({
+          fillOpacity: !this.offline ? .55 : 0,
+          fillColor: this.color,
+          strokeColor: this.color,
+        });
         this.polygon.setPath(polygonPath);
         this.polygon.setVisible(true);
         this.polygon.setMap(this.googleMaps.map);
+        console.log(this.color)
       }
     }
     else {
@@ -366,7 +365,7 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
     }
 
     // Update dot icon
-    const solidDot = this.online || this.canDrawPolygon;
+    const solidDot = !this.offline || this.canDrawPolygon;
     this.dotMarker.setIcon({
       path: google.maps.SymbolPath.CIRCLE,
       fillColor: this.color,

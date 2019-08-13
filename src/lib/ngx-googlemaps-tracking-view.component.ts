@@ -5,9 +5,8 @@ import { GoogleMapsWrapper } from './services/googlemaps-wrapper';
 /**
  * Creates an embeded google map with polygons representing the tracked objects.
  *
- * ### Usage
  * @example
- * <gmtv-map [data]="objectArray" [template]="infowindow">
+ * <gmtv-map [data]="objectArray" [template]="infowindow" [mapOptions]="mapOptions">
  *  <ng-template #infowindow let-o>
  *   <div id="root">
  *     <h4>{{o.name}}</h4>
@@ -25,30 +24,41 @@ export class NgxGooglemapsTrackingViewComponent implements OnInit {
   @ViewChild('map') mapDiv: ElementRef;
   protected _data: TrackedObject[] = [];
 
-  @Input() options: google.maps.MapOptions;
+  /**
+   * Options to pass on map initialization.
+   * See {@link https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions MapOptions}
+   */
+  @Input() mapOptions: google.maps.MapOptions;
 
-  /** Infowindow's template */
+  /**
+   * Infowindow's template
+   */
+  // tslint:disable-next-line: no-any
   @Input() template: TemplateRef<any>;
 
-  /** * Array of {@link TrackedObject} to draw on map */
+  /**
+   * Array of {@link TrackedObject} to draw on map
+   */
   @Input()
   set data(val: TrackedObject[]) { this._data = val; }
   get data(): TrackedObject[] { return this._data; }
 
-  /** Currently inited {@link https://developers.google.com/maps/documentation/javascript/reference/map#Map Map} object */
+  /**
+   * Currently inited {@link https://developers.google.com/maps/documentation/javascript/reference/map#Map Map} object
+   */
   get map(): google.maps.Map { return this.googlemapsWrapper.map; }
 
   constructor(protected googlemapsWrapper: GoogleMapsWrapper) { }
+
+  ngOnInit() {
+    this.googlemapsWrapper.initMap(this.mapDiv.nativeElement, this.mapOptions);
+  }
 
   /**
    * Resolves whem map has been inited
    */
   ready(): Promise<void> {
     return this.googlemapsWrapper.ready();
-  }
-
-  ngOnInit() {
-    this.googlemapsWrapper.initMap(this.mapDiv.nativeElement, this.options);
   }
 
   trackById(_index: number, item: TrackedObject) {

@@ -17,9 +17,14 @@ import { GoogleMapsWrapper } from '../../services/googlemaps-wrapper';
 @Component({
   selector: 'gmtv-infowindow',
   template: `	<div style="display: none;" #root>
-                <ng-template #defaultTemplate>
-                  <div [ngClass]=[cssClass]>
-                    <ng-content></ng-content>
+                <ng-template #defaultTemplate let-o>
+                  <div id="rootNode">
+                    <h3>{{o.name}}</h3>
+                    <p>
+                      <strong>ID:</strong> {{o.id}}<br>
+                      <strong>Position:</strong> {{o.position?.toJSON() | json}}<br>
+                      <strong>Heading:</strong> {{o.heading | number:'1.0-1'}}°<br>
+                    </p>
                   </div>
                 </ng-template>
                 <ng-container #vc></ng-container>
@@ -27,6 +32,7 @@ import { GoogleMapsWrapper } from '../../services/googlemaps-wrapper';
 })
 export class InfowindowComponent implements AfterContentInit, OnDestroy {
   @ViewChild('root') root: ElementRef;
+  // tslint:disable-next-line: no-any
   @ViewChild('defaultTemplate') defaultTemplateRef: TemplateRef<any>;
   @ViewChild('vc', { read: ViewContainerRef }) vc: ViewContainerRef;
   /** When infowindow has closed */
@@ -40,12 +46,15 @@ export class InfowindowComponent implements AfterContentInit, OnDestroy {
   @Input() id: string;
   @Input() cssClass = '';
   /** Template for infowindow content */
+  // tslint:disable-next-line: no-any
   @Input('template') contentTemplateRef: TemplateRef<any>;
   /** Implicit context for content template */
+  // tslint:disable-next-line: no-any
   @Input('context') ctx: any;
   @Input() closeOnMapClick = true;
 
   content: Node;
+  // tslint:disable-next-line: no-any
   view: EmbeddedViewRef<any>;
   subscription = new Subscription();
 

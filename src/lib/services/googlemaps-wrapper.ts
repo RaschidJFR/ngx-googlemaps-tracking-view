@@ -14,6 +14,7 @@ export class GoogleMapsWrapper {
   protected polygons: google.maps.Polygon[] = [];
   private _isReady = false;
   private _ready: Promise<void>;
+  // tslint:disable-next-line: no-any
   private resolver: { resolve: () => void, reject: (err: any) => void };
 
   /** If `true` the infowindows will close on clicking on any point on the map */
@@ -90,9 +91,14 @@ export class GoogleMapsWrapper {
 
       console.debug('map created ');
 
-      this._isReady = true;
-      this.resolver.resolve();
-      this.onReady.emit();
+      // Wait for SDK to load
+      setTimeout(() => {
+        this._isReady = true;
+        this.resolver.resolve();
+        this.onReady.emit();
+      }, 1000);
+
+      await this._isReady;
       return this.map;
     } catch (e) {
       this.resolver.reject(e);
@@ -113,6 +119,7 @@ export class GoogleMapsWrapper {
   /**
 	 * Subscribe to map event
 	 */
+  // tslint:disable-next-line: no-any
   subscribe(eventName: string, callback: (event: any) => void) {
     this.map.addListener(eventName, callback);
   }
