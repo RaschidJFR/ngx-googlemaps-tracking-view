@@ -1,17 +1,61 @@
 {
-  "extends": "../../tslint.json",
+  "rulesDirectory": [
+    "codelyzer"
+  ],
   "rules": {
-    "directive-selector": [
+		"align": [true, "statements"],
+    "array-type": [true, "array"],
+    "deprecation": {
+      "severity": "warn"
+		},
+    "import-blacklist": [
       true,
-      "attribute",
-      "gmtv",
-      "camelCase"
+      "rxjs/Rx"
+		],
+		"indent": [true, "spaces", 2],
+    "max-line-length": {
+			"severity": "warning",
+			"options": [140]
+		},
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "instance-sandwich"
+        ]
+      }
+		],
+		"no-any":true,
+		"no-var-keyword": true,
+		"prefer-const": true,
+    "no-inferrable-types": [
+      true,
+      "ignore-params"
     ],
-    "component-selector": [
+    "no-non-null-assertion": true,
+    "no-redundant-jsdoc": true,
+    "no-use-before-declare": true,
+    "object-literal-key-quotes": [
       true,
-      "element",
-      "gmtv",
-      "kebab-case"
-    ]
+      "as-needed"
+		],
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "no-output-on-prefix": true,
+		"variable-name":{
+			"severity": "warning",
+			"options": ["ban-keywords", "check-format", "allow-leading-underscore", "allow-snake-case", "allow-pascal-case"]
+		} ,
+    "use-input-property-decorator": true,
+    "use-output-property-decorator": true,
+    "use-host-property-decorator": true,
+    "no-input-rename": true,
+    "no-output-rename": true,
+    "use-life-cycle-interface": true,
+    "use-pipe-transform-interface": true,
+    "component-class-suffix": true,
+    "directive-class-suffix": true
   }
 }
