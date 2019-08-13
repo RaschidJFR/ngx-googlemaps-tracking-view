@@ -1,9 +1,9 @@
 /// <reference types="@types/googlemaps" />
 import { Component, ViewChild, AfterContentInit } from '@angular/core';
-import { NgxGooglemapsTrackingViewComponent, TrackedObject } from 'ngx-googlemaps-tracking-view';
+import { NgxGooglemapsTrackingViewComponent, TrackedObject } from 'projects/ngx-googlemaps-tracking-view/src';
 import { HttpClient } from '@angular/common/http';
 import * as i18IsoCountries from 'i18n-iso-countries';
-import * as randomColor from'randomcolor';
+import * as randomColor from 'randomcolor';
 
 i18IsoCountries.registerLocale(require('i18n-iso-countries/langs/en.json'));
 
@@ -39,6 +39,7 @@ export class AppComponent implements AfterContentInit {
   @ViewChild(NgxGooglemapsTrackingViewComponent) mapView: NgxGooglemapsTrackingViewComponent;
 
   objectsToTrack: TrackedObject[] = [];
+  symbolPath = 'M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z';
 
   mapOptions: google.maps.MapOptions = {
     center: {
@@ -63,12 +64,14 @@ export class AppComponent implements AfterContentInit {
     this.http.get(`https://opensky-network.org/api/states/all?lamin=${sw.lat()}&lomin=${sw.lng()}&lamax=${ne.lat()}&lomax=${ne.lng()}`)
       .subscribe((response: { states: Aircraft[] }) => {
         this.objectsToTrack = response.states.map(aircraft => {
+          const found = this.objectsToTrack.find(a => a.id == aircraft[0]);
           const trkObj: TrackedAircraft = {
             altitude: aircraft[13],
             id: aircraft[0],
-            color: randomColor(),
+            color: found && found.color || randomColor(),
             country: aircraft[2],
             heading: aircraft[10],
+            icon: found && found.icon || this.getIcon(aircraft[10]),
             name: aircraft[0].toLocaleUpperCase(),
             onGround: aircraft[8],
             position: new google.maps.LatLng(aircraft[6], aircraft[5]),
@@ -82,5 +85,20 @@ export class AppComponent implements AfterContentInit {
 
   getIsoCode(countryName: string) {
     return i18IsoCountries.getAlpha2Code(countryName, 'en');
+  }
+
+  getIcon(rotation: number): google.maps.Symbol {
+    const color = randomColor();
+    return {
+      path: this.symbolPath,
+      labelOrigin: new google.maps.Point(0, 5),
+      fillColor: color,
+      fillOpacity: 0.8,
+      strokeColor: color,
+      strokeOpacity: .9,
+      strokeWeight: 1,
+      scale: 1,
+      rotation: rotation
+    }
   }
 }

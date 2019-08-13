@@ -5,7 +5,9 @@
     "start": "ng serve",
     "build": "ng build",
     "build:lib": "ng build ngx-googlemaps-tracking-view",
-    "compodoc": "npx compodoc -p ./projects/ngx-googlemaps-tracking-view/tsconfig.lib.json -d docs"
+    "compodoc": "npx compodoc -p ./projects/ngx-googlemaps-tracking-view/tsconfig.lib.json -d docs",
+    "publish": "npm publish ./projects/ngx-googlemaps-tracking-view/package.json",
+    "prepublish": "npm run compodoc"
   },
   "private": true,
   "dependencies": {

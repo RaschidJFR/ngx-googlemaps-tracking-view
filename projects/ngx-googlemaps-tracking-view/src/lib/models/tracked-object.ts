@@ -9,6 +9,7 @@ export interface TrackedObject {
   heading: number;
   id: string;
   name?: string;
+  icon?: google.maps.Icon | google.maps.Symbol,
   isOnline?: boolean;
   position: google.maps.LatLng;
   speed?: number;
