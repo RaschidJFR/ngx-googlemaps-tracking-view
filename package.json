@@ -5,7 +5,9 @@
     "start": "ng serve",
     "build": "ng build ngx-googlemaps-tracking-view",
     "build:demo": "ng build --base-href=\".\"",
-    "compodoc": "npx compodoc -p ./projects/ngx-googlemaps-tracking-view/tsconfig.lib.json -d docs/reference",
+    "compodoc": "npx compodoc -p ./projects/ngx-googlemaps-tracking-view/tsconfig.lib.json -d dist/demo/reference",
+    "deploy": "npx ngh --dir=\"dist/demo\"",
+    "predeploy": "npm run build && npm run build:demo && npm run compodoc",
     "publish": "npm publish ./dist/ngx-googlemaps-tracking-view",
     "prepublish": "npm run build && npm run compodoc",
     "watch": "ng build ngx-googlemaps-tracking-view --watch"
@@ -20,6 +22,7 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "angular-cli-ghpages": "^0.5.3",
     "core-js": "^2.5.4",
     "extract-svg-path": "^2.1.0",
     "flag-icon-css": "^3.3.0",
