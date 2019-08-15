@@ -65,13 +65,13 @@ Get Started with Google Maps Platform](https://developers.google.com/maps/gmp-ge
 
 ## 🧩 API
 
-See full documentation at https://raschidjfr.github.io/ngx-googlemaps-tracking-view.
-
 | Param      | Type                                                                                               | Required? | Description                                                                                                                            |
 | ---------- | -------------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| data       | `TrackedObject[]`| Required  | Array of objects to draw on the map. They must implement the interface `TrackedObject`. |
+| data       | `TrackedObject[]`| Required  | Array of objects to draw on the map. They must implement the interface `TrackedObject`: <br><br><ul><li>`color?: string` The marker's color.</li><li>`heading: number` Direction measured in degrees from true north.</li><li>`id: string` Unique identifier assigned to this object.</li><li>`icon?: google.maps.Icon | google.maps.Symbol` A google map's icon object.</li><li>`isOffline?: boolean` If `true`, the default marker (circle or triangle) will be outlined instead of solid.</li><li>`label?: label?: google.maps.MarkerLabel` A google maps label object to show near the marker.</li><li>`position: google.maps.LatLng` Scale for default markers. This is overwritten when `icon` is provided.</li><li>`scale?: number` The marker's color.</li><li>`speed?: number` If this value is not provided or is greater than 0 a triangle oriented towards`heading` will be shown as marker, otherwise, a circle (if `icon` is not set).</li></ul> |
 | mapOptions | [MapOptions](https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions) | Optional  | GoogleMaps initialization options.                                                                                                     |
 | template   | [TemplateRef](https://angular.io/api/core/TemplateRef)                                             | Optional  | An Angular template for rendering the infowindow. If non provided, a default infowindow template will be used.                         |
+
+See [Full Documentation](https://raschidjfr.github.io/ngx-googlemaps-tracking-view)
 
 ### Example
 
