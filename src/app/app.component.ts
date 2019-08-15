@@ -1,6 +1,6 @@
 /// <reference types="@types/googlemaps" />
 import { Component, ViewChild, AfterContentInit } from '@angular/core';
-import { NgxGooglemapsTrackingViewComponent, TrackedObject } from 'projects/ngx-googlemaps-tracking-view/src';
+import { NgxGooglemapsTrackingViewComponent, TrackedObject } from 'ngx-googlemaps-tracking-view';
 import { HttpClient } from '@angular/common/http';
 import * as i18IsoCountries from 'i18n-iso-countries';
 import * as randomColor from 'randomcolor';
@@ -50,7 +50,7 @@ export class AppComponent implements AfterContentInit {
       lng: 12.646361
     },
     zoom: 6,
-    mapTypeId: google.maps.MapTypeId.SATELLITE
+    mapTypeId: google.maps.MapTypeId.SATELLITE,
   }
 
   constructor(private http: HttpClient) {

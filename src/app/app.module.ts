@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgxGooglemapsTrackingViewModule } from 'projects/ngx-googlemaps-tracking-view/src';
+import { NgxGooglemapsTrackingViewModule } from 'ngx-googlemaps-tracking-view';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({

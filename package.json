@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve",
-    "build": "ng build",
-    "build:lib": "ng build ngx-googlemaps-tracking-view",
+    "build": "ng build ngx-googlemaps-tracking-view",
     "compodoc": "npx compodoc -p ./projects/ngx-googlemaps-tracking-view/tsconfig.lib.json -d docs",
-    "publish": "npm publish ./projects/ngx-googlemaps-tracking-view/package.json",
-    "prepublish": "npm run compodoc"
+    "publish": "npm publish ./dist/ngx-googlemaps-tracking-view",
+    "prepublish": "npm run build && npm run compodoc",
+    "watch": "ng build ngx-googlemaps-tracking-view --watch"
   },
   "private": true,
   "dependencies": {

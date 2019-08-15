@@ -1,8 +1,10 @@
 # Angular Google Maps Tracking View
 
-A General-purpose embedded Angular map for tracking objects in real time using [Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial).
+A General-purpose embedded Angular map for tracking objects in real time using [Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial). Helpful for Uber-like applications.
 
-<!-- ![Example Gif](./example.gif) -->
+![Demo 1](./img/demo1.jpg)
+
+![Demo 2](./img/demo2.jpg)
 
 ## 🌎 Usage
 
@@ -20,14 +22,14 @@ objectsToTrack: TrackedObject[] = [
     id: '1',
     color: 'blue',
     heading: 45,
-    name: 'Test object #1',
+    label: {text: 'Test object #1' },
     position: new google.maps.LatLng(19.53124, -96.91589),
   },
   {
     id: '2',
     color: 'red',
     heading: -30,
-    name: 'Test object #2',
+    label: {text: 'Test object #2' },
     position: new google.maps.LatLng(19.53144, -96.91523),
   },
   ...
@@ -65,11 +67,11 @@ Get Started with Google Maps Platform](https://developers.google.com/maps/gmp-ge
 
 ## 🧩 API
 
-| Param      | Type                                                                                               | Required? | Description                                                                                                                            |
-| ---------- | -------------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| data       | `TrackedObject[]`| Required  | Array of objects to draw on the map. They must implement the interface `TrackedObject`: <br><br><ul><li>`color?: string` The marker's color.</li><li>`heading: number` Direction measured in degrees from true north.</li><li>`id: string` Unique identifier assigned to this object.</li><li>`icon?: google.maps.Icon | google.maps.Symbol` A google map's icon object.</li><li>`isOffline?: boolean` If `true`, the default marker (circle or triangle) will be outlined instead of solid.</li><li>`label?: label?: google.maps.MarkerLabel` A google maps label object to show near the marker.</li><li>`position: google.maps.LatLng` Scale for default markers. This is overwritten when `icon` is provided.</li><li>`scale?: number` The marker's color.</li><li>`speed?: number` If this value is not provided or is greater than 0 a triangle oriented towards`heading` will be shown as marker, otherwise, a circle (if `icon` is not set).</li></ul> |
-| mapOptions | [MapOptions](https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions) | Optional  | GoogleMaps initialization options.                                                                                                     |
-| template   | [TemplateRef](https://angular.io/api/core/TemplateRef)                                             | Optional  | An Angular template for rendering the infowindow. If non provided, a default infowindow template will be used.                         |
+| Param      | Type                                                                                               | Required? | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ---------- | -------------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| data       | `TrackedObject[]`                                                                                  | Required  | Array of objects to draw on the map. They must implement the interface `TrackedObject`: <br><br><ul><li>`color?: string` The marker's color.</li><li>`heading: number` Direction measured in degrees from true north.</li><li>`id: string` Unique identifier assigned to this object.</li><li>`icon?: google.maps.Icon / google.maps.Symbol` A google map's icon object.</li><li>`isOffline?: boolean` If `true`, the default marker (circle or triangle) will be outlined instead of solid.</li><li>`label?: label?: google.maps.MarkerLabel` A google maps label object to show near the marker.</li><li>`position: google.maps.LatLng` Scale for default markers. This is overwritten when `icon` is provided.</li><li>`scale?: number` The marker's color.</li><li>`speed?: number` If this value is not provided or is greater than 0 a triangle oriented towards`heading` will be shown as marker, otherwise, a circle (if `icon` is not set).</li></ul> |
+| mapOptions | [MapOptions](https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions) | Optional  | GoogleMaps initialization options.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| template   | [TemplateRef](https://angular.io/api/core/TemplateRef)                                             | Optional  | An Angular template for rendering the infowindow. If non provided, a default infowindow template will be used.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 See [Full Documentation](https://raschidjfr.github.io/ngx-googlemaps-tracking-view)
 
@@ -97,7 +99,7 @@ Feel free to improve the code.
 
 * The source code for the test app `/src`.
 * You'll find the library's source in `/projects/ngx-googlemaps-tracking-view/src`.
-* Run `ng build ngx-googlemaps-tracking-view --watch` to build in watch mode. Then run `ng serve` to deploy the test app.
+* Run `$ npm run --watch` to build in watch mode. Then run `$ ng serve` to deploy the test app.
 
 ## Credits
 Raschid JF. Rafaelly
