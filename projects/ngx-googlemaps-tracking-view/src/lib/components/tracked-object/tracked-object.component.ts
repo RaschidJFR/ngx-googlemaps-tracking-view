@@ -374,10 +374,6 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
     this.dotMarker.setPosition(this.trackedObject.position);
     this.dotMarker.setMap(this.googleMaps.map);
     this.dotMarker.setVisible(true);
-
-    console.log(this.dotMarker.getIcon());
-    console.log(this.dotMarker.getMap());
-    console.log(this.dotMarker.getPosition().toJSON());
   }
 
   onMouseOver() {

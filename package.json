@@ -4,7 +4,8 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build ngx-googlemaps-tracking-view",
-    "compodoc": "npx compodoc -p ./projects/ngx-googlemaps-tracking-view/tsconfig.lib.json -d docs",
+    "build:demo": "ng build --base-href=\".\"",
+    "compodoc": "npx compodoc -p ./projects/ngx-googlemaps-tracking-view/tsconfig.lib.json -d docs/reference",
     "publish": "npm publish ./dist/ngx-googlemaps-tracking-view",
     "prepublish": "npm run build && npm run compodoc",
     "watch": "ng build ngx-googlemaps-tracking-view --watch"

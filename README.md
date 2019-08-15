@@ -2,9 +2,11 @@
 
 A General-purpose embedded Angular map for tracking objects in real time using [Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial). Helpful for Uber-like applications.
 
-![Demo 1](./img/demo1.jpg)
+[Live Demo](https://raschidjfr.github.io/ngx-googlemaps-tracking-view)
 
-![Demo 2](./img/demo2.jpg)
+![Demo 1](https://raw.githubusercontent.com/RaschidJFR/ngx-googlemaps-tracking-view/master/img/demo1.jpg)
+
+![Demo 2](https://raw.githubusercontent.com/RaschidJFR/ngx-googlemaps-tracking-view/master/img/demo2.jpg)
 
 ## 🌎 Usage
 
@@ -73,7 +75,7 @@ Get Started with Google Maps Platform](https://developers.google.com/maps/gmp-ge
 | mapOptions | [MapOptions](https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions) | Optional  | GoogleMaps initialization options.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | template   | [TemplateRef](https://angular.io/api/core/TemplateRef)                                             | Optional  | An Angular template for rendering the infowindow. If non provided, a default infowindow template will be used.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
-See [Full Documentation](https://raschidjfr.github.io/ngx-googlemaps-tracking-view)
+See [Full Documentation](https://raschidjfr.github.io/ngx-googlemaps-tracking-view/reference)
 
 ### Example
 
