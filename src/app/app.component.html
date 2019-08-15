@@ -1,7 +1,7 @@
 <gmtv-map [data]="objectsToTrack" [template]="infowindow" [mapOptions]="mapOptions">
   <ng-template #infowindow let-o>
     <div>
-      <h3>Flight #{{o.name}} <span class="flag-icon flag-icon-{{getIsoCode(o.country)?.toLowerCase()}}" [title]="o.country"></span></h3>
+      <h3>Flight #{{o.label?.text}} <span class="flag-icon flag-icon-{{getIsoCode(o.country)?.toLowerCase()}}" [title]="o.country"></span></h3>
       <span><strong>Altitude: </strong>{{o.altitude | number: '1.0-0'}}m</span>
     </div>
   </ng-template>

@@ -4,6 +4,9 @@ import { NgxGooglemapsTrackingViewComponent, TrackedObject } from 'projects/ngx-
 import { HttpClient } from '@angular/common/http';
 import * as i18IsoCountries from 'i18n-iso-countries';
 import * as randomColor from 'randomcolor';
+import * as parseSvg from 'parse-svg-path';
+import * as extractSvg from 'extract-svg-path';
+import * as loadSvg from 'load-svg';
 
 i18IsoCountries.registerLocale(require('i18n-iso-countries/langs/en.json'));
 
@@ -39,17 +42,27 @@ export class AppComponent implements AfterContentInit {
   @ViewChild(NgxGooglemapsTrackingViewComponent) mapView: NgxGooglemapsTrackingViewComponent;
 
   objectsToTrack: TrackedObject[] = [];
-  symbolPath = 'M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z';
+  symbolPath = '';
 
   mapOptions: google.maps.MapOptions = {
     center: {
-      lat: 45.46427,
-      lng: 9.18951
+      lat: 42.504154,
+      lng: 12.646361
     },
-    zoom: 7
+    zoom: 6,
+    mapTypeId: google.maps.MapTypeId.SATELLITE
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    // Load svg as symbol path
+    loadSvg('assets/baseline-local_airport-24px.svg', (err, svg) => {
+      const paths: any[][] = parseSvg(extractSvg.parse(svg));
+      const i = paths.findIndex(p => p[0] == 'z');
+      this.symbolPath = paths
+        .slice(0, i - 1)
+        .map(p => p.join(' ')).join(' ');
+    });
+  }
 
   async ngAfterContentInit() {
     await this.mapView.ready();
@@ -72,9 +85,15 @@ export class AppComponent implements AfterContentInit {
             country: aircraft[2],
             heading: aircraft[10],
             icon: found && found.icon || this.getIcon(aircraft[10]),
-            name: aircraft[0].toLocaleUpperCase(),
+            // speed: 0,
+            label: {
+              text: aircraft[0].toLocaleUpperCase(),
+              color: 'white'
+            },
+            // isOffline: true,
             onGround: aircraft[8],
             position: new google.maps.LatLng(aircraft[6], aircraft[5]),
+            // scale: 2,
           }
           return trkObj;
         })
@@ -93,11 +112,11 @@ export class AppComponent implements AfterContentInit {
       path: this.symbolPath,
       labelOrigin: new google.maps.Point(0, 5),
       fillColor: color,
-      fillOpacity: 0.8,
+      fillOpacity: .6,
       strokeColor: color,
-      strokeOpacity: .9,
-      strokeWeight: 1,
-      scale: 1,
+      strokeOpacity: 1,
+      strokeWeight: 2,
+      scale: 2,
       rotation: rotation
     }
   }
