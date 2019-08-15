@@ -27,7 +27,7 @@ const LOD = {
 })
 export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDestroy {
   vectorLine: google.maps.Polyline;
-  dotMarker: google.maps.Marker;
+  dotMarker = new google.maps.Marker({ position: { lat: NaN, lng: NaN } });
   hoverDotListeners: google.maps.MapsEventListener[] = [];
   hoverPolygonListeners: google.maps.MapsEventListener[] = [];
   zoomListener: google.maps.MapsEventListener;
@@ -82,7 +82,7 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
   get color(): string { return this.trackedObject && this.trackedObject.color || this.defaultColor; }
 
   protected get isMoving(): boolean { return !!this.trackedObject && this.trackedObject.speed !== 0; }
-  protected get offline(): boolean { return this.trackedObject && this.trackedObject.isOnline === false; }
+  protected get offline(): boolean { return this.trackedObject && this.trackedObject.isOffline; }
   protected get hasValidMeasures(): boolean { return true; }
 
 
@@ -92,7 +92,7 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
   protected get scale(): number {
     const zoom = this.googleMaps && this.googleMaps.map && this.googleMaps.map.getZoom() || 1;
     const s = Math.ceil(LOD.scaleTriangle - zoom);
-    return Math.pow(2, s) * 1.5;
+    return Math.pow(2, s) * (this.trackedObject.scale && this.trackedObject.scale || 1);
   }
 
   /**
@@ -138,21 +138,33 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
    * Checks if object is on screen and renders/unrenders it
    */
   protected checkRenderObject() {
-    let isPolygonOnScreen = false;
     const path = this.polygon && this.polygon.getPath();
-    if (path.getArray().length) {
-      const bounds = this.googleMaps.map.getBounds();
-      path.forEach(p => isPolygonOnScreen = isPolygonOnScreen || bounds && bounds.contains(p));
-    }
 
-    if (isPolygonOnScreen) {
-      this.dotMarker.setVisible(true);
-      this.polygon.setVisible(true);
-      this.vectorLine.setVisible(true);
-    } else {
-      this.dotMarker.setVisible(false);
-      this.polygon.setVisible(false);
-      this.vectorLine.setVisible(false);
+    // If showing a polygon
+    if (path && !!path.getLength()) {
+      let isPolygonOnScreen = false;
+      if (path.getArray().length) {
+        const bounds = this.googleMaps.map.getBounds();
+        path.forEach(p => isPolygonOnScreen = isPolygonOnScreen || bounds && bounds.contains(p));
+      }
+
+      if (isPolygonOnScreen) {
+        this.dotMarker.setVisible(true);
+        this.polygon.setVisible(true);
+        this.vectorLine.setVisible(true);
+      } else {
+        this.dotMarker.setVisible(false);
+        this.polygon.setVisible(false);
+        this.vectorLine.setVisible(false);
+      }
+    }
+    // If using the dot marker
+    else if (this.dotMarker) {
+      const bounds = this.googleMaps.map.getBounds();
+      const visible = !!bounds && bounds.contains(this.dotMarker.getPosition());
+      this.dotMarker.setVisible(visible);
+      this.polygon.setVisible(visible);
+      this.vectorLine.setVisible(visible);
     }
   }
 
@@ -164,10 +176,9 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
   }
 
   protected setupEventListeners() {
-
     const showPolygon = (this.canDrawPolygon && this.zoom >= LOD.scaleTriangle) || (this.isMoving && this.zoom < LOD.scaleTriangle);
 
-    if (showPolygon) {
+    if (showPolygon && !this.trackedObject.icon) {
 
       // Add listeners for polygon, not do
       if (this.hoverPolygonListeners.length < 1) {
@@ -265,25 +276,6 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
 
   protected initDotaMarker() {
     if (this.dotMarker) this.dotMarker.setMap(null);
-
-    this.dotMarker = new google.maps.Marker({
-      position: {
-        lat: NaN,
-        lng: NaN
-      },
-      icon: {
-        path: google.maps.SymbolPath.CIRCLE,
-        fillColor: this.color,
-        fillOpacity: 0.6,
-        strokeColor: this.color,
-        strokeOpacity: 0.9,
-        strokeWeight: 1,
-        scale: 5,
-        labelOrigin: new google.maps.Point(0, 5)
-      },
-      label: this.zoom >= LOD.nameLabels ? this.trackedObject.name : ''
-    });
-
     this.googleMaps.addMarker(this.dotMarker);
   }
 
@@ -329,7 +321,7 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
 
     this.setupEventListeners();
     const showDot = !this.isMoving;
-    const showTriangle = this.isMoving;
+    const showTriangle = this.isMoving && !this.trackedObject.icon;
     const showSpeedLine = this.drawSpeedVector && this.isMoving && this.zoom >= LOD.speed;
 
     // Show triangle
@@ -344,7 +336,6 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
         this.polygon.setPath(polygonPath);
         this.polygon.setVisible(true);
         this.polygon.setMap(this.googleMaps.map);
-        console.log(this.color)
       }
     }
     else {
@@ -365,21 +356,28 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
     }
 
     // Update dot icon
-    const solidDot = !this.offline || this.canDrawPolygon;
-    this.dotMarker.setIcon({
-      path: google.maps.SymbolPath.CIRCLE,
-      fillColor: this.color,
-      fillOpacity: solidDot && showDot ? 0.6 : 0,
-      strokeColor: this.color,
-      strokeOpacity: showDot ? 0.9 : 0,
-      strokeWeight: 1,
-      scale: 5,
-      labelOrigin: new google.maps.Point(0, 5)
-    });
-    this.dotMarker.setLabel(this.zoom >= LOD.nameLabels ? this.trackedObject.name : '');
+    this.dotMarker.setIcon(
+      this.trackedObject.icon ||
+      {
+        path: google.maps.SymbolPath.CIRCLE,
+        fillColor: this.color,
+        fillOpacity: !this.offline && showDot ? 0.6 : 0,
+        strokeColor: this.color,
+        strokeOpacity: showDot ? 0.9 : 0,
+        strokeWeight: 1,
+        scale: 5 * (this.trackedObject.scale || 1),
+        labelOrigin: new google.maps.Point(0, 5),
+        anchor: new google.maps.Point(.5, .5),
+      }
+    );
+    this.dotMarker.setLabel(this.zoom >= LOD.nameLabels ? this.trackedObject.label : '');
     this.dotMarker.setPosition(this.trackedObject.position);
     this.dotMarker.setMap(this.googleMaps.map);
     this.dotMarker.setVisible(true);
+
+    console.log(this.dotMarker.getIcon());
+    console.log(this.dotMarker.getMap());
+    console.log(this.dotMarker.getPosition().toJSON());
   }
 
   onMouseOver() {

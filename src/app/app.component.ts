@@ -1,9 +1,12 @@
 /// <reference types="@types/googlemaps" />
 import { Component, ViewChild, AfterContentInit } from '@angular/core';
-import { NgxGooglemapsTrackingViewComponent, TrackedObject } from 'ngx-googlemaps-tracking-view';
+import { NgxGooglemapsTrackingViewComponent, TrackedObject } from 'projects/ngx-googlemaps-tracking-view/src';
 import { HttpClient } from '@angular/common/http';
 import * as i18IsoCountries from 'i18n-iso-countries';
-import * as randomColor from'randomcolor';
+import * as randomColor from 'randomcolor';
+import * as parseSvg from 'parse-svg-path';
+import * as extractSvg from 'extract-svg-path';
+import * as loadSvg from 'load-svg';
 
 i18IsoCountries.registerLocale(require('i18n-iso-countries/langs/en.json'));
 
@@ -39,16 +42,27 @@ export class AppComponent implements AfterContentInit {
   @ViewChild(NgxGooglemapsTrackingViewComponent) mapView: NgxGooglemapsTrackingViewComponent;
 
   objectsToTrack: TrackedObject[] = [];
+  symbolPath = '';
 
   mapOptions: google.maps.MapOptions = {
     center: {
-      lat: 45.46427,
-      lng: 9.18951
+      lat: 42.504154,
+      lng: 12.646361
     },
-    zoom: 7
+    zoom: 6,
+    mapTypeId: google.maps.MapTypeId.SATELLITE
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    // Load svg as symbol path
+    loadSvg('assets/baseline-local_airport-24px.svg', (err, svg) => {
+      const paths: any[][] = parseSvg(extractSvg.parse(svg));
+      const i = paths.findIndex(p => p[0] == 'z');
+      this.symbolPath = paths
+        .slice(0, i - 1)
+        .map(p => p.join(' ')).join(' ');
+    });
+  }
 
   async ngAfterContentInit() {
     await this.mapView.ready();
@@ -63,15 +77,23 @@ export class AppComponent implements AfterContentInit {
     this.http.get(`https://opensky-network.org/api/states/all?lamin=${sw.lat()}&lomin=${sw.lng()}&lamax=${ne.lat()}&lomax=${ne.lng()}`)
       .subscribe((response: { states: Aircraft[] }) => {
         this.objectsToTrack = response.states.map(aircraft => {
+          const found = this.objectsToTrack.find(a => a.id == aircraft[0]);
           const trkObj: TrackedAircraft = {
             altitude: aircraft[13],
             id: aircraft[0],
-            color: randomColor(),
+            color: found && found.color || randomColor(),
             country: aircraft[2],
             heading: aircraft[10],
-            name: aircraft[0].toLocaleUpperCase(),
+            icon: found && found.icon || this.getIcon(aircraft[10]),
+            // speed: 0,
+            label: {
+              text: aircraft[0].toLocaleUpperCase(),
+              color: 'white'
+            },
+            // isOffline: true,
             onGround: aircraft[8],
             position: new google.maps.LatLng(aircraft[6], aircraft[5]),
+            // scale: 2,
           }
           return trkObj;
         })
@@ -82,5 +104,20 @@ export class AppComponent implements AfterContentInit {
 
   getIsoCode(countryName: string) {
     return i18IsoCountries.getAlpha2Code(countryName, 'en');
+  }
+
+  getIcon(rotation: number): google.maps.Symbol {
+    const color = randomColor();
+    return {
+      path: this.symbolPath,
+      labelOrigin: new google.maps.Point(0, 5),
+      fillColor: color,
+      fillOpacity: .6,
+      strokeColor: color,
+      strokeOpacity: 1,
+      strokeWeight: 2,
+      scale: 2,
+      rotation: rotation
+    }
   }
 }
