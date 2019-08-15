@@ -138,21 +138,33 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
    * Checks if object is on screen and renders/unrenders it
    */
   protected checkRenderObject() {
-    let isPolygonOnScreen = false;
     const path = this.polygon && this.polygon.getPath();
-    if (path.getArray().length) {
-      const bounds = this.googleMaps.map.getBounds();
-      path.forEach(p => isPolygonOnScreen = isPolygonOnScreen || bounds && bounds.contains(p));
-    }
 
-    if (isPolygonOnScreen) {
-      this.dotMarker.setVisible(true);
-      this.polygon.setVisible(true);
-      this.vectorLine.setVisible(true);
-    } else {
-      this.dotMarker.setVisible(false);
-      this.polygon.setVisible(false);
-      this.vectorLine.setVisible(false);
+    // If showing a polygon
+    if (path && !!path.getLength()) {
+      let isPolygonOnScreen = false;
+      if (path.getArray().length) {
+        const bounds = this.googleMaps.map.getBounds();
+        path.forEach(p => isPolygonOnScreen = isPolygonOnScreen || bounds && bounds.contains(p));
+      }
+
+      if (isPolygonOnScreen) {
+        this.dotMarker.setVisible(true);
+        this.polygon.setVisible(true);
+        this.vectorLine.setVisible(true);
+      } else {
+        this.dotMarker.setVisible(false);
+        this.polygon.setVisible(false);
+        this.vectorLine.setVisible(false);
+      }
+    }
+    // If using the dot marker
+    else if (this.dotMarker) {
+      const bounds = this.googleMaps.map.getBounds();
+      const visible = !!bounds && bounds.contains(this.dotMarker.getPosition());
+      this.dotMarker.setVisible(visible);
+      this.polygon.setVisible(visible);
+      this.vectorLine.setVisible(visible);
     }
   }
 
@@ -164,7 +176,6 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
   }
 
   protected setupEventListeners() {
-
     const showPolygon = (this.canDrawPolygon && this.zoom >= LOD.scaleTriangle) || (this.isMoving && this.zoom < LOD.scaleTriangle);
 
     if (showPolygon && !this.trackedObject.icon) {
@@ -363,6 +374,10 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
     this.dotMarker.setPosition(this.trackedObject.position);
     this.dotMarker.setMap(this.googleMaps.map);
     this.dotMarker.setVisible(true);
+
+    console.log(this.dotMarker.getIcon());
+    console.log(this.dotMarker.getMap());
+    console.log(this.dotMarker.getPosition().toJSON());
   }
 
   onMouseOver() {
