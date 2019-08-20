@@ -9,7 +9,7 @@
     "deploy": "npx ngh --dir=\"dist/demo\"",
     "predeploy": "npm run build && npm run build:demo && npm run compodoc",
     "publish": "npm publish ./dist/ngx-googlemaps-tracking-view",
-    "prepublish": "npm run build && npm run compodoc",
+    "prepublish": "npm run build && npm run compodoc && cp README.md dist/ngx-googlemaps-tracking-view",
     "watch": "ng build ngx-googlemaps-tracking-view --watch"
   },
   "private": true,
