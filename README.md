@@ -19,7 +19,7 @@ A General-purpose embedded Angular map for tracking objects in real time using [
 // component.ts
 import { TrackedObject } from 'ngx-googlemaps-tracking-view';
 
-objectsToTrack: TrackedObject[] = [
+const objectsToTrack: TrackedObject[] = [
   {
     id: '1',
     color: 'blue',
@@ -85,7 +85,7 @@ See [Full Documentation](https://raschidjfr.github.io/ngx-googlemaps-tracking-vi
 
   <ng-template #infowindow let-o>
     <div id="rootNode">
-      <h3>{{o.name}}</h3>
+      <h3>{{o.label?.text}}</h3>
       <p>
         <strong>ID:</strong> {{o.id}}<br>
         <strong>Position:</strong> {{o.position?.toJSON() | json}}<br>
@@ -101,7 +101,10 @@ Feel free to improve the code.
 
 * The source code for the test app `/src`.
 * You'll find the library's source in `/projects/ngx-googlemaps-tracking-view/src`.
-* Run `$ npm run --watch` to build in watch mode. Then run `$ ng serve` to deploy the test app.
+* Run:
+    1. `$ npm run --watch` to build in watch mode,
+    2. then `$npm run link:library` to install modules,
+    3. and then run `$ ng serve` to start the test app.
 
 ## Credits
 Raschid JF. Rafaelly
