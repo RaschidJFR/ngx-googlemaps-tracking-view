@@ -76,29 +76,31 @@ export class AppComponent implements AfterContentInit {
     const sw = bounds.getSouthWest();
     this.http.get(`https://opensky-network.org/api/states/all?lamin=${sw.lat()}&lomin=${sw.lng()}&lamax=${ne.lat()}&lomax=${ne.lng()}`)
       .subscribe((response: { states: Aircraft[] }) => {
-        this.objectsToTrack = response.states.map(aircraft => {
-          const found = this.objectsToTrack.find(a => a.id == aircraft[0]);
-          const trkObj: TrackedAircraft = {
-            altitude: aircraft[13],
-            id: aircraft[0],
-            color: found && found.color || randomColor(),
-            country: aircraft[2],
-            heading: aircraft[10],
-            icon: found && found.icon || this.getIcon(aircraft[10]),
-            // speed: 0,
-            label: {
-              text: aircraft[0].toLocaleUpperCase(),
-              color: 'white'
-            },
-            // isOffline: true,
-            onGround: aircraft[8],
-            position: new google.maps.LatLng(aircraft[6], aircraft[5]),
-            // scale: 2,
-          }
-          return trkObj;
-        })
-          .filter(a => !a.onGround)
-          .splice(0, 50);
+        this.objectsToTrack = response.states &&
+          response.states.map(aircraft => {
+            const found = this.objectsToTrack.find(a => a.id == aircraft[0]);
+            const trkObj: TrackedAircraft = {
+              altitude: aircraft[13],
+              id: aircraft[0],
+              color: found && found.color || randomColor(),
+              country: aircraft[2],
+              heading: aircraft[10],
+              icon: found && found.icon || this.getIcon(aircraft[10]),
+              // speed: 0,
+              label: {
+                text: aircraft[0].toLocaleUpperCase(),
+                color: 'white'
+              },
+              // isOffline: true,
+              onGround: aircraft[8],
+              position: new google.maps.LatLng(aircraft[6], aircraft[5]),
+              // scale: 2,
+            }
+            return trkObj;
+          })
+            .filter(a => !a.onGround)
+            .splice(0, 50)
+          || [];
       });
   }
 

@@ -1,4 +1,4 @@
-<gmtv-map [data]="objectsToTrack" [template]="infowindow" [mapOptions]="mapOptions">
+<gmtv-map [data]="objectsToTrack" [template]="infowindow" [mapOptions]="mapOptions" [showLocationButton]="true">
   <ng-template #infowindow let-o>
     <div>
       <h3>Flight #{{o.label?.text}} <span class="flag-icon flag-icon-{{getIsoCode(o.country)?.toLowerCase()}}" [title]="o.country"></span></h3>

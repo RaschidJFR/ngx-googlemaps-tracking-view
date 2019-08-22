@@ -1,17 +1,16 @@
 {
   "name": "ngx-googlemaps-tracking-view",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0"
+    "@angular/core": "^7.2.0",
+    "@types/googlemaps": "latest"
   },
-  "devDependencies": {},
   "description": "A General-purpose embedded Angular map for tracking objects in real time using [Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial).",
   "main": "karma.conf.js",
   "directories": {
     "doc": "docs"
   },
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RaschidJFR/ngx-googlemaps-tracking-view.git"
@@ -31,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/issues"
   },
-  "homepage": "https://github.com/RaschidJFR/ngx-googlemaps-tracking-view#readme"
+  "homepage": "https://github.com/RaschidJFR/ngx-googlemaps-tracking-view#readme",
+  "dependencies": {
+    "geolocation-marker": "^2.0.5"
+  }
 }
