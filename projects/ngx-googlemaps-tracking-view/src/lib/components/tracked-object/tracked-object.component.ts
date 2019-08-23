@@ -20,6 +20,19 @@ const LOD = {
 
 /**
  * This class renders a trackable object on the map
+ *
+ * @example
+ * // component.ts
+ * const objectsToTrack: TrackedObject[] = [{
+ *   id: '1',
+ *   color: 'blue',
+ *   heading: 45,
+ *   label: {text: 'Test object #1' },
+ *   position: new google.maps.LatLng(19.53124, -96.91589),
+ * }]
+ *
+ * // component.html
+ * <gmtv-map [data]="objectsToTrack"></gmtv-map>
  */
 @Component({
   selector: 'gmtv-tracked-object',

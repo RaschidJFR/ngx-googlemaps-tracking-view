@@ -1,10 +1,4 @@
-<div class="map-wrapper">
-  <div id="map" #map></div>
-  <button aria-label="Show Your Location" id="widget-mylocation" class="widget-mylocation-button ripple-container"
-    (click)="centerOnUser()" *ngIf="showLocationButton">
-    <div class="widget-mylocation-button-icon-common widget-mylocation-button-normal widget-mylocation-cookie"></div>
-  </button>
-</div>
+<div id="map" #map></div>
 
 <div id="tracked-object-list">
   <gmtv-tracked-object [trackedObject]="trkObj" [template]="template" *ngFor="let trkObj of data; trackBy: trackById">
