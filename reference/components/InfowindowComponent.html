@@ -1305,7 +1305,7 @@ export class InfowindowComponent implements AfterContentInit, OnDestroy {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div style="display: none;" #root>               <ng-template #defaultTemplate let-o>                 <div id="rootNode">                   <h3>{{o.name}}</h3>                   <p>                     <strong>ID:</strong> {{o.id}}<br>                     <strong>Position:</strong> {{o.position?.toJSON() | json}}<br>                     <strong>Heading:</strong> {{o.heading | number:\'1.0-1\'}}°<br>                   </p>                 </div>               </ng-template>               <ng-container #vc></ng-container>             </div></div>'
-    var COMPONENTS = [{'name': 'InfowindowComponent', 'selector': 'gmtv-infowindow'},{'name': 'NgxGooglemapsTrackingViewComponent', 'selector': 'gmtv-map'},{'name': 'TrackedObjectComponent', 'selector': 'gmtv-tracked-object'}];
+    var COMPONENTS = [{'name': 'GeolocationButtonComponent', 'selector': 'gmtv-geolocation-button'},{'name': 'InfowindowComponent', 'selector': 'gmtv-infowindow'},{'name': 'NgxGooglemapsTrackingViewComponent', 'selector': 'gmtv-map'},{'name': 'TrackedObjectComponent', 'selector': 'gmtv-tracked-object'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'InfowindowComponent'};
 </script>

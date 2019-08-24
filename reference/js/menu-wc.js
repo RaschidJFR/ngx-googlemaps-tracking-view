@@ -35,8 +35,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </a>
                         </li>
                         <li class="link">
-                            <a href="contributing.html"  data-type="chapter-link">
-                                <span class="icon ion-ios-paper"></span>CONTRIBUTING
+                            <a href="changelog.html"  data-type="chapter-link">
+                                <span class="icon ion-ios-paper"></span>CHANGELOG
                             </a>
                         </li>
                                 <li class="link">
@@ -60,13 +60,17 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NgxGooglemapsTrackingViewModule.html" data-type="entity-link">NgxGooglemapsTrackingViewModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NgxGooglemapsTrackingViewModule-8e458e7472a662043f32769e6b1ded1d"' : 'data-target="#xs-components-links-module-NgxGooglemapsTrackingViewModule-8e458e7472a662043f32769e6b1ded1d"' }>
+                                            'data-target="#components-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' : 'data-target="#xs-components-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxGooglemapsTrackingViewModule-8e458e7472a662043f32769e6b1ded1d"' :
-                                            'id="xs-components-links-module-NgxGooglemapsTrackingViewModule-8e458e7472a662043f32769e6b1ded1d"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' :
+                                            'id="xs-components-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' }>
+                                            <li class="link">
+                                                <a href="components/GeolocationButtonComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">GeolocationButtonComponent</a>
+                                            </li>
                                             <li class="link">
                                                 <a href="components/InfowindowComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">InfowindowComponent</a>
@@ -83,13 +87,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-NgxGooglemapsTrackingViewModule-8e458e7472a662043f32769e6b1ded1d"' : 'data-target="#xs-injectables-links-module-NgxGooglemapsTrackingViewModule-8e458e7472a662043f32769e6b1ded1d"' }>
+                                        'data-target="#injectables-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' : 'data-target="#xs-injectables-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NgxGooglemapsTrackingViewModule-8e458e7472a662043f32769e6b1ded1d"' :
-                                        'id="xs-injectables-links-module-NgxGooglemapsTrackingViewModule-8e458e7472a662043f32769e6b1ded1d"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' :
+                                        'id="xs-injectables-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' }>
                                         <li class="link">
                                             <a href="injectables/GoogleMapsWrapper.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>GoogleMapsWrapper</a>
@@ -99,6 +103,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                 </ul>
                 </li>
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#classes-links"' :
+                            'data-target="#xs-classes-links"' }>
+                            <span class="icon ion-ios-paper"></span>
+                            <span>Classes</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
+                            <li class="link">
+                                <a href="classes/GeolocationMarker.html" data-type="entity-link">GeolocationMarker</a>
+                            </li>
+                        </ul>
+                    </li>
                         <li class="chapter">
                             <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#injectables-links"' :
                                 'data-target="#xs-injectables-links"' }>

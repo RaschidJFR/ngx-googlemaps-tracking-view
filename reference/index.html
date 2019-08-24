@@ -40,7 +40,7 @@
 &lt;gmtv-map [data]=&quot;objectsToTrack&quot;&gt;&lt;/gmtv-map&gt;</code></pre></div><div><pre class="line-numbers"><code class="language-ts">// component.ts
 import { TrackedObject } from &#39;ngx-googlemaps-tracking-view&#39;;
 
-objectsToTrack: TrackedObject[] = [
+const objectsToTrack: TrackedObject[] = [
   {
     id: &#39;1&#39;,
     color: &#39;blue&#39;,
@@ -56,7 +56,11 @@ objectsToTrack: TrackedObject[] = [
     position: new google.maps.LatLng(19.53144, -96.91523),
   },
   ...
-]
+]</code></pre></div><div><pre class="line-numbers"><code class="language-scss">// styles.scss (Recomended)
+body {
+  margin: 0;
+  height: 100vh;
+}
 </code></pre></div><h2 id="🛠-set-up">🛠 Set Up</h2>
 <ol>
 <li><p>Install package: <code>$ npm i ngx-googlemaps-tracking-view</code></p>
@@ -111,31 +115,46 @@ Get Started with Google Maps Platform</a></em> for more info.</p>
 </tr>
 </tbody>
 </table>
-<p>See <a href="https://raschidjfr.github.io/ngx-googlemaps-tracking-view/reference">Full Documentation</a></p>
+<p>See <a href="https://raschidjfr.github.io/ngx-googlemaps-tracking-view/reference/components/NgxGooglemapsTrackingViewComponent.html">Full Documentation</a></p>
 <h3 id="example">Example</h3>
 <div><pre class="line-numbers"><code class="language-html">&lt;!-- component.html --&gt;
-&lt;gmtv-map [data]=&quot;objectsToTrack&quot; [template]=&quot;infowindow&quot; [mapOptions]=&quot;mapOptions&quot;&gt;
 
-  &lt;ng-template #infowindow let-o&gt;
-    &lt;div id=&quot;rootNode&quot;&gt;
-      &lt;h3&gt;{{o.name}}&lt;/h3&gt;
-      &lt;p&gt;
-        &lt;strong&gt;ID:&lt;/strong&gt; {{o.id}}&lt;br&gt;
-        &lt;strong&gt;Position:&lt;/strong&gt; {{o.position?.toJSON() | json}}&lt;br&gt;
-        &lt;strong&gt;Heading:&lt;/strong&gt; {{o.heading | number:&#39;1.0-1&#39;}}°&lt;br&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/ng-template&gt;
-&lt;/gmtv-map&gt;</code></pre></div><h2 id="contributing">Contributing</h2>
+&lt;div id=&quot;parent&quot; style=&quot;height: 100%; width: 100%;&quot;&gt;
+
+  &lt;!-- Add the map component --&gt;
+  &lt;gmtv-map [data]=&quot;objectsToTrack&quot; [template]=&quot;infowindow&quot; [mapOptions]=&quot;mapOptions&quot; [showLocationButton]=&quot;true&quot;&gt;
+
+    &lt;!-- (Optional) Add a custom template for the infowindow --&gt;
+    &lt;ng-template #infowindow let-o&gt;
+      &lt;div id=&quot;rootNode&quot;&gt;
+        &lt;h3&gt;{{o.label?.text}}&lt;/h3&gt;
+        &lt;p&gt;
+          &lt;strong&gt;ID:&lt;/strong&gt; {{o.id}}&lt;br&gt;
+          &lt;strong&gt;Position:&lt;/strong&gt; {{o.position?.toJSON() | json}}&lt;br&gt;
+          &lt;strong&gt;Heading:&lt;/strong&gt; {{o.heading | number:&#39;1.0-1&#39;}}°&lt;br&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/ng-template&gt;
+  &lt;/gmtv-map&gt;
+
+  &lt;!-- (Optional) Add the geo-location button --&gt;
+  &lt;gmtv-geolocation-button (beforeLocate)=&quot;onLocation()&quot;&gt;&lt;/gmtv-geolocation-button&gt;
+
+&lt;/div&gt;</code></pre></div><h2 id="contributing">Contributing</h2>
 <p>Feel free to improve the code.</p>
 <ul>
 <li>The source code for the test app <code>/src</code>.</li>
 <li>You&#39;ll find the library&#39;s source in <code>/projects/ngx-googlemaps-tracking-view/src</code>.</li>
-<li>Run <code>$ npm run --watch</code> to build in watch mode. Then run <code>$ ng serve</code> to deploy the test app.</li>
+<li>Run:<ol>
+<li><code>$ npm run --watch</code> to build in watch mode,</li>
+<li>then <code>$npm run link:library</code> to install modules,</li>
+<li>and then run <code>$ ng serve</code> to start the test app.</li>
+</ol>
+</li>
 </ul>
 <h2 id="credits">Credits</h2>
 <p>Raschid JF. Rafaelly</p>
-<p><a href="mailto:&#109;&#101;&#64;&#114;&#97;&#115;&#99;&#x68;&#105;&#100;&#106;&#x66;&#114;&#x2e;&#x64;&#101;&#x76;">&#109;&#101;&#64;&#114;&#97;&#115;&#99;&#x68;&#105;&#100;&#106;&#x66;&#114;&#x2e;&#x64;&#101;&#x76;</a></p>
+<p><a href="mailto:&#109;&#x65;&#x40;&#114;&#97;&#115;&#99;&#x68;&#x69;&#100;&#x6a;&#102;&#114;&#46;&#x64;&#101;&#x76;">&#109;&#x65;&#x40;&#114;&#97;&#115;&#99;&#x68;&#x69;&#100;&#x6a;&#102;&#114;&#46;&#x64;&#101;&#x76;</a></p>
 <p><a href="https://raschidjfr.dev">https://raschidjfr.dev</a></p>
 
 

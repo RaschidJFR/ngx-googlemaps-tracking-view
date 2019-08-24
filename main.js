@@ -4,20 +4,24 @@
 /*!*********************************************************************************!*\
   !*** ./dist/ngx-googlemaps-tracking-view/fesm5/ngx-googlemaps-tracking-view.js ***!
   \*********************************************************************************/
-/*! exports provided: NgxGooglemapsTrackingViewComponent, NgxGooglemapsTrackingViewModule, ɵc, ɵb, ɵa */
+/*! exports provided: NgxGooglemapsTrackingViewComponent, NgxGooglemapsTrackingViewModule, ɵd, ɵc, ɵb, ɵa */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NgxGooglemapsTrackingViewComponent", function() { return NgxGooglemapsTrackingViewComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NgxGooglemapsTrackingViewModule", function() { return NgxGooglemapsTrackingViewModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return GeolocationButtonComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return InfowindowComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return TrackedObjectComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return GoogleMapsWrapper; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./dist/ngx-googlemaps-tracking-view/node_modules/tslib/tslib.es6.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var geolocation_marker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! geolocation-marker */ "./dist/ngx-googlemaps-tracking-view/node_modules/geolocation-marker/geolocation-marker.js");
+/* harmony import */ var geolocation_marker__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(geolocation_marker__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -45,15 +49,15 @@ var GoogleMapsWrapper = /** @class */ (function () {
         /**
          * Emits when the map has been inited by calling `GoogleMapsWrapper.init()`
          */
-        this.onReady = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.onReady = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
         /**
          * When the user clicks on the map
          */
-        this.click = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.click = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
         /**
          * When visible maps change but zooming or dragging the map
          */
-        this.boundsChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.boundsChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
         this._ready = new Promise((/**
          * @param {?} resolve
          * @param {?} reject
@@ -491,7 +495,7 @@ var GoogleMapsWrapper = /** @class */ (function () {
                 content: '[info]',
                 position: this.map.getCenter()
             });
-            infowindow['closeclick'] = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+            infowindow['closeclick'] = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
             infowindow.addListener('closeclick', (/**
              * @return {?}
              */
@@ -530,7 +534,7 @@ var GoogleMapsWrapper = /** @class */ (function () {
         }
     };
     GoogleMapsWrapper.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Injectable"] }
     ];
     /** @nocollapse */
     GoogleMapsWrapper.ctorParameters = function () { return []; };
@@ -545,7 +549,7 @@ var GoogleMapsWrapper = /** @class */ (function () {
  * Creates an embeded google map with polygons representing the tracked objects.
  *
  * \@example
- * <gmtv-map [data]="objectArray" [template]="infowindow" [mapOptions]="mapOptions">
+ * <gmtv-map [data]="objectArray" [template]="infowindow" [mapOptions]="mapOptions" [showLocationButton]="true">
  *  <ng-template #infowindow let-o>
  *   <div id="root">
  *     <h4>{{o.name}}</h4>
@@ -557,6 +561,11 @@ var NgxGooglemapsTrackingViewComponent = /** @class */ (function () {
     function NgxGooglemapsTrackingViewComponent(googlemapsWrapper) {
         this.googlemapsWrapper = googlemapsWrapper;
         this._data = [];
+        /**
+         * Show location button in controls to retrieve user's location.
+         * An https connection is required.
+         */
+        this.showLocationButton = true;
     }
     Object.defineProperty(NgxGooglemapsTrackingViewComponent.prototype, "data", {
         get: /**
@@ -571,7 +580,7 @@ var NgxGooglemapsTrackingViewComponent = /** @class */ (function () {
          * @param {?} val
          * @return {?}
          */
-        function (val) { this._data = val; },
+        function (val) { this._data = val || []; },
         enumerable: true,
         configurable: true
     });
@@ -624,9 +633,9 @@ var NgxGooglemapsTrackingViewComponent = /** @class */ (function () {
         return item.id;
     };
     NgxGooglemapsTrackingViewComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"], args: [{
                     selector: 'gmtv-map',
-                    template: "<div id=\"map\" #map></div>\r\n\r\n<div id=\"tracked-object-list\">\r\n  <gmtv-tracked-object [trackedObject]=\"trkObj\" [template]=\"template\" *ngFor=\"let trkObj of data; trackBy: trackById\"></gmtv-tracked-object>\r\n</div>",
+                    template: "<div id=\"map\" #map></div>\r\n\r\n<div id=\"tracked-object-list\">\r\n  <gmtv-tracked-object [trackedObject]=\"trkObj\" [template]=\"template\" *ngFor=\"let trkObj of data; trackBy: trackById\">\r\n  </gmtv-tracked-object>\r\n</div>",
                     styles: ["#map{width:100%;height:100%}"]
                 }] }
     ];
@@ -635,10 +644,11 @@ var NgxGooglemapsTrackingViewComponent = /** @class */ (function () {
         { type: GoogleMapsWrapper }
     ]; };
     NgxGooglemapsTrackingViewComponent.propDecorators = {
-        mapDiv: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"], args: ['map',] }],
-        mapOptions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        template: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }]
+        mapDiv: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ['map',] }],
+        mapOptions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+        showLocationButton: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+        template: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+        data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }]
     };
     return NgxGooglemapsTrackingViewComponent;
 }());
@@ -654,16 +664,16 @@ var InfowindowComponent = /** @class */ (function () {
         /**
          * When infowindow has closed
          */
-        this.closed = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.closed = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
         /**
          * Triggered on clicking on the X button
          */
-        this.closeclick = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.closeclick = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
         this.noPadding = false;
         this.padding = false;
         this.cssClass = '';
         this.closeOnMapClick = true;
-        this.subscription = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subscription"]();
+        this.subscription = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subscription"]();
     }
     Object.defineProperty(InfowindowComponent.prototype, "nativeInfowindow", {
         get: /**
@@ -799,7 +809,7 @@ var InfowindowComponent = /** @class */ (function () {
         this.closed.emit();
     };
     InfowindowComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"], args: [{
                     selector: 'gmtv-infowindow',
                     template: "\t<div style=\"display: none;\" #root>\n                <ng-template #defaultTemplate let-o>\n                  <div id=\"rootNode\">\n                    <h3>{{o.name}}</h3>\n                    <p>\n                      <strong>ID:</strong> {{o.id}}<br>\n                      <strong>Position:</strong> {{o.position?.toJSON() | json}}<br>\n                      <strong>Heading:</strong> {{o.heading | number:'1.0-1'}}\u00B0<br>\n                    </p>\n                  </div>\n                </ng-template>\n                <ng-container #vc></ng-container>\n              </div>"
                 }] }
@@ -807,21 +817,21 @@ var InfowindowComponent = /** @class */ (function () {
     /** @nocollapse */
     InfowindowComponent.ctorParameters = function () { return [
         { type: GoogleMapsWrapper },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"] }
     ]; };
     InfowindowComponent.propDecorators = {
-        root: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"], args: ['root',] }],
-        defaultTemplateRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"], args: ['defaultTemplate',] }],
-        vc: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"], args: ['vc', { read: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"] },] }],
-        closed: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"] }],
-        closeclick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"] }],
-        noPadding: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        padding: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        id: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        cssClass: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        contentTemplateRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"], args: ['template',] }],
-        ctx: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"], args: ['context',] }],
-        closeOnMapClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }]
+        root: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ['root',] }],
+        defaultTemplateRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ['defaultTemplate',] }],
+        vc: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ['vc', { read: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewContainerRef"] },] }],
+        closed: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"] }],
+        closeclick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"] }],
+        noPadding: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+        padding: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+        id: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+        cssClass: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+        contentTemplateRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"], args: ['template',] }],
+        ctx: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"], args: ['context',] }],
+        closeOnMapClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }]
     };
     return InfowindowComponent;
 }());
@@ -848,10 +858,36 @@ var LOD = {
 }
 /**
  * This class renders a trackable object on the map
+ *
+ * @example
+ * // component.ts
+ * const objectsToTrack: TrackedObject[] = [{
+ *   id: '1',
+ *   color: 'blue',
+ *   heading: 45,
+ *   label: {text: 'Test object #1' },
+ *   position: new google.maps.LatLng(19.53124, -96.91589),
+ * }]
+ *
+ * // component.html
+ * <gmtv-map [data]="objectsToTrack"></gmtv-map>
  */
 ;
 /**
  * This class renders a trackable object on the map
+ *
+ * \@example
+ * // component.ts
+ * const objectsToTrack: TrackedObject[] = [{
+ *   id: '1',
+ *   color: 'blue',
+ *   heading: 45,
+ *   label: {text: 'Test object #1' },
+ *   position: new google.maps.LatLng(19.53124, -96.91589),
+ * }]
+ *
+ * // component.html
+ * <gmtv-map [data]="objectsToTrack"></gmtv-map>
  */
 var TrackedObjectComponent = /** @class */ (function () {
     function TrackedObjectComponent(googleMaps) {
@@ -859,7 +895,7 @@ var TrackedObjectComponent = /** @class */ (function () {
         this.dotMarker = new google.maps.Marker({ position: { lat: NaN, lng: NaN } });
         this.hoverDotListeners = [];
         this.hoverPolygonListeners = [];
-        this.subscription = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subscription"]();
+        this.subscription = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subscription"]();
         this.defaultColor = 'red';
         this.polygon = new google.maps.Polygon({
             strokeColor: this.color,
@@ -1442,7 +1478,7 @@ var TrackedObjectComponent = /** @class */ (function () {
         this.drawObject();
     };
     TrackedObjectComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"], args: [{
                     selector: 'gmtv-tracked-object',
                     template: "<gmtv-infowindow [template]=\"template\" [context]=\"{$implicit: trackedObject}\"></gmtv-infowindow>"
                 }] }
@@ -1452,11 +1488,90 @@ var TrackedObjectComponent = /** @class */ (function () {
         { type: GoogleMapsWrapper }
     ]; };
     TrackedObjectComponent.propDecorators = {
-        trackedObject: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        template: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
-        infowindow: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"], args: [InfowindowComponent,] }]
+        trackedObject: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+        template: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+        infowindow: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: [InfowindowComponent,] }]
     };
     return TrackedObjectComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * Creates the default user location button. Add this component as sibling **after** the
+ * {\@link NgxGooglemapsTrackingViewComponent} inside a wrapping component.
+ *
+ * \@example
+ * <div id="parent" style="height: 100%; width: 100%;">
+ *  <div id="map" #map></div>
+ *  <gmtv-geolocation-button (beforeLocate)="onLocation()"></gmtv-geolocation-button>
+ * </div>
+ */
+var GeolocationButtonComponent = /** @class */ (function () {
+    function GeolocationButtonComponent(googlemapsWrapper) {
+        this.googlemapsWrapper = googlemapsWrapper;
+        /**
+         * Emited after obtaining the user's location
+         */
+        this.locate = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
+    }
+    /**
+     * Center map on user's location
+     */
+    /**
+     * Center map on user's location
+     * @return {?}
+     */
+    GeolocationButtonComponent.prototype.centerOnUser = /**
+     * Center map on user's location
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((/**
+             * @param {?} position
+             * @return {?}
+             */
+            function (position) {
+                /** @type {?} */
+                var lng = position.coords.longitude;
+                /** @type {?} */
+                var lat = position.coords.latitude;
+                _this.googlemapsWrapper.map.setCenter({ lat: lat, lng: lng });
+                if (_this._geoLocationMarker)
+                    _this._geoLocationMarker.setMap(null);
+                _this._geoLocationMarker = new GeolocationMarker(_this.googlemapsWrapper.map);
+                _this.locate.emit(_this._geoLocationMarker.position);
+            }), (/**
+             * @param {?} error
+             * @return {?}
+             */
+            function (error) {
+                console.error(error);
+            }), { enableHighAccuracy: true });
+        }
+        else {
+            console.error('No support for geolocation');
+        }
+    };
+    GeolocationButtonComponent.decorators = [
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"], args: [{
+                    selector: 'gmtv-geolocation-button',
+                    template: "<button aria-label=\"Show Your Location\" id=\"widget-mylocation\" class=\"widget-mylocation-button ripple-container\"\r\n  (click)=\"centerOnUser()\">\r\n  <div class=\"widget-mylocation-button-icon-common widget-mylocation-button-normal widget-mylocation-cookie\"></div>\r\n</button>",
+                    styles: ["#widget-mylocation{position:absolute;right:10px;bottom:110px;padding:0}.widget-mylocation-button{background-color:#fff;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.3);display:block;width:40px;height:40px;overflow:hidden;cursor:pointer;transition:background-color .16s ease-out}.widget-mylocation-button .widget-mylocation-button-normal{background-position:0 0}.widget-mylocation-button .widget-mylocation-cookie{background-image:url(//maps.gstatic.com/tactile/mylocation/mylocation-sprite-2x.png);background-size:200px 20px;height:100%;width:21px;background-position:2px 2px;background-repeat:no-repeat}.widget-mylocation-button-icon-common{display:block;height:18px;left:6px;margin:0;padding:0;position:absolute;top:6px;width:18px}"]
+                }] }
+    ];
+    /** @nocollapse */
+    GeolocationButtonComponent.ctorParameters = function () { return [
+        { type: GoogleMapsWrapper }
+    ]; };
+    GeolocationButtonComponent.propDecorators = {
+        locate: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"] }]
+    };
+    return GeolocationButtonComponent;
 }());
 
 /**
@@ -1467,13 +1582,22 @@ var NgxGooglemapsTrackingViewModule = /** @class */ (function () {
     function NgxGooglemapsTrackingViewModule() {
     }
     NgxGooglemapsTrackingViewModule.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"], args: [{
-                    declarations: [NgxGooglemapsTrackingViewComponent, TrackedObjectComponent, InfowindowComponent],
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"], args: [{
+                    declarations: [
+                        NgxGooglemapsTrackingViewComponent,
+                        TrackedObjectComponent,
+                        InfowindowComponent,
+                        GeolocationButtonComponent
+                    ],
                     imports: [
-                        _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"]
+                        _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
                     ],
                     providers: [GoogleMapsWrapper],
-                    exports: [NgxGooglemapsTrackingViewComponent, InfowindowComponent]
+                    exports: [
+                        NgxGooglemapsTrackingViewComponent,
+                        InfowindowComponent,
+                        GeolocationButtonComponent
+                    ]
                 },] }
     ];
     return NgxGooglemapsTrackingViewModule;
@@ -1535,7 +1659,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<gmtv-map [data]=\"objectsToTrack\" [template]=\"infowindow\" [mapOptions]=\"mapOptions\">\r\n  <ng-template #infowindow let-o>\r\n    <div>\r\n      <h3>Flight #{{o.label?.text}} <span class=\"flag-icon flag-icon-{{getIsoCode(o.country)?.toLowerCase()}}\" [title]=\"o.country\"></span></h3>\r\n      <span><strong>Altitude: </strong>{{o.altitude | number: '1.0-0'}}m</span>\r\n    </div>\r\n  </ng-template>\r\n</gmtv-map>"
+module.exports = "<div id=\"parent\" style=\"height: 100%; width: 100%;\">\r\n  <gmtv-map [data]=\"objectsToTrack\" [template]=\"infowindow\" [mapOptions]=\"mapOptions\" [showLocationButton]=\"true\">\r\n    <ng-template #infowindow let-o>\r\n      <div>\r\n        <h3>Flight #{{o.label?.text}} <span class=\"flag-icon flag-icon-{{getIsoCode(o.country)?.toLowerCase()}}\" [title]=\"o.country\"></span></h3>\r\n        <span><strong>Altitude: </strong>{{o.altitude | number: '1.0-0'}}m</span>\r\n      </div>\r\n    </ng-template>\r\n  </gmtv-map>\r\n  <gmtv-geolocation-button></gmtv-geolocation-button>\r\n</div>"
 
 /***/ }),
 
@@ -1546,7 +1670,7 @@ module.exports = "<gmtv-map [data]=\"objectsToTrack\" [template]=\"infowindow\" 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJ9 */"
+module.exports = "#parent {\n  padding-top: env(safe-area-inset-top, 40px);\n  padding-bottom: env(safe-area-inset-bottom, 40px); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxSYXNjaGlkXFxHaXRcXGFuZ3VsYXJcXGdvb2dsZW1hcHMtdHJhY2tpbmctdmlldy9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMkNBQTJDO0VBQzNDLGlEQUFpRCxFQUFBIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3BhcmVudCB7XHJcbiAgcGFkZGluZy10b3A6IGVudihzYWZlLWFyZWEtaW5zZXQtdG9wLCA0MHB4KTtcclxuICBwYWRkaW5nLWJvdHRvbTogZW52KHNhZmUtYXJlYS1pbnNldC1ib3R0b20sIDQwcHgpO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -1630,28 +1754,30 @@ var AppComponent = /** @class */ (function () {
         var sw = bounds.getSouthWest();
         this.http.get("https://opensky-network.org/api/states/all?lamin=" + sw.lat() + "&lomin=" + sw.lng() + "&lamax=" + ne.lat() + "&lomax=" + ne.lng())
             .subscribe(function (response) {
-            _this.objectsToTrack = response.states.map(function (aircraft) {
-                var found = _this.objectsToTrack.find(function (a) { return a.id == aircraft[0]; });
-                var trkObj = {
-                    altitude: aircraft[13],
-                    id: aircraft[0],
-                    color: found && found.color || randomcolor__WEBPACK_IMPORTED_MODULE_5__(),
-                    country: aircraft[2],
-                    heading: aircraft[10],
-                    icon: found && found.icon || _this.getIcon(aircraft[10]),
-                    // speed: 0,
-                    label: {
-                        text: aircraft[0].toLocaleUpperCase(),
-                        color: 'white'
-                    },
-                    // isOffline: true,
-                    onGround: aircraft[8],
-                    position: new google.maps.LatLng(aircraft[6], aircraft[5]),
-                };
-                return trkObj;
-            })
-                .filter(function (a) { return !a.onGround; })
-                .splice(0, 50);
+            _this.objectsToTrack = response.states &&
+                response.states.map(function (aircraft) {
+                    var found = _this.objectsToTrack.find(function (a) { return a.id == aircraft[0]; });
+                    var trkObj = {
+                        altitude: aircraft[13],
+                        id: aircraft[0],
+                        color: found && found.color || randomcolor__WEBPACK_IMPORTED_MODULE_5__(),
+                        country: aircraft[2],
+                        heading: aircraft[10],
+                        icon: found && found.icon || _this.getIcon(aircraft[10]),
+                        // speed: 0,
+                        label: {
+                            text: aircraft[0].toLocaleUpperCase(),
+                            color: 'white'
+                        },
+                        // isOffline: true,
+                        onGround: aircraft[8],
+                        position: new google.maps.LatLng(aircraft[6], aircraft[5]),
+                    };
+                    return trkObj;
+                })
+                    .filter(function (a) { return !a.onGround; })
+                    .splice(0, 50)
+                || [];
         });
     };
     AppComponent.prototype.getIsoCode = function (countryName) {
