@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+/// <reference types="@types/googlemaps" />
+import { Component, Output, EventEmitter } from '@angular/core';
 import geolocationMarkrFn from 'geolocation-marker';
 import { GoogleMapsWrapper } from '../../services/googlemaps-wrapper';
 geolocationMarkrFn;
 
+/**
+ * Extends from {@link google.maps.MVCObject https://developers.google.com/maps/documentation/javascript/reference/event#MVCObject}.
+ * It shows the default blue sphere with proximity shade.
+ */
 declare class GeolocationMarker {
   constructor(map: google.maps.Map);
   setMap(map: google.maps.Map);
+  position: google.maps.LatLng;
 }
 
 /**
@@ -15,7 +21,7 @@ declare class GeolocationMarker {
  * @example
  * <div id="parent" style="height: 100%; width: 100%;">
  *  <div id="map" #map></div>
- *  <gmtv-geolocation-button></gmtv-geolocation-button>
+ *  <gmtv-geolocation-button (beforeLocate)="onLocation()"></gmtv-geolocation-button>
  * </div>
  */
 @Component({
@@ -24,7 +30,11 @@ declare class GeolocationMarker {
   styleUrls: ['./geolocation-button.scss']
 })
 export class GeolocationButtonComponent {
-  private _userLocationMarker: GeolocationMarker;
+  /**
+   * Emited after obtaining the user's location
+   */
+  @Output() locate = new EventEmitter<google.maps.LatLng>();
+  private _geoLocationMarker: GeolocationMarker;
 
   constructor(protected googlemapsWrapper: GoogleMapsWrapper) { }
 
@@ -38,8 +48,9 @@ export class GeolocationButtonComponent {
         const lat = position.coords.latitude;
         this.googlemapsWrapper.map.setCenter({ lat, lng });
 
-        if (this._userLocationMarker) this._userLocationMarker.setMap(null);
-        this._userLocationMarker = new GeolocationMarker(this.googlemapsWrapper.map);
+        if (this._geoLocationMarker) this._geoLocationMarker.setMap(null);
+        this._geoLocationMarker = new GeolocationMarker(this.googlemapsWrapper.map);
+        this.locate.emit(this._geoLocationMarker.position);
       }, error => {
         console.error(error);
       },
