@@ -1,5 +1,6 @@
 <div id="map" #map></div>
 
 <div id="tracked-object-list">
-  <gmtv-tracked-object [trackedObject]="trkObj" [template]="template" *ngFor="let trkObj of data; trackBy: trackById"></gmtv-tracked-object>
+  <gmtv-tracked-object [trackedObject]="trkObj" [template]="template" *ngFor="let trkObj of data; trackBy: trackById">
+  </gmtv-tracked-object>
 </div>

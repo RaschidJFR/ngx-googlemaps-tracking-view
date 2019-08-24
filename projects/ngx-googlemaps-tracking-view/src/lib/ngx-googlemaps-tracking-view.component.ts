@@ -6,7 +6,7 @@ import { GoogleMapsWrapper } from './services/googlemaps-wrapper';
  * Creates an embeded google map with polygons representing the tracked objects.
  *
  * @example
- * <gmtv-map [data]="objectArray" [template]="infowindow" [mapOptions]="mapOptions">
+ * <gmtv-map [data]="objectArray" [template]="infowindow" [mapOptions]="mapOptions" [showLocationButton]="true">
  *  <ng-template #infowindow let-o>
  *   <div id="root">
  *     <h4>{{o.name}}</h4>
@@ -31,6 +31,12 @@ export class NgxGooglemapsTrackingViewComponent implements OnInit {
   @Input() mapOptions: google.maps.MapOptions;
 
   /**
+   * Show location button in controls to retrieve user's location.
+   * An https connection is required.
+   */
+  @Input() showLocationButton = true;
+
+  /**
    * Infowindow's template
    */
   // tslint:disable-next-line: no-any
@@ -40,7 +46,7 @@ export class NgxGooglemapsTrackingViewComponent implements OnInit {
    * Array of {@link TrackedObject} to draw on map
    */
   @Input()
-  set data(val: TrackedObject[]) { this._data = val; }
+  set data(val: TrackedObject[]) { this._data = val || []; }
   get data(): TrackedObject[] { return this._data; }
 
   /**

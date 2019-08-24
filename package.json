@@ -31,6 +31,7 @@
     "flag-icon-css": "^3.3.0",
     "i18n-iso-countries": "^4.2.1",
     "load-svg": "^1.0.0",
+    "ngx-googlemaps-tracking-view": "^1.0.3",
     "parse-svg-path": "^0.1.2",
     "randomcolor": "^0.5.4",
     "rxjs": "~6.3.3",
