@@ -1,0 +1,4 @@
+#parent {
+  padding-top: env(safe-area-inset-top, 40px);
+  padding-bottom: env(safe-area-inset-bottom, 40px);
+}
