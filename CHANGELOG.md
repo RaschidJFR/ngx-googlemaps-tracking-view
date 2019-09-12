@@ -1,8 +1,13 @@
 # Changelog
 
+## 1.2.0 (90-09-12)
+### Added
+* Center Pin to geo-decode location by dragging the map's center
+
 ## 1.1.1 (19-08-24)
 ### Added
 * GeolocationButton component to fetch user's location
+
 ### Fixed
 * Demo: No more "two-finger scroll" on map... viewport height modified for mobile
 

@@ -1,6 +1,6 @@
 {
   "name": "ngx-googlemaps-tracking-view",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0",
@@ -25,7 +25,7 @@
     "ngx",
     "uber"
   ],
-  "author": "Raschid JF Rafaelly",
+  "author": "Raschid JF Rafaelly <hello@raschidjfr.dev> (https://raschidjfr.dev)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/issues"
