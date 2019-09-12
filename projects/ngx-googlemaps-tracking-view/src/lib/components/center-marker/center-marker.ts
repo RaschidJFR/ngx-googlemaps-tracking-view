@@ -1,11 +1,11 @@
 //// <reference types="@types/googlemaps" />
-import { Subject, Subscription, of, Observable } from 'rxjs';
+import { Subject, Subscription, of, timer } from 'rxjs';
 import { TemplateRef, EventEmitter } from '@angular/core';
-import { tap, switchMap } from 'rxjs/operators';
+import { tap, switchMap, debounce } from 'rxjs/operators';
 import { GoogleMapsWrapper } from '../../services/googlemaps-wrapper';
 import { HttpClient } from '@angular/common/http';
 
-const REVERSE_GEOCODING_URL = `https://maps.googleapis.com/maps/api/geocode/json?key=***REMOVED***&latlng=`;
+let API_KEY = '';
 
 /**
  * A marker fixed to the center of the map which emits the geo-decoded location
@@ -17,17 +17,15 @@ const REVERSE_GEOCODING_URL = `https://maps.googleapis.com/maps/api/geocode/json
  * @emits CenterMarker#addressChanges addressChanges The the geocoded address has resolved.
  *
  * @example
- * <button (click)="map.addressPin.enable(infowindowLocation)">Add center Pin</button>
- *  <button (click)="map.addressPin.disable()">Remove Pin</button>
+ * <button (click)="map.centerPin.enable(infowindowLocation, <yourGMapsApiKey)">Add center Pin</button>
+ * <button (click)="map.centerPin.disable()">Remove Pin</button>
  *
- *  <ng-template #infowindowLocation let-address>
- *    <div class="infowindow-location">
- *      <span *ngIf="!address">Loading...</span>
- *      <span *ngIf="address">
- *        {{map.addressPin.address}}
- *      </span>
- *    </div>
- *  </ng-template>
+ * <ng-template #infowindowLocation let-address>
+ *   <div>
+ *     <span *ngIf="!address">Loading...</span>
+ *     <span *ngIf="!!address">{{address}}</span>
+ *   </div>
+ * </ng-template>
  */
 export class CenterMarker {
   /**
@@ -42,27 +40,38 @@ export class CenterMarker {
    * The current decoded address obtained from google. It becomes `null` while fetching.
    */
   address: string;
+
   /** @ignore */
-  private infowindowTemplate: TemplateRef<any>
+  private _infowindowTemplate: TemplateRef<any>
   /** @ignore */
-  private _changeCenter$ = new Subject<google.maps.LatLng>();
+  private _centerChanged$ = new Subject<google.maps.LatLng>();
   /** @ignore */
   private _centerMarker: HTMLDivElement;
   /** @ignore */
   private _mapEventSubscription = new Subscription();
+  /** @ignore */
+  private _geocoder = new google.maps.Geocoder();
+  /** @ignore */
+  private _idleListener: google.maps.MapsEventListener;
+
 
   constructor(
     private googlemapsWrapper: GoogleMapsWrapper,
     private viewContainer,
     private http: HttpClient) { }
 
+  /** @ignore */
+  private get REVERSE_GEOCODING_URL() { return `https://maps.googleapis.com/maps/api/geocode/json?key=${API_KEY}&latlng=`; }
+
   /**
    * Activates the pin to show at the map's center
    * @param infowindowTemplate A template for rendering the infowindow on top of the marker.
-   * It must have a single root element.
+   * It must have a single root element. The address string will be passed as implicit context.
+   * @param apiKey GoogleMaps API key
    */
-  enable(infowindowTemplate: TemplateRef<any>) {
-    this.infowindowTemplate = infowindowTemplate;
+  enable(infowindowTemplate: TemplateRef<any>, apiKey: string) {
+    API_KEY = apiKey;
+    this._infowindowTemplate = infowindowTemplate;
     if (this._centerMarker) return;
 
     const mapDiv = this.googlemapsWrapper.map.getDiv() as HTMLDivElement;
@@ -77,47 +86,55 @@ export class CenterMarker {
       margin-top:-34px;
       height:34px;
       width:20px;
-      cursor: pointer;`
-    this._centerMarker.onclick = () => this.showInfowindowOverCenterMarker(this.address);
+      cursor: pointer;`;
+
     mapDiv.appendChild(this._centerMarker);
+    this._centerMarker.onclick = () => this.displayInfowindowOverPin();
 
     this._mapEventSubscription = new Subscription();
     this._mapEventSubscription.add(
-      this._changeCenter$
+      this._centerChanged$
         .pipe(
-          tap(() => this.showInfowindowOverCenterMarker()),
-          switchMap(value => of(value)),
-          switchMap(value => this.reverseGeocode(value)),
+          tap(() => {
+            this.address = null;
+            this.displayInfowindowOverPin();
+          }),
+          switchMap(latLng => of(latLng)),
+          debounce(() => timer(1000)),
+          switchMap(latLng => this.http.get(`${this.REVERSE_GEOCODING_URL}${latLng.toUrlValue()}`) as any)
         )
+        // .subscribe((latLng) => {
         .subscribe(response => {
-          const result = response.results[0];
-          const address = result && result.formatted_address || 'desconocido';
-          this.showInfowindowOverCenterMarker(address);
-          this.addressChanges.emit(address);
+          // this._geocoder.geocode({ location: latLng }, (response) => {
+          const results = response[0] || (response as any).results;
+          const firstResult: google.maps.GeocoderResult = results[0] || results;
+          this.address = firstResult && firstResult.formatted_address || 'desconocido';
+          this.addressChanges.emit(this.address);
+          this.displayInfowindowOverPin();
+          // });
         })
     );
 
     this.onMapIdle();
-    this.showInfowindowOverCenterMarker(this.address);
-    this.googlemapsWrapper.map.addListener('idle', () => this.onMapIdle());
+    this.displayInfowindowOverPin();
+    this._idleListener = this.googlemapsWrapper.map.addListener('idle', () => this.onMapIdle());
   }
 
   /**
    * Removes the pin from the map
    */
   disable() {
-    console.log('remove')
     if (this._centerMarker) this._centerMarker.remove();
     this._centerMarker = null;
     this._mapEventSubscription.unsubscribe();
     this.googlemapsWrapper.closeInfowindow();
+    google.maps.event.removeListener(this._idleListener);
   }
 
   /** @ignore */
-  showInfowindowOverCenterMarker(address?: string) {
-    this.address = address;
+  displayInfowindowOverPin() {
     this.viewContainer.clear();
-    const view = this.viewContainer.createEmbeddedView(this.infowindowTemplate, { $implicit: address });
+    const view = this.viewContainer.createEmbeddedView(this._infowindowTemplate, { $implicit: this.address });
     const content = view.rootNodes[0] as HTMLElement;
 
     const center = this.googlemapsWrapper.map.getCenter();
@@ -128,14 +145,9 @@ export class CenterMarker {
   }
 
   /** @ignore */
-  private reverseGeocode(latLng: google.maps.LatLng): Observable<{ results: google.maps.GeocoderResult[], status: string }> {
-    return this.http.get(`${REVERSE_GEOCODING_URL}${latLng.toUrlValue()}`) as any;
-  }
-
-  /** @ignore */
   private onMapIdle() {
     const center = this.googlemapsWrapper.map.getCenter();
     this.locationChanges.emit(center.toJSON());
-    this._changeCenter$.next(center);
+    this._centerChanged$.next(center);
   }
 }

@@ -29,7 +29,7 @@ export class NgxGooglemapsTrackingViewComponent implements OnInit {
    * as a full address.
    * @see {@link CenterMarker}
    */
-  addressPin: CenterMarker = new CenterMarker(this.googlemapsWrapper, this.vc, this.http);
+  centerPin: CenterMarker = new CenterMarker(this.googlemapsWrapper, this.vc, this.http);
   protected _data: TrackedObject[] = [];
 
   /**
@@ -58,7 +58,7 @@ export class NgxGooglemapsTrackingViewComponent implements OnInit {
   get data(): TrackedObject[] { return this._data; }
 
   /**
-   * Currently inited {@link https://developers.google.com/maps/documentation/javascript/reference/map#Map Map} object
+   * Currently inited GoogleMaps  {@link https://developers.google.com/maps/documentation/javascript/reference/map#Map Map} object
    */
   get map(): google.maps.Map { return this.googlemapsWrapper.map; }
 

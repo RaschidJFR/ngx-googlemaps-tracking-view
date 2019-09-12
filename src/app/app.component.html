@@ -1,12 +1,12 @@
-<button (click)="map.addressPin.enable(infowindowLocation)">Add center Pin</button>
-<button (click)="map.addressPin.disable()">Remove Pin</button>
-
+<!-- Center Pin Example -->
+<!-- <button (click)="map.centerPin.enable(infowindowLocation, '<yourApuKey>')">Add center Pin</button>
+<button (click)="map.centerPin.disable()">Remove Pin</button>
 <ng-template #infowindowLocation let-address>
-  <div class="infowindow-location">
-    <span name="circles" *ngIf="!address">Loading...</span>
-    <span *ngIf="address" id="content">{{map.addressPin.address}}</span>
+  <div style="min-height: 20px; min-width: 50px;">
+    <span *ngIf="!address">Loading...</span>
+    <span *ngIf="!!address">{{address}}</span>
   </div>
-</ng-template>
+</ng-template> -->
 
 
 <div id="parent" style="height: 100%; width: 100%;">
