@@ -97,7 +97,7 @@ Get Started with Google Maps Platform</a></em> for more info.</p>
 <tbody>
 <tr>
 <td>data</td>
-<td><code>TrackedObject[]</code></td>
+<td><a href="https://raschidjfr.github.io/ngx-googlemaps-tracking-view/reference/interfaces/TrackedObject.html"><code>TrackedObject[]</code></a></td>
 <td>Required</td>
 <td>Array of objects to draw on the map. They must implement the interface <code>TrackedObject</code>: <br><br><ul><li><code>color?: string</code> The marker&#39;s color.</li><li><code>heading: number</code> Direction measured in degrees from true north.</li><li><code>id: string</code> Unique identifier assigned to this object.</li><li><code>icon?: google.maps.Icon / google.maps.Symbol</code> A google map&#39;s icon object.</li><li><code>isOffline?: boolean</code> If <code>true</code>, the default marker (circle or triangle) will be outlined instead of solid.</li><li><code>label?: label?: google.maps.MarkerLabel</code> A google maps label object to show near the marker.</li><li><code>position: google.maps.LatLng</code> Scale for default markers. This is overwritten when <code>icon</code> is provided.</li><li><code>scale?: number</code> The marker&#39;s color.</li><li><code>speed?: number</code> If this value is not provided or is greater than 0 a triangle oriented towards<code>heading</code> will be shown as marker, otherwise, a circle (if <code>icon</code> is not set).</li></ul></td>
 </tr>
@@ -137,7 +137,7 @@ Get Started with Google Maps Platform</a></em> for more info.</p>
     &lt;/ng-template&gt;
   &lt;/gmtv-map&gt;
 
-  &lt;!-- (Optional) Add the geo-location button --&gt;
+  &lt;!-- (Optional) Add the geo-location button AFTER the map --&gt;
   &lt;gmtv-geolocation-button (beforeLocate)=&quot;onLocation()&quot;&gt;&lt;/gmtv-geolocation-button&gt;
 
 &lt;/div&gt;</code></pre></div><h2 id="contributing">Contributing</h2>
@@ -154,7 +154,7 @@ Get Started with Google Maps Platform</a></em> for more info.</p>
 </ul>
 <h2 id="credits">Credits</h2>
 <p>Raschid JF. Rafaelly</p>
-<p><a href="mailto:&#109;&#x65;&#x40;&#114;&#97;&#115;&#99;&#x68;&#x69;&#100;&#x6a;&#102;&#114;&#46;&#x64;&#101;&#x76;">&#109;&#x65;&#x40;&#114;&#97;&#115;&#99;&#x68;&#x69;&#100;&#x6a;&#102;&#114;&#46;&#x64;&#101;&#x76;</a></p>
+<p><a href="mailto:&#104;&#x65;&#108;&#108;&#x6f;&#x40;&#x72;&#x61;&#115;&#x63;&#104;&#105;&#100;&#106;&#102;&#x72;&#46;&#100;&#101;&#118;">&#104;&#x65;&#108;&#108;&#x6f;&#x40;&#x72;&#x61;&#115;&#x63;&#104;&#105;&#100;&#106;&#102;&#x72;&#46;&#100;&#101;&#118;</a></p>
 <p><a href="https://raschidjfr.dev">https://raschidjfr.dev</a></p>
 
 

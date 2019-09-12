@@ -68,8 +68,9 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>Creates the default user location button. Add this component as sibling <strong>after</strong> the
-<a href="../components/NgxGooglemapsTrackingViewComponent.html">NgxGooglemapsTrackingViewComponent</a> inside a wrapping component.</p>
+        <p>Creates the default user location button.</p>
+<p>⚠ Add this component as sibling <strong>AFTER the
+map element</strong>, so if renders on top of it.</p>
 
     </p>
 
@@ -80,7 +81,7 @@
     </p>
     <div class="io-description">
                 <div>
-                    <pre class="line-numbers"><code class="language-html">&lt;div id=&quot;parent&quot; style=&quot;height: 100%; width: 100%;&quot;&gt;&lt;div id=&quot;map&quot; #map&gt;&lt;/div&gt;&lt;gmtv-geolocation-button (beforeLocate)=&quot;onLocation()&quot;&gt;&lt;/gmtv-geolocation-button&gt;&lt;/div&gt;</code></pre>
+                    <pre class="line-numbers"><code class="language-html">&lt;div id=&quot;parent&quot; style=&quot;height: 100%; width: 100%;&quot;&gt;&lt;div id=&quot;map&quot; #map&gt;&lt;/div&gt;&lt;gmtv-geolocation-button (locate)=&quot;onLocation()&quot;&gt;&lt;/gmtv-geolocation-button&gt;&lt;/div&gt;</code></pre>
                 </div>
     </div>
 
@@ -195,7 +196,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -252,7 +253,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:38</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -293,8 +294,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:46</a></div>
                 </td>
             </tr>
 
@@ -339,7 +340,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -368,13 +369,15 @@ declare class GeolocationMarker {
 }
 
 /**
- * Creates the default user location button. Add this component as sibling **after** the
- * {@link NgxGooglemapsTrackingViewComponent} inside a wrapping component.
+ * Creates the default user location button.
+ *
+ * ⚠ Add this component as sibling **AFTER the
+ * map element**, so if renders on top of it.
  *
  * @example
  * &lt;div id&#x3D;&quot;parent&quot; style&#x3D;&quot;height: 100%; width: 100%;&quot;&gt;
- *  &lt;div id&#x3D;&quot;map&quot; #map&gt;&lt;/div&gt;
- *  &lt;gmtv-geolocation-button (beforeLocate)&#x3D;&quot;onLocation()&quot;&gt;&lt;/gmtv-geolocation-button&gt;
+ *   &lt;div id&#x3D;&quot;map&quot; #map&gt;&lt;/div&gt;
+ *   &lt;gmtv-geolocation-button (locate)&#x3D;&quot;onLocation()&quot;&gt;&lt;/gmtv-geolocation-button&gt;
  * &lt;/div&gt;
  */
 @Component({
@@ -412,7 +415,8 @@ export class GeolocationButtonComponent {
       console.error(&#x27;No support for geolocation&#x27;);
     }
   }
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">

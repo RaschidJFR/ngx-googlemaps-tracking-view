@@ -301,13 +301,15 @@ declare class GeolocationMarker {
 }
 
 /**
- * Creates the default user location button. Add this component as sibling **after** the
- * {@link NgxGooglemapsTrackingViewComponent} inside a wrapping component.
+ * Creates the default user location button.
+ *
+ * ⚠ Add this component as sibling **AFTER the
+ * map element**, so if renders on top of it.
  *
  * @example
  * &lt;div id&#x3D;&quot;parent&quot; style&#x3D;&quot;height: 100%; width: 100%;&quot;&gt;
- *  &lt;div id&#x3D;&quot;map&quot; #map&gt;&lt;/div&gt;
- *  &lt;gmtv-geolocation-button (beforeLocate)&#x3D;&quot;onLocation()&quot;&gt;&lt;/gmtv-geolocation-button&gt;
+ *   &lt;div id&#x3D;&quot;map&quot; #map&gt;&lt;/div&gt;
+ *   &lt;gmtv-geolocation-button (locate)&#x3D;&quot;onLocation()&quot;&gt;&lt;/gmtv-geolocation-button&gt;
  * &lt;/div&gt;
  */
 @Component({
@@ -345,7 +347,8 @@ export class GeolocationButtonComponent {
       console.error(&#x27;No support for geolocation&#x27;);
     }
   }
-}</code></pre>
+}
+</code></pre>
     </div>
 </div>
 
