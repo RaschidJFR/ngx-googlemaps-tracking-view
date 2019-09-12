@@ -1,5 +1,5 @@
 /// <reference types="@types/googlemaps" />
-import { Component, ViewChild, AfterContentInit } from '@angular/core';
+import { Component, ViewChild, AfterContentInit, ViewContainerRef } from '@angular/core';
 import { NgxGooglemapsTrackingViewComponent, TrackedObject } from 'ngx-googlemaps-tracking-view';
 import { HttpClient } from '@angular/common/http';
 import * as i18IsoCountries from 'i18n-iso-countries';
@@ -53,7 +53,7 @@ export class AppComponent implements AfterContentInit {
     mapTypeId: google.maps.MapTypeId.SATELLITE,
   }
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public vc: ViewContainerRef) {
     // Load svg as symbol path
     loadSvg('assets/baseline-local_airport-24px.svg', (err, svg) => {
       const paths: any[][] = parseSvg(extractSvg.parse(svg));

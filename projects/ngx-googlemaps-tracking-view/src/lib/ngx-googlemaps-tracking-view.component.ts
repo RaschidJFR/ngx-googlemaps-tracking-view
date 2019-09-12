@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 import { TrackedObject } from './models/tracked-object';
 import { GoogleMapsWrapper } from './services/googlemaps-wrapper';
+import { CenterMarker } from './components/center-marker/center-marker';
+import { HttpClient } from '@angular/common/http';
 
 /**
  * Creates an embeded google map with polygons representing the tracked objects.
@@ -22,6 +24,12 @@ import { GoogleMapsWrapper } from './services/googlemaps-wrapper';
 })
 export class NgxGooglemapsTrackingViewComponent implements OnInit {
   @ViewChild('map') mapDiv: ElementRef;
+  /**
+   * A marker fixed to the center of the map which emits the geo-decoded location
+   * as a full address.
+   * @see {@link CenterMarker}
+   */
+  addressPin: CenterMarker = new CenterMarker(this.googlemapsWrapper, this.vc, this.http);
   protected _data: TrackedObject[] = [];
 
   /**
@@ -54,19 +62,20 @@ export class NgxGooglemapsTrackingViewComponent implements OnInit {
    */
   get map(): google.maps.Map { return this.googlemapsWrapper.map; }
 
-  constructor(protected googlemapsWrapper: GoogleMapsWrapper) { }
+  constructor(protected googlemapsWrapper: GoogleMapsWrapper, protected vc: ViewContainerRef, private http: HttpClient) { }
 
   ngOnInit() {
     this.googlemapsWrapper.initMap(this.mapDiv.nativeElement, this.mapOptions);
   }
 
   /**
-   * Resolves whem map has been inited
+   * Resolves when map has been inited
    */
   ready(): Promise<void> {
     return this.googlemapsWrapper.ready();
   }
 
+  /** @ignore */
   trackById(_index: number, item: TrackedObject) {
     return item.id;
   }
