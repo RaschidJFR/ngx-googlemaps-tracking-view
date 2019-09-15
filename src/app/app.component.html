@@ -1,15 +1,18 @@
 <!-- Center Pin Example -->
 <!-- <button (click)="map.centerPin.enable(infowindowLocation, '<yourApuKey>')">Add center Pin</button>
-<button (click)="map.centerPin.disable()">Remove Pin</button>
-<ng-template #infowindowLocation let-address>
-  <div style="min-height: 20px; min-width: 50px;">
-    <span *ngIf="!address">Loading...</span>
-    <span *ngIf="!!address">{{address}}</span>
-  </div>
-</ng-template> -->
+  <button (click)="map.centerPin.disable()">Remove Pin</button>
+  <ng-template #infowindowLocation let-address>
+    <div style="min-height: 20px; min-width: 50px;">
+      <span *ngIf="!address">Loading...</span>
+      <div *ngIf="!!address">
+        {{address}}
+        <br>
+        <button (click)="map.centerPin.fix = !map.centerPin.fix">Fix</button>
+      </div>
+    </div>
+  </ng-template> -->
 
-
-<div id="parent" style="height: 100%; width: 100%;">
+<div id="parent">
 
   <gmtv-map [data]="objectsToTrack" [template]="infowindow" [mapOptions]="mapOptions" [showLocationButton]="true" #map>
     <ng-template #infowindow let-o>
