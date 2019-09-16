@@ -1,5 +1,5 @@
 /// <reference types="@types/googlemaps" />
-import { Component, ViewChild, AfterContentInit, ViewContainerRef } from '@angular/core';
+import { Component, ViewChild, AfterContentInit, ViewContainerRef, TemplateRef } from '@angular/core';
 import { NgxGooglemapsTrackingViewComponent, TrackedObject } from 'ngx-googlemaps-tracking-view';
 import { HttpClient } from '@angular/common/http';
 import * as i18IsoCountries from 'i18n-iso-countries';
@@ -40,6 +40,7 @@ interface TrackedAircraft extends TrackedObject {
 })
 export class AppComponent implements AfterContentInit {
   @ViewChild(NgxGooglemapsTrackingViewComponent) mapView: NgxGooglemapsTrackingViewComponent;
+  @ViewChild('infowindowLocation') infowindowLocation: TemplateRef<any>
 
   objectsToTrack: TrackedObject[] = [];
   symbolPath = '';

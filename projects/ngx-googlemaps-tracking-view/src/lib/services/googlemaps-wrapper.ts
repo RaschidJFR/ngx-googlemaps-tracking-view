@@ -233,6 +233,7 @@ export class GoogleMapsWrapper {
       infowindow.open(this.map, anchor);
     }
     infowindow['isOpen'] = true;
+    return infowindow;
   }
 
   /**

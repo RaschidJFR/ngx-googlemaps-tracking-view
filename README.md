@@ -2,7 +2,8 @@
 
 A General-purpose embedded Angular map for tracking objects in real time using [Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial). Helpful for Uber-like applications.
 
-[Live Demo](https://raschidjfr.github.io/ngx-googlemaps-tracking-view)
+* [Live Demo](https://raschidjfr.github.io/ngx-googlemaps-tracking-view)
+* [Documentation](https://raschidjfr.github.io/ngx-googlemaps-tracking-view/reference/components/NgxGooglemapsTrackingViewComponent.html)
 
 ![Demo 1](https://raw.githubusercontent.com/RaschidJFR/ngx-googlemaps-tracking-view/master/img/demo1.jpg)
 
@@ -90,7 +91,7 @@ See [Full Documentation](https://raschidjfr.github.io/ngx-googlemaps-tracking-vi
 ```html
 <!-- component.html -->
 
-<div id="parent" style="height: 100%; width: 100%;">
+<div id="parent" style="height: 100%; width: 100%; position:relative">
 
   <!-- Add the map component -->
   <gmtv-map [data]="objectsToTrack" [template]="infowindow" [mapOptions]="mapOptions" [showLocationButton]="true">
@@ -120,7 +121,7 @@ Feel free to improve the code.
 * The source code for the test app `/src`.
 * You'll find the library's source in `/projects/ngx-googlemaps-tracking-view/src`.
 * Run:
-    1. `$ npm run --watch` to build in watch mode,
+    1. `$ npm run watch` to build in watch mode,
     2. then `$npm run link:library` to install modules,
     3. and then run `$ ng serve` to start the test app.
 

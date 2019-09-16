@@ -105,12 +105,14 @@ export class InfowindowComponent implements AfterContentInit, OnDestroy {
     }
   }
 
-  onMapClick() {
+  /** @ignore */
+  private onMapClick() {
     if (this.closeOnMapClick)
       this.close();
   }
 
-  onClosed() {
+  /** @ignore */
+  private onClosed() {
     try {
       this.vc.remove(0);
       this.view.destroy();

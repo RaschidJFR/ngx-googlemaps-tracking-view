@@ -9,22 +9,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=geometry"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
     body {
-      margin: 0;
+      --headerHeight: 0;
       --body-height: 100vh;
       height: var(--body-height);
+      margin: 0;
     }
   </style>
 </head>
 
 <body>
+  <div class="container text-center bg-white" id="header">
+    <h3>Tracking View Demo</h3>
+    <p><small>
+        This demo shows 50 real-time aircrafts flying over the location, updated every 10 seconds.
+        <a href="https://raschidjfr.github.io/ngx-googlemaps-tracking-view/reference/">See Documentation</a>
+      </small></p>
+  </div>
   <app-root></app-root>
   <script>
-    document
-      .querySelector('body')
-      .style
-      .setProperty('--body-height', window.innerHeight + 'px');
+    const body = document.querySelector('body');
+    const header = document.querySelector('#header');
+    body.style.setProperty('--body-height', (window.innerHeight) + 'px');
+    body.style.setProperty('--header-height', (header.clientHeight) + 'px');
   </script>
 </body>
 
