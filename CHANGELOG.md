@@ -4,6 +4,9 @@
 ### Added
 * Property `CenterMarker.fix`.
 
+## Changed
+* `CenterMarker` creates its own infowindow with option `disableAutoPan` set to `true`.
+
 ## 1.2.1 (09-09-12)
 ### Changed
 * Importing `HttpClientModule` in `NgxGooglemapsTrackingViewModule` so it does not need to be imported by the host module.

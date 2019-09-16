@@ -6,6 +6,7 @@ import { GoogleMapsWrapper } from '../../services/googlemaps-wrapper';
 import { HttpClient } from '@angular/common/http';
 
 let API_KEY = '';
+const INFOWINDOW_ID = 'center-pin';
 
 /**
  * A marker fixed to the center of the map which emits the geo-decoded location
@@ -59,6 +60,8 @@ export class CenterMarker {
   private _geocoder = new google.maps.Geocoder();
   /** @ignore */
   private _idleListener: google.maps.MapsEventListener;
+  /** @ignore */
+  private _clickListener: google.maps.MapsEventListener;
 
 
   constructor(
@@ -144,6 +147,7 @@ export class CenterMarker {
 
     this.updateAddress();
     this._idleListener = this.googlemapsWrapper.map.addListener('idle', () => this.onMapIdle());
+    this._clickListener = this.googlemapsWrapper.map.addListener('click', () => this.googlemapsWrapper.closeInfowindow(INFOWINDOW_ID));
   }
 
   /**
@@ -155,7 +159,9 @@ export class CenterMarker {
     this._mapEventSubscription.unsubscribe();
     this.googlemapsWrapper.closeInfowindow();
     google.maps.event.removeListener(this._idleListener);
+    google.maps.event.removeListener(this._clickListener);
     this.removeFixedMarker();
+    this.googlemapsWrapper.closeInfowindow(INFOWINDOW_ID);
   }
 
   /** @ignore */
@@ -168,7 +174,8 @@ export class CenterMarker {
     const offset = this.googlemapsWrapper.getMetersPerPx(markerPosition.lat()) * 36;
     const pos = google.maps.geometry.spherical.computeOffset(markerPosition, offset, 0);
 
-    this.googlemapsWrapper.openInfowindow(pos, content);
+    this.googlemapsWrapper.openInfowindow(pos, content, INFOWINDOW_ID)
+      .setOptions({ disableAutoPan: true });
   }
 
   /**
