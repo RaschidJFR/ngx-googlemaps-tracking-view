@@ -174,12 +174,6 @@
                                 <a href="#ngOnDestroy">ngOnDestroy</a>
                             </li>
                             <li>
-                                <a href="#onClosed">onClosed</a>
-                            </li>
-                            <li>
-                                <a href="#onMapClick">onMapClick</a>
-                            </li>
-                            <li>
                                 <a href="#open">open</a>
                             </li>
                         </ul>
@@ -715,84 +709,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="onClosed"></a>
-                    <span class="name">
-                        <b>
-                            onClosed
-                        </b>
-                        <a href="#onClosed"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>onClosed()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="113"
-                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/infowindow/infowindow.component.ts:113</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="onMapClick"></a>
-                    <span class="name">
-                        <b>
-                            onMapClick
-                        </b>
-                        <a href="#onMapClick"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>onMapClick()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="108"
-                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/infowindow/infowindow.component.ts:108</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="open"></a>
                     <span class="name">
                         <b>
@@ -1259,12 +1175,14 @@ export class InfowindowComponent implements AfterContentInit, OnDestroy {
     }
   }
 
-  onMapClick() {
+  /** @ignore */
+  private onMapClick() {
     if (this.closeOnMapClick)
       this.close();
   }
 
-  onClosed() {
+  /** @ignore */
+  private onClosed() {
     try {
       this.vc.remove(0);
       this.view.destroy();
@@ -1274,7 +1192,8 @@ export class InfowindowComponent implements AfterContentInit, OnDestroy {
     }
     this.closed.emit();
   }
-}</code></pre>
+}
+</code></pre>
     </div>
 
 

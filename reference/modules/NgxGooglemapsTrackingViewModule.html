@@ -274,6 +274,7 @@ import { CommonModule } from &#x27;@angular/common&#x27;;
 import { GoogleMapsWrapper } from &#x27;./services/googlemaps-wrapper&#x27;;
 import { InfowindowComponent } from &#x27;./components/infowindow/infowindow.component&#x27;;
 import { GeolocationButtonComponent } from &#x27;./components/geolocation-button/geolocation-button&#x27;;
+import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
 
 @NgModule({
   declarations: [
@@ -283,7 +284,8 @@ import { GeolocationButtonComponent } from &#x27;./components/geolocation-button
     GeolocationButtonComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [GoogleMapsWrapper],
   exports: [

@@ -60,13 +60,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NgxGooglemapsTrackingViewModule.html" data-type="entity-link">NgxGooglemapsTrackingViewModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' : 'data-target="#xs-components-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' }>
+                                            'data-target="#components-links-module-NgxGooglemapsTrackingViewModule-6cc12ae8c7d55030ae0b32e05a5f91fc"' : 'data-target="#xs-components-links-module-NgxGooglemapsTrackingViewModule-6cc12ae8c7d55030ae0b32e05a5f91fc"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' :
-                                            'id="xs-components-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxGooglemapsTrackingViewModule-6cc12ae8c7d55030ae0b32e05a5f91fc"' :
+                                            'id="xs-components-links-module-NgxGooglemapsTrackingViewModule-6cc12ae8c7d55030ae0b32e05a5f91fc"' }>
                                             <li class="link">
                                                 <a href="components/GeolocationButtonComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">GeolocationButtonComponent</a>
@@ -87,13 +87,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' : 'data-target="#xs-injectables-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' }>
+                                        'data-target="#injectables-links-module-NgxGooglemapsTrackingViewModule-6cc12ae8c7d55030ae0b32e05a5f91fc"' : 'data-target="#xs-injectables-links-module-NgxGooglemapsTrackingViewModule-6cc12ae8c7d55030ae0b32e05a5f91fc"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' :
-                                        'id="xs-injectables-links-module-NgxGooglemapsTrackingViewModule-d4658f9726732731a74a81984a37f7e4"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NgxGooglemapsTrackingViewModule-6cc12ae8c7d55030ae0b32e05a5f91fc"' :
+                                        'id="xs-injectables-links-module-NgxGooglemapsTrackingViewModule-6cc12ae8c7d55030ae0b32e05a5f91fc"' }>
                                         <li class="link">
                                             <a href="injectables/GoogleMapsWrapper.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>GoogleMapsWrapper</a>

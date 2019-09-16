@@ -16,13 +16,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return TrackedObjectComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return GoogleMapsWrapper; });
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ "./dist/ngx-googlemaps-tracking-view/node_modules/tslib/tslib.es6.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var geolocation_marker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! geolocation-marker */ "./dist/ngx-googlemaps-tracking-view/node_modules/geolocation-marker/geolocation-marker.js");
-/* harmony import */ var geolocation_marker__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(geolocation_marker__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "./dist/ngx-googlemaps-tracking-view/node_modules/tslib/tslib.es6.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var geolocation_marker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! geolocation-marker */ "./dist/ngx-googlemaps-tracking-view/node_modules/geolocation-marker/geolocation-marker.js");
+/* harmony import */ var geolocation_marker__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(geolocation_marker__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 
 
 
@@ -53,15 +53,15 @@ var GoogleMapsWrapper = /** @class */ (function () {
         /**
          * Emits when the map has been inited by calling `GoogleMapsWrapper.init()`
          */
-        this.onReady = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
+        this.onReady = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
         /**
          * When the user clicks on the map
          */
-        this.click = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
+        this.click = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
         /**
          * When visible maps change but zooming or dragging the map
          */
-        this.boundsChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
+        this.boundsChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
         this._ready = new Promise((/**
          * @param {?} resolve
          * @param {?} reject
@@ -147,14 +147,14 @@ var GoogleMapsWrapper = /** @class */ (function () {
      * @return {?}
      */
     function (element, options) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_2__["__awaiter"])(this, void 0, void 0, function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__awaiter"])(this, void 0, void 0, function () {
             var e_1;
             var _this = this;
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_2__["__generator"])(this, function (_a) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__generator"])(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        this._map = new google.maps.Map(element, Object(tslib__WEBPACK_IMPORTED_MODULE_2__["__assign"])({ center: new google.maps.LatLng(19.53124, -96.91589), zoom: 14, clickableIcons: false, disableDefaultUI: false, zoomControl: true, streetViewControl: false, scaleControl: true, rotateControl: true, fullscreenControl: true, mapTypeControlOptions: {
+                        this._map = new google.maps.Map(element, Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__assign"])({ center: new google.maps.LatLng(19.53124, -96.91589), zoom: 14, clickableIcons: false, disableDefaultUI: false, zoomControl: true, streetViewControl: false, scaleControl: true, rotateControl: true, fullscreenControl: true, mapTypeControlOptions: {
                                 mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.SATELLITE]
                             } }, options));
                         // Add listeners
@@ -417,7 +417,7 @@ var GoogleMapsWrapper = /** @class */ (function () {
         function (m) {
             m.setMap(_this.map);
         }));
-        this.markers = Object(tslib__WEBPACK_IMPORTED_MODULE_2__["__spread"])(array);
+        this.markers = Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__spread"])(array);
     };
     /**
      * @param id In case more than one infowindows are required to be shown. If no parameter is passed,
@@ -453,6 +453,7 @@ var GoogleMapsWrapper = /** @class */ (function () {
             infowindow.open(this.map, anchor);
         }
         infowindow['isOpen'] = true;
+        return infowindow;
     };
     /**
      * @param id Unique identifier for an infowindow in case more than one exist
@@ -499,7 +500,7 @@ var GoogleMapsWrapper = /** @class */ (function () {
                 content: '[info]',
                 position: this.map.getCenter()
             });
-            infowindow['closeclick'] = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
+            infowindow['closeclick'] = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
             infowindow.addListener('closeclick', (/**
              * @return {?}
              */
@@ -538,7 +539,7 @@ var GoogleMapsWrapper = /** @class */ (function () {
         }
     };
     GoogleMapsWrapper.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Injectable"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"] }
     ];
     /** @nocollapse */
     GoogleMapsWrapper.ctorParameters = function () { return []; };
@@ -551,6 +552,8 @@ var GoogleMapsWrapper = /** @class */ (function () {
  */
 /** @type {?} */
 var API_KEY = '';
+/** @type {?} */
+var INFOWINDOW_ID = 'center-pin';
 /**
  * A marker fixed to the center of the map which emits the geo-decoded location
  * as a full address.
@@ -567,7 +570,11 @@ var API_KEY = '';
  * <ng-template #infowindowLocation let-address>
  *   <div>
  *     <span *ngIf="!address">Loading...</span>
- *     <span *ngIf="!!address">{{address}}</span>
+ *       <div *ngIf="!!address">
+ *       {{address}}
+ *       <br>
+ *       <button (click)="map.centerPin.fix = !map.centerPin.fix">Fix</button>
+ *     </div>
  *   </div>
  * </ng-template>
  */
@@ -587,7 +594,11 @@ var /**
  * <ng-template #infowindowLocation let-address>
  *   <div>
  *     <span *ngIf="!address">Loading...</span>
- *     <span *ngIf="!!address">{{address}}</span>
+ *       <div *ngIf="!!address">
+ *       {{address}}
+ *       <br>
+ *       <button (click)="map.centerPin.fix = !map.centerPin.fix">Fix</button>
+ *     </div>
  *   </div>
  * </ng-template>
  */
@@ -597,26 +608,57 @@ CenterMarker = /** @class */ (function () {
         this.viewContainer = viewContainer;
         this.http = http;
         /**
-         * Emitted when the pin's location has changed (by zooming or dragging) and the map has become idle again.
-         */
-        this.locationChanges = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
-        /**
          * Emitted when the the geocoded address has resolved.
          */
-        this.addressChanges = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
+        this.addressChanges = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
+        /**
+         * Emitted when the pin's location has changed (by zooming or dragging) and the map has become idle again.
+         */
+        this.locationChanges = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
         /**
          * @ignore
          */
-        this._centerChanged$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+        this._centerChanged$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
         /**
          * @ignore
          */
-        this._mapEventSubscription = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subscription"]();
+        this._mapEventSubscription = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subscription"]();
         /**
          * @ignore
          */
         this._geocoder = new google.maps.Geocoder();
     }
+    Object.defineProperty(CenterMarker.prototype, "fix", {
+        /**
+         * Fix the pin to its current position on map instead of floating over it.
+         * This value is reset on calling `disable()`.
+         */
+        get: /**
+         * Fix the pin to its current position on map instead of floating over it.
+         * This value is reset on calling `disable()`.
+         * @return {?}
+         */
+        function () { return !!this._fixedMarker; },
+        set: /**
+         * @param {?} val
+         * @return {?}
+         */
+        function (val) {
+            if (!this.googlemapsWrapper.isReady()) {
+                console.warn('Map is not ready');
+                return;
+            }
+            this.disable();
+            if (val) {
+                this.setFixedMarker();
+            }
+            else {
+                this.enable(this._infowindowTemplate, API_KEY);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(CenterMarker.prototype, "REVERSE_GEOCODING_URL", {
         /** @ignore */
         get: /**
@@ -632,24 +674,25 @@ CenterMarker = /** @class */ (function () {
      * Activates the pin to show at the map's center
      * @param infowindowTemplate A template for rendering the infowindow on top of the marker.
      * It must have a single root element. The address string will be passed as implicit context.
-     * @param apiKey GoogleMaps API key
+     * @param apiKey GoogleMaps API key. TODO: remove the need for this param in future versions.
      */
     /**
      * Activates the pin to show at the map's center
      * @param {?} infowindowTemplate A template for rendering the infowindow on top of the marker.
      * It must have a single root element. The address string will be passed as implicit context.
-     * @param {?} apiKey GoogleMaps API key
+     * @param {?} apiKey GoogleMaps API key. TODO: remove the need for this param in future versions.
      * @return {?}
      */
     CenterMarker.prototype.enable = /**
      * Activates the pin to show at the map's center
      * @param {?} infowindowTemplate A template for rendering the infowindow on top of the marker.
      * It must have a single root element. The address string will be passed as implicit context.
-     * @param {?} apiKey GoogleMaps API key
+     * @param {?} apiKey GoogleMaps API key. TODO: remove the need for this param in future versions.
      * @return {?}
      */
     function (infowindowTemplate, apiKey) {
         var _this = this;
+        this.removeFixedMarker();
         API_KEY = apiKey;
         this._infowindowTemplate = infowindowTemplate;
         if (this._centerMarker)
@@ -665,7 +708,7 @@ CenterMarker = /** @class */ (function () {
          * @return {?}
          */
         function () { return _this.displayInfowindowOverPin(); });
-        this._mapEventSubscription = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subscription"]();
+        this._mapEventSubscription = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subscription"]();
         this._mapEventSubscription.add(this._centerChanged$
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["tap"])((/**
          * @return {?}
@@ -677,10 +720,10 @@ CenterMarker = /** @class */ (function () {
          * @param {?} latLng
          * @return {?}
          */
-        function (latLng) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(latLng); })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["debounce"])((/**
+        function (latLng) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(latLng); })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["debounce"])((/**
          * @return {?}
          */
-        function () { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["timer"])(1000); })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["switchMap"])((/**
+        function () { return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["timer"])(1000); })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["switchMap"])((/**
          * @param {?} latLng
          * @return {?}
          */
@@ -701,12 +744,15 @@ CenterMarker = /** @class */ (function () {
             _this.displayInfowindowOverPin();
             // });
         })));
-        this.onMapIdle();
-        this.displayInfowindowOverPin();
+        this.updateAddress();
         this._idleListener = this.googlemapsWrapper.map.addListener('idle', (/**
          * @return {?}
          */
         function () { return _this.onMapIdle(); }));
+        this._clickListener = this.googlemapsWrapper.map.addListener('click', (/**
+         * @return {?}
+         */
+        function () { return _this.googlemapsWrapper.closeInfowindow(INFOWINDOW_ID); }));
     };
     /**
      * Removes the pin from the map
@@ -726,6 +772,9 @@ CenterMarker = /** @class */ (function () {
         this._mapEventSubscription.unsubscribe();
         this.googlemapsWrapper.closeInfowindow();
         google.maps.event.removeListener(this._idleListener);
+        google.maps.event.removeListener(this._clickListener);
+        this.removeFixedMarker();
+        this.googlemapsWrapper.closeInfowindow(INFOWINDOW_ID);
     };
     /** @ignore */
     /**
@@ -743,12 +792,29 @@ CenterMarker = /** @class */ (function () {
         /** @type {?} */
         var content = (/** @type {?} */ (view.rootNodes[0]));
         /** @type {?} */
-        var center = this.googlemapsWrapper.map.getCenter();
+        var markerPosition = this.fix ? this._fixedMarker.getPosition() : this.googlemapsWrapper.map.getCenter();
         /** @type {?} */
-        var offset = this.googlemapsWrapper.getMetersPerPx(center.lat()) * 36;
+        var offset = this.googlemapsWrapper.getMetersPerPx(markerPosition.lat()) * 36;
         /** @type {?} */
-        var pos = google.maps.geometry.spherical.computeOffset(center, offset, 0);
-        this.googlemapsWrapper.openInfowindow(pos, content);
+        var pos = google.maps.geometry.spherical.computeOffset(markerPosition, offset, 0);
+        this.googlemapsWrapper.openInfowindow(pos, content, INFOWINDOW_ID)
+            .setOptions({ disableAutoPan: true });
+    };
+    /**
+     * Geodecode the current pin's location.
+     */
+    /**
+     * Geodecode the current pin's location.
+     * @return {?}
+     */
+    CenterMarker.prototype.updateAddress = /**
+     * Geodecode the current pin's location.
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var markerPosition = this.fix ? this._fixedMarker.getPosition() : this.googlemapsWrapper.map.getCenter();
+        this._centerChanged$.next(markerPosition);
     };
     /** @ignore */
     /**
@@ -756,8 +822,48 @@ CenterMarker = /** @class */ (function () {
      * @private
      * @return {?}
      */
-    CenterMarker.prototype.onMapIdle = /**
+    CenterMarker.prototype.setFixedMarker = /**
      * @ignore
+     * @private
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        if (this._fixedMarker)
+            this.removeFixedMarker();
+        this._fixedMarker = new google.maps.Marker({
+            icon: 'https://maps.gstatic.com/mapfiles/markers/marker.png',
+            map: this.googlemapsWrapper.map,
+            position: this.googlemapsWrapper.map.getCenter(),
+        });
+        this._fixedMarker.addListener('click', (/**
+         * @return {?}
+         */
+        function () { return _this.displayInfowindowOverPin(); }));
+    };
+    /** @ignore */
+    /**
+     * @ignore
+     * @private
+     * @return {?}
+     */
+    CenterMarker.prototype.removeFixedMarker = /**
+     * @ignore
+     * @private
+     * @return {?}
+     */
+    function () {
+        if (!this._fixedMarker)
+            return;
+        this._fixedMarker.setMap(null);
+        google.maps.event.clearInstanceListeners(this._fixedMarker);
+        this._fixedMarker = null;
+    };
+    /**
+     * @private
+     * @return {?}
+     */
+    CenterMarker.prototype.onMapIdle = /**
      * @private
      * @return {?}
      */
@@ -765,7 +871,7 @@ CenterMarker = /** @class */ (function () {
         /** @type {?} */
         var center = this.googlemapsWrapper.map.getCenter();
         this.locationChanges.emit(center.toJSON());
-        this._centerChanged$.next(center);
+        this.updateAddress();
     };
     return CenterMarker;
 }());
@@ -873,7 +979,7 @@ var NgxGooglemapsTrackingViewComponent = /** @class */ (function () {
         return item.id;
     };
     NgxGooglemapsTrackingViewComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
                     selector: 'gmtv-map',
                     template: "<div id=\"map\" #map></div>\r\n\r\n<div id=\"tracked-object-list\">\r\n  <gmtv-tracked-object [trackedObject]=\"trkObj\" [template]=\"template\" *ngFor=\"let trkObj of data; trackBy: trackById\">\r\n  </gmtv-tracked-object>\r\n</div>\r\n",
                     styles: ["#map{width:100%;height:100%}"]
@@ -882,15 +988,15 @@ var NgxGooglemapsTrackingViewComponent = /** @class */ (function () {
     /** @nocollapse */
     NgxGooglemapsTrackingViewComponent.ctorParameters = function () { return [
         { type: GoogleMapsWrapper },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["ViewContainerRef"] },
-        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewContainerRef"] },
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClient"] }
     ]; };
     NgxGooglemapsTrackingViewComponent.propDecorators = {
-        mapDiv: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["ViewChild"], args: ['map',] }],
-        mapOptions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"] }],
-        showLocationButton: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"] }],
-        template: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"] }],
-        data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"] }]
+        mapDiv: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"], args: ['map',] }],
+        mapOptions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        showLocationButton: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        template: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
     };
     return NgxGooglemapsTrackingViewComponent;
 }());
@@ -906,16 +1012,16 @@ var InfowindowComponent = /** @class */ (function () {
         /**
          * When infowindow has closed
          */
-        this.closed = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
+        this.closed = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
         /**
          * Triggered on clicking on the X button
          */
-        this.closeclick = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
+        this.closeclick = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
         this.noPadding = false;
         this.padding = false;
         this.cssClass = '';
         this.closeOnMapClick = true;
-        this.subscription = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subscription"]();
+        this.subscription = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subscription"]();
     }
     Object.defineProperty(InfowindowComponent.prototype, "nativeInfowindow", {
         get: /**
@@ -1023,20 +1129,30 @@ var InfowindowComponent = /** @class */ (function () {
             this.onClosed();
         }
     };
+    /** @ignore */
     /**
+     * @ignore
+     * @private
      * @return {?}
      */
     InfowindowComponent.prototype.onMapClick = /**
+     * @ignore
+     * @private
      * @return {?}
      */
     function () {
         if (this.closeOnMapClick)
             this.close();
     };
+    /** @ignore */
     /**
+     * @ignore
+     * @private
      * @return {?}
      */
     InfowindowComponent.prototype.onClosed = /**
+     * @ignore
+     * @private
      * @return {?}
      */
     function () {
@@ -1051,7 +1167,7 @@ var InfowindowComponent = /** @class */ (function () {
         this.closed.emit();
     };
     InfowindowComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
                     selector: 'gmtv-infowindow',
                     template: "\t<div style=\"display: none;\" #root>\n                <ng-template #defaultTemplate let-o>\n                  <div id=\"rootNode\">\n                    <h3>{{o.name}}</h3>\n                    <p>\n                      <strong>ID:</strong> {{o.id}}<br>\n                      <strong>Position:</strong> {{o.position?.toJSON() | json}}<br>\n                      <strong>Heading:</strong> {{o.heading | number:'1.0-1'}}\u00B0<br>\n                    </p>\n                  </div>\n                </ng-template>\n                <ng-container #vc></ng-container>\n              </div>"
                 }] }
@@ -1059,21 +1175,21 @@ var InfowindowComponent = /** @class */ (function () {
     /** @nocollapse */
     InfowindowComponent.ctorParameters = function () { return [
         { type: GoogleMapsWrapper },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["ElementRef"] }
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"] }
     ]; };
     InfowindowComponent.propDecorators = {
-        root: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["ViewChild"], args: ['root',] }],
-        defaultTemplateRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["ViewChild"], args: ['defaultTemplate',] }],
-        vc: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["ViewChild"], args: ['vc', { read: _angular_core__WEBPACK_IMPORTED_MODULE_5__["ViewContainerRef"] },] }],
-        closed: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Output"] }],
-        closeclick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Output"] }],
-        noPadding: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"] }],
-        padding: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"] }],
-        id: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"] }],
-        cssClass: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"] }],
-        contentTemplateRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"], args: ['template',] }],
-        ctx: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"], args: ['context',] }],
-        closeOnMapClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"] }]
+        root: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"], args: ['root',] }],
+        defaultTemplateRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"], args: ['defaultTemplate',] }],
+        vc: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"], args: ['vc', { read: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewContainerRef"] },] }],
+        closed: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"] }],
+        closeclick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"] }],
+        noPadding: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        padding: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        id: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        cssClass: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        contentTemplateRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"], args: ['template',] }],
+        ctx: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"], args: ['context',] }],
+        closeOnMapClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
     };
     return InfowindowComponent;
 }());
@@ -1137,7 +1253,7 @@ var TrackedObjectComponent = /** @class */ (function () {
         this.dotMarker = new google.maps.Marker({ position: { lat: NaN, lng: NaN } });
         this.hoverDotListeners = [];
         this.hoverPolygonListeners = [];
-        this.subscription = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subscription"]();
+        this.subscription = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subscription"]();
         this.defaultColor = 'red';
         this.polygon = new google.maps.Polygon({
             strokeColor: this.color,
@@ -1156,9 +1272,9 @@ var TrackedObjectComponent = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_2__["__awaiter"])(this, void 0, void 0, function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__awaiter"])(this, void 0, void 0, function () {
             var _this = this;
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_2__["__generator"])(this, function (_a) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_1__["__generator"])(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.googleMaps.ready()];
                     case 1:
@@ -1720,7 +1836,7 @@ var TrackedObjectComponent = /** @class */ (function () {
         this.drawObject();
     };
     TrackedObjectComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
                     selector: 'gmtv-tracked-object',
                     template: "<gmtv-infowindow [template]=\"template\" [context]=\"{$implicit: trackedObject}\"></gmtv-infowindow>"
                 }] }
@@ -1730,9 +1846,9 @@ var TrackedObjectComponent = /** @class */ (function () {
         { type: GoogleMapsWrapper }
     ]; };
     TrackedObjectComponent.propDecorators = {
-        trackedObject: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"] }],
-        template: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Input"] }],
-        infowindow: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["ViewChild"], args: [InfowindowComponent,] }]
+        trackedObject: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        template: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        infowindow: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"], args: [InfowindowComponent,] }]
     };
     return TrackedObjectComponent;
 }());
@@ -1759,7 +1875,7 @@ var GeolocationButtonComponent = /** @class */ (function () {
         /**
          * Emited after obtaining the user's location
          */
-        this.locate = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
+        this.locate = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
     }
     /**
      * Center map on user's location
@@ -1802,7 +1918,7 @@ var GeolocationButtonComponent = /** @class */ (function () {
         }
     };
     GeolocationButtonComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
                     selector: 'gmtv-geolocation-button',
                     template: "<button aria-label=\"Show Your Location\" id=\"widget-mylocation\" class=\"widget-mylocation-button ripple-container\"\r\n  (click)=\"centerOnUser()\">\r\n  <div class=\"widget-mylocation-button-icon-common widget-mylocation-button-normal widget-mylocation-cookie\"></div>\r\n</button>",
                     styles: ["#widget-mylocation{position:absolute;right:10px;bottom:110px;padding:0}.widget-mylocation-button{background-color:#fff;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.3);display:block;width:40px;height:40px;overflow:hidden;cursor:pointer;transition:background-color .16s ease-out}.widget-mylocation-button .widget-mylocation-button-normal{background-position:0 0}.widget-mylocation-button .widget-mylocation-cookie{background-image:url(//maps.gstatic.com/tactile/mylocation/mylocation-sprite-2x.png);background-size:200px 20px;height:100%;width:21px;background-position:2px 2px;background-repeat:no-repeat}.widget-mylocation-button-icon-common{display:block;height:18px;left:6px;margin:0;padding:0;position:absolute;top:6px;width:18px}"]
@@ -1813,7 +1929,7 @@ var GeolocationButtonComponent = /** @class */ (function () {
         { type: GoogleMapsWrapper }
     ]; };
     GeolocationButtonComponent.propDecorators = {
-        locate: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["Output"] }]
+        locate: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"] }]
     };
     return GeolocationButtonComponent;
 }());
@@ -1826,7 +1942,7 @@ var NgxGooglemapsTrackingViewModule = /** @class */ (function () {
     function NgxGooglemapsTrackingViewModule() {
     }
     NgxGooglemapsTrackingViewModule.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_5__["NgModule"], args: [{
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"], args: [{
                     declarations: [
                         NgxGooglemapsTrackingViewComponent,
                         TrackedObjectComponent,
@@ -1834,7 +1950,8 @@ var NgxGooglemapsTrackingViewModule = /** @class */ (function () {
                         GeolocationButtonComponent
                     ],
                     imports: [
-                        _angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"]
+                        _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
+                        _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"]
                     ],
                     providers: [GoogleMapsWrapper],
                     exports: [
@@ -1903,7 +2020,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Center Pin Example -->\r\n<!-- <button (click)=\"map.centerPin.enable(infowindowLocation, '<yourApuKey>')\">Add center Pin</button>\r\n<button (click)=\"map.centerPin.disable()\">Remove Pin</button>\r\n<ng-template #infowindowLocation let-address>\r\n  <div style=\"min-height: 20px; min-width: 50px;\">\r\n    <span *ngIf=\"!address\">Loading...</span>\r\n    <span *ngIf=\"!!address\">{{address}}</span>\r\n  </div>\r\n</ng-template> -->\r\n\r\n\r\n<div id=\"parent\" style=\"height: 100%; width: 100%;\">\r\n\r\n  <gmtv-map [data]=\"objectsToTrack\" [template]=\"infowindow\" [mapOptions]=\"mapOptions\" [showLocationButton]=\"true\" #map>\r\n    <ng-template #infowindow let-o>\r\n      <div>\r\n        <h3>Flight #{{o.label?.text}} <span class=\"flag-icon flag-icon-{{getIsoCode(o.country)?.toLowerCase()}}\"\r\n            [title]=\"o.country\"></span></h3>\r\n        <span><strong>Altitude: </strong>{{o.altitude | number: '1.0-0'}}m</span>\r\n      </div>\r\n    </ng-template>\r\n  </gmtv-map>\r\n\r\n  <gmtv-geolocation-button></gmtv-geolocation-button>\r\n\r\n</div>\r\n"
+module.exports = "<!-- Center Pin Example -->\r\n<!-- <button (click)=\"map.centerPin.enable(infowindowLocation, '<yourApuKey>')\">Add center Pin</button>\r\n  <button (click)=\"map.centerPin.disable()\">Remove Pin</button>\r\n  <ng-template #infowindowLocation let-address>\r\n    <div style=\"min-height: 20px; min-width: 50px;\">\r\n      <span *ngIf=\"!address\">Loading...</span>\r\n      <div *ngIf=\"!!address\">\r\n        {{address}}\r\n        <br>\r\n        <button (click)=\"map.centerPin.fix = !map.centerPin.fix\">Fix</button>\r\n      </div>\r\n    </div>\r\n  </ng-template> -->\r\n\r\n<div id=\"parent\">\r\n\r\n  <gmtv-map [data]=\"objectsToTrack\" [template]=\"infowindow\" [mapOptions]=\"mapOptions\" [showLocationButton]=\"true\" #map>\r\n    <ng-template #infowindow let-o>\r\n      <div>\r\n        <h3>Flight #{{o.label?.text}} <span class=\"flag-icon flag-icon-{{getIsoCode(o.country)?.toLowerCase()}}\"\r\n            [title]=\"o.country\"></span></h3>\r\n        <span><strong>Altitude: </strong>{{o.altitude | number: '1.0-0'}}m</span>\r\n      </div>\r\n    </ng-template>\r\n  </gmtv-map>\r\n\r\n  <gmtv-geolocation-button></gmtv-geolocation-button>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1914,7 +2031,7 @@ module.exports = "<!-- Center Pin Example -->\r\n<!-- <button (click)=\"map.cent
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#parent {\n  padding-top: env(safe-area-inset-top, 40px);\n  padding-bottom: env(safe-area-inset-bottom, 40px); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxSYXNjaGlkXFxHaXRcXGFuZ3VsYXJcXGdvb2dsZW1hcHMtdHJhY2tpbmctdmlldy9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMkNBQTJDO0VBQzNDLGlEQUFpRCxFQUFBIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3BhcmVudCB7XHJcbiAgcGFkZGluZy10b3A6IGVudihzYWZlLWFyZWEtaW5zZXQtdG9wLCA0MHB4KTtcclxuICBwYWRkaW5nLWJvdHRvbTogZW52KHNhZmUtYXJlYS1pbnNldC1ib3R0b20sIDQwcHgpO1xyXG59Il19 */"
+module.exports = "#parent {\n  width: 100%;\n  position: relative;\n  height: calc(100% - var(--header-height)); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxSYXNjaGlkXFxHaXRcXGFuZ3VsYXJcXGdvb2dsZW1hcHMtdHJhY2tpbmctdmlldy9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVztFQUNYLGtCQUFrQjtFQUNsQix5Q0FBeUMsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNwYXJlbnQge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBoZWlnaHQ6IGNhbGMoMTAwJSAtIHZhcigtLWhlYWRlci1oZWlnaHQpKTtcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -2046,6 +2163,10 @@ var AppComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(ngx_googlemaps_tracking_view__WEBPACK_IMPORTED_MODULE_2__["NgxGooglemapsTrackingViewComponent"]),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", ngx_googlemaps_tracking_view__WEBPACK_IMPORTED_MODULE_2__["NgxGooglemapsTrackingViewComponent"])
     ], AppComponent.prototype, "mapView", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('infowindowLocation'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"])
+    ], AppComponent.prototype, "infowindowLocation", void 0);
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',

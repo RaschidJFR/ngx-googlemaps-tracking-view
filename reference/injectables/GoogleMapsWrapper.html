@@ -599,8 +599,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="241"
-                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/services/googlemaps-wrapper.ts:241</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="242"
+                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/services/googlemaps-wrapper.ts:242</a></div>
                 </td>
             </tr>
 
@@ -674,8 +674,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="274"
-                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/services/googlemaps-wrapper.ts:274</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="275"
+                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/services/googlemaps-wrapper.ts:275</a></div>
                 </td>
             </tr>
 
@@ -752,8 +752,8 @@ string is passed, the defoult infowindow will be returned.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="254"
-                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/services/googlemaps-wrapper.ts:254</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="255"
+                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/services/googlemaps-wrapper.ts:255</a></div>
                 </td>
             </tr>
 
@@ -1178,7 +1178,7 @@ with that specifier.</p>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -2240,6 +2240,7 @@ export class GoogleMapsWrapper {
       infowindow.open(this.map, anchor);
     }
     infowindow[&#x27;isOpen&#x27;] &#x3D; true;
+    return infowindow;
   }
 
   /**

@@ -79,7 +79,7 @@ as a full address.</p>
             </p>
             <div class="io-description">
                         <div>
-                            <pre class="line-numbers"><code class="language-html">&lt;button (click)=&quot;map.centerPin.enable(infowindowLocation, &lt;yourGMapsApiKey)&quot;&gt;Add center Pin&lt;/button&gt;&lt;button (click)=&quot;map.centerPin.disable()&quot;&gt;Remove Pin&lt;/button&gt;&lt;ng-template #infowindowLocation let-address&gt;&lt;div&gt;&lt;span *ngIf=&quot;!address&quot;&gt;Loading...&lt;/span&gt;&lt;span *ngIf=&quot;!!address&quot;&gt;{{address}}&lt;/span&gt;&lt;/div&gt;&lt;/ng-template&gt;</code></pre>
+                            <pre class="line-numbers"><code class="language-html">&lt;button (click)=&quot;map.centerPin.enable(infowindowLocation, &lt;yourGMapsApiKey)&quot;&gt;Add center Pin&lt;/button&gt;&lt;button (click)=&quot;map.centerPin.disable()&quot;&gt;Remove Pin&lt;/button&gt;&lt;ng-template #infowindowLocation let-address&gt;&lt;div&gt;&lt;span *ngIf=&quot;!address&quot;&gt;Loading...&lt;/span&gt;&lt;div *ngIf=&quot;!!address&quot;&gt;{{address}}&lt;br&gt;&lt;button (click)=&quot;map.centerPin.fix = !map.centerPin.fix&quot;&gt;Fix&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;/ng-template&gt;</code></pre>
                         </div>
             </div>
 
@@ -122,6 +122,13 @@ as a full address.</p>
                             <li>
                                 <a href="#enable">enable</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#onMapIdle">onMapIdle</a>
+                            </li>
+                            <li>
+                                <a href="#updateAddress">updateAddress</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -130,6 +137,20 @@ as a full address.</p>
 
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#fix">fix</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
         </tbody>
     </table>
 </section>
@@ -145,7 +166,7 @@ as a full address.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:55</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:64</a></div>
                             </td>
                         </tr>
 
@@ -231,7 +252,7 @@ as a full address.</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -263,7 +284,7 @@ as a full address.</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:43</a></div>
                             </td>
                         </tr>
 
@@ -295,7 +316,7 @@ as a full address.</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:47</a></div>
                             </td>
                         </tr>
 
@@ -337,8 +358,8 @@ as a full address.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="126"
-                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:126</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="156"
+                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:156</a></div>
                 </td>
             </tr>
 
@@ -378,8 +399,8 @@ as a full address.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="72"
-                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:72</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:100</a></div>
                 </td>
             </tr>
 
@@ -430,7 +451,7 @@ It must have a single root element. The address string will be passed as implici
 
 
                                     <td>
-                                        <p>GoogleMaps API key</p>
+                                        <p>GoogleMaps API key. TODO: remove the need for this param in future versions.</p>
 
                                     </td>
                                 </tr>
@@ -450,12 +471,180 @@ It must have a single root element. The address string will be passed as implici
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onMapIdle"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            onMapIdle
+                        </b>
+                        <a href="#onMapIdle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onMapIdle()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="209"
+                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:209</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateAddress"></a>
+                    <span class="name">
+                        <b>
+                            updateAddress
+                        </b>
+                        <a href="#updateAddress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateAddress()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="184"
+                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:184</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Geodecode the current pin&#39;s location.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
 
 
 
 
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fix"></a>
+                        <span class="name"><b>fix</b><a href="#fix"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>fix()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:76</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fix the pin to its current position on map instead of floating over it.
+This value is reset on calling <code>disable()</code>.</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>fix(val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/center-marker/center-marker.ts:77</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
     </div>
 
 
@@ -467,6 +656,7 @@ import { GoogleMapsWrapper } from &#x27;../../services/googlemaps-wrapper&#x27;;
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
 
 let API_KEY &#x3D; &#x27;&#x27;;
+const INFOWINDOW_ID &#x3D; &#x27;center-pin&#x27;;
 
 /**
  * A marker fixed to the center of the map which emits the geo-decoded location
@@ -484,23 +674,27 @@ let API_KEY &#x3D; &#x27;&#x27;;
  * &lt;ng-template #infowindowLocation let-address&gt;
  *   &lt;div&gt;
  *     &lt;span *ngIf&#x3D;&quot;!address&quot;&gt;Loading...&lt;/span&gt;
- *     &lt;span *ngIf&#x3D;&quot;!!address&quot;&gt;{{address}}&lt;/span&gt;
+ *       &lt;div *ngIf&#x3D;&quot;!!address&quot;&gt;
+ *       {{address}}
+ *       &lt;br&gt;
+ *       &lt;button (click)&#x3D;&quot;map.centerPin.fix &#x3D; !map.centerPin.fix&quot;&gt;Fix&lt;/button&gt;
+ *     &lt;/div&gt;
  *   &lt;/div&gt;
  * &lt;/ng-template&gt;
  */
 export class CenterMarker {
   /**
-   * Emitted when the pin&#x27;s location has changed (by zooming or dragging) and the map has become idle again.
+   * The current decoded address obtained from google. It becomes &#x60;null&#x60; while fetching.
    */
-  locationChanges &#x3D; new EventEmitter&lt;google.maps.LatLngLiteral&gt;();
+  address: string;
   /**
    * Emitted when the the geocoded address has resolved.
    */
   addressChanges &#x3D; new EventEmitter&lt;string&gt;();
   /**
-   * The current decoded address obtained from google. It becomes &#x60;null&#x60; while fetching.
+   * Emitted when the pin&#x27;s location has changed (by zooming or dragging) and the map has become idle again.
    */
-  address: string;
+  locationChanges &#x3D; new EventEmitter&lt;google.maps.LatLngLiteral&gt;();
 
   /** @ignore */
   private _infowindowTemplate: TemplateRef&lt;any&gt;
@@ -509,17 +703,40 @@ export class CenterMarker {
   /** @ignore */
   private _centerMarker: HTMLDivElement;
   /** @ignore */
+  private _fixedMarker: google.maps.Marker;
+  /** @ignore */
   private _mapEventSubscription &#x3D; new Subscription();
   /** @ignore */
   private _geocoder &#x3D; new google.maps.Geocoder();
   /** @ignore */
   private _idleListener: google.maps.MapsEventListener;
+  /** @ignore */
+  private _clickListener: google.maps.MapsEventListener;
 
 
   constructor(
     private googlemapsWrapper: GoogleMapsWrapper,
     private viewContainer,
     private http: HttpClient) { }
+
+  /**
+   * Fix the pin to its current position on map instead of floating over it.
+   * This value is reset on calling &#x60;disable()&#x60;.
+   */
+  get fix(): boolean { return !!this._fixedMarker; }
+  set fix(val: boolean) {
+    if (!this.googlemapsWrapper.isReady()) {
+      console.warn(&#x27;Map is not ready&#x27;);
+      return;
+    }
+
+    this.disable();
+    if (val) {
+      this.setFixedMarker();
+    } else {
+      this.enable(this._infowindowTemplate, API_KEY);
+    }
+  }
 
   /** @ignore */
   private get REVERSE_GEOCODING_URL() { return &#x60;https://maps.googleapis.com/maps/api/geocode/json?key&#x3D;${API_KEY}&amp;latlng&#x3D;&#x60;; }
@@ -528,9 +745,11 @@ export class CenterMarker {
    * Activates the pin to show at the map&#x27;s center
    * @param infowindowTemplate A template for rendering the infowindow on top of the marker.
    * It must have a single root element. The address string will be passed as implicit context.
-   * @param apiKey GoogleMaps API key
+   * @param apiKey GoogleMaps API key. TODO: remove the need for this param in future versions.
    */
   enable(infowindowTemplate: TemplateRef&lt;any&gt;, apiKey: string) {
+    this.removeFixedMarker();
+
     API_KEY &#x3D; apiKey;
     this._infowindowTemplate &#x3D; infowindowTemplate;
     if (this._centerMarker) return;
@@ -576,9 +795,9 @@ export class CenterMarker {
         })
     );
 
-    this.onMapIdle();
-    this.displayInfowindowOverPin();
+    this.updateAddress();
     this._idleListener &#x3D; this.googlemapsWrapper.map.addListener(&#x27;idle&#x27;, () &#x3D;&gt; this.onMapIdle());
+    this._clickListener &#x3D; this.googlemapsWrapper.map.addListener(&#x27;click&#x27;, () &#x3D;&gt; this.googlemapsWrapper.closeInfowindow(INFOWINDOW_ID));
   }
 
   /**
@@ -590,6 +809,9 @@ export class CenterMarker {
     this._mapEventSubscription.unsubscribe();
     this.googlemapsWrapper.closeInfowindow();
     google.maps.event.removeListener(this._idleListener);
+    google.maps.event.removeListener(this._clickListener);
+    this.removeFixedMarker();
+    this.googlemapsWrapper.closeInfowindow(INFOWINDOW_ID);
   }
 
   /** @ignore */
@@ -598,18 +820,46 @@ export class CenterMarker {
     const view &#x3D; this.viewContainer.createEmbeddedView(this._infowindowTemplate, { $implicit: this.address });
     const content &#x3D; view.rootNodes[0] as HTMLElement;
 
-    const center &#x3D; this.googlemapsWrapper.map.getCenter();
-    const offset &#x3D; this.googlemapsWrapper.getMetersPerPx(center.lat()) * 36;
-    const pos &#x3D; google.maps.geometry.spherical.computeOffset(center, offset, 0);
+    const markerPosition &#x3D; this.fix ? this._fixedMarker.getPosition() : this.googlemapsWrapper.map.getCenter();
+    const offset &#x3D; this.googlemapsWrapper.getMetersPerPx(markerPosition.lat()) * 36;
+    const pos &#x3D; google.maps.geometry.spherical.computeOffset(markerPosition, offset, 0);
 
-    this.googlemapsWrapper.openInfowindow(pos, content);
+    this.googlemapsWrapper.openInfowindow(pos, content, INFOWINDOW_ID)
+      .setOptions({ disableAutoPan: true });
+  }
+
+  /**
+   * Geodecode the current pin&#x27;s location.
+   */
+  updateAddress() {
+    const markerPosition &#x3D; this.fix ? this._fixedMarker.getPosition() : this.googlemapsWrapper.map.getCenter();
+    this._centerChanged$.next(markerPosition);
   }
 
   /** @ignore */
+  private setFixedMarker() {
+    if (this._fixedMarker) this.removeFixedMarker();
+    this._fixedMarker &#x3D; new google.maps.Marker({
+      icon: &#x27;https://maps.gstatic.com/mapfiles/markers/marker.png&#x27;,
+      map: this.googlemapsWrapper.map,
+      position: this.googlemapsWrapper.map.getCenter(),
+    });
+
+    this._fixedMarker.addListener(&#x27;click&#x27;, () &#x3D;&gt; this.displayInfowindowOverPin());
+  }
+
+  /** @ignore */
+  private removeFixedMarker() {
+    if (!this._fixedMarker) return;
+    this._fixedMarker.setMap(null);
+    google.maps.event.clearInstanceListeners(this._fixedMarker);
+    this._fixedMarker &#x3D; null;
+  }
+
   private onMapIdle() {
     const center &#x3D; this.googlemapsWrapper.map.getCenter();
     this.locationChanges.emit(center.toJSON());
-    this._centerChanged$.next(center);
+    this.updateAddress();
   }
 }
 </code></pre>
