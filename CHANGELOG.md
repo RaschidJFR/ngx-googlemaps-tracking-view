@@ -7,6 +7,10 @@
 ### Fixed
 * Geolocation button worked only the first time.
 
+### Changed
+* Default object scale increased x2.
+* Default object shape is circle if is speed is not provided or greater than 0.
+
 ## 1.3.0 (19-09-12)
 ### Added
 * Property `CenterMarker.fix`.
