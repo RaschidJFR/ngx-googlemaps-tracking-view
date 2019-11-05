@@ -1,17 +1,24 @@
 # Changelog
 
-## 1.3.0 (15-09-12)
+## 1.4.0 (19-11-04)
+### Added
+* Added prop `useCustomClickFn` to GeolocationButton.
+
+### Fixed
+* Geolocation button worked only the first time.
+
+## 1.3.0 (19-09-12)
 ### Added
 * Property `CenterMarker.fix`.
 
 ## Changed
 * `CenterMarker` creates its own infowindow with option `disableAutoPan` set to `true`.
 
-## 1.2.1 (09-09-12)
+## 1.2.1 (19-09-12)
 ### Changed
 * Importing `HttpClientModule` in `NgxGooglemapsTrackingViewModule` so it does not need to be imported by the host module.
 
-## 1.2.0 (09-09-12)
+## 1.2.0 (19-09-12)
 ### Added
 * Center Pin to geo-decode location by dragging the map's center
 
