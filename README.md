@@ -124,6 +124,9 @@ Feel free to improve the code.
     1. `$ npm run watch` to build in watch mode,
     2. then `$npm run link:library` to install modules,
     3. and then run `$ ng serve` to start the test app.
+* Publish:
+    1. Publish package: `$npm run publish`
+    2. Deploy demo and docs: `$ npm run deploy`
 
 ## Credits
 Raschid JF. Rafaelly
