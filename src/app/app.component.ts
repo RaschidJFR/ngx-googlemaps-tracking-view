@@ -87,7 +87,7 @@ export class AppComponent implements AfterContentInit {
               country: aircraft[2],
               heading: aircraft[10],
               icon: found && found.icon || this.getIcon(aircraft[10]),
-              // speed: 0,
+              speed: 1,
               label: {
                 text: aircraft[0].toLocaleUpperCase(),
                 color: 'white'

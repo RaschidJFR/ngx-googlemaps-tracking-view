@@ -109,8 +109,8 @@ See [Full Documentation](https://raschidjfr.github.io/ngx-googlemaps-tracking-vi
     </ng-template>
   </gmtv-map>
 
-  <!-- (Optional) Add the geo-location button AFTER the map -->
-  <gmtv-geolocation-button (beforeLocate)="onLocation()"></gmtv-geolocation-button>
+  <!-- (Optional) Add the geo-location button **AFTER** the map -->
+  <gmtv-geolocation-button (locate)="onLocation()"></gmtv-geolocation-button>
 
 </div>
 ```

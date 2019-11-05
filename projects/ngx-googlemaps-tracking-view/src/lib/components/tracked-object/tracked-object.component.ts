@@ -94,7 +94,7 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
    */
   get color(): string { return this.trackedObject && this.trackedObject.color || this.defaultColor; }
 
-  protected get isMoving(): boolean { return !!this.trackedObject && this.trackedObject.speed !== 0; }
+  protected get isMoving(): boolean { return !!this.trackedObject && this.trackedObject.speed > 0; }
   protected get offline(): boolean { return this.trackedObject && this.trackedObject.isOffline; }
   protected get hasValidMeasures(): boolean { return true; }
 
@@ -378,8 +378,8 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
         strokeColor: this.color,
         strokeOpacity: showDot ? 0.9 : 0,
         strokeWeight: 1,
-        scale: 5 * (this.trackedObject.scale || 1),
-        labelOrigin: new google.maps.Point(0, 5),
+        scale: 10 * (this.trackedObject.scale || 1),
+        labelOrigin: new google.maps.Point(0, 3),
         anchor: new google.maps.Point(.5, .5),
       }
     );
