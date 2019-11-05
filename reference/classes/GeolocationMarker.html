@@ -285,7 +285,7 @@ It shows the default blue sphere with proximity shade.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Output, EventEmitter } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Output, EventEmitter, Input } from &#x27;@angular/core&#x27;;
 import geolocationMarkrFn from &#x27;geolocation-marker&#x27;;
 import { GoogleMapsWrapper } from &#x27;../../services/googlemaps-wrapper&#x27;;
 geolocationMarkrFn;
@@ -319,6 +319,11 @@ declare class GeolocationMarker {
 })
 export class GeolocationButtonComponent {
   /**
+   * If &#x60;true&#x60;, the button won&#x27;t attempt to center the map on the user when clicked,
+   * but will emit the event &#x60;click&#x60; instead.
+   */
+  @Input() useCustomClickFn &#x3D; false;
+  /**
    * Emited after obtaining the user&#x27;s location
    */
   @Output() locate &#x3D; new EventEmitter&lt;google.maps.LatLng&gt;();
@@ -327,25 +332,39 @@ export class GeolocationButtonComponent {
   constructor(protected googlemapsWrapper: GoogleMapsWrapper) { }
 
   /**
-   * Center map on user&#x27;s location
+   * Get user&#x27;s location and center map on it
    */
   centerOnUser() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) &#x3D;&gt; {
-        const lng &#x3D; position.coords.longitude;
-        const lat &#x3D; position.coords.latitude;
-        this.googlemapsWrapper.map.setCenter({ lat, lng });
+    if (this.useCustomClickFn) {
+      return;
+    }
 
-        if (this._geoLocationMarker) this._geoLocationMarker.setMap(null);
-        this._geoLocationMarker &#x3D; new GeolocationMarker(this.googlemapsWrapper.map);
-        this.locate.emit(this._geoLocationMarker.position);
-      }, error &#x3D;&gt; {
-        console.error(error);
-      },
-        { enableHighAccuracy: true });
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.onPosition, console.error, { enableHighAccuracy: true });
     } else {
       console.error(&#x27;No support for geolocation&#x27;);
     }
+  }
+
+  /**
+   * Center the map on a specific position and draw the geoLocationMarker
+   */
+  setUserPosition(lat: number, lng: number) {
+    this.googlemapsWrapper.map.setCenter({ lat, lng });
+    if (this._geoLocationMarker) this._geoLocationMarker.setMap(null);
+    this._geoLocationMarker &#x3D; new GeolocationMarker(this.googlemapsWrapper.map);
+    this.locate.emit(this._geoLocationMarker.position);
+  }
+
+  private onPosition(position: Position) {
+    const lng &#x3D; position.coords.longitude;
+    const lat &#x3D; position.coords.latitude;
+    // this.googlemapsWrapper.map.setCenter({ lat, lng });
+
+    // if (this._geoLocationMarker) this._geoLocationMarker.setMap(null);
+    // this._geoLocationMarker &#x3D; new GeolocationMarker(this.googlemapsWrapper.map);
+    // this.locate.emit(this._geoLocationMarker.position);
+    this.setUserPosition(lat, lng);
   }
 }
 </code></pre>

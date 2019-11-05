@@ -159,10 +159,31 @@ map element</strong>, so if renders on top of it.</p>
                             <li>
                                 <a href="#centerOnUser">centerOnUser</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#onPosition">onPosition</a>
+                            </li>
+                            <li>
+                                <a href="#setUserPosition">setUserPosition</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#useCustomClickFn">useCustomClickFn</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -196,7 +217,7 @@ map element</strong>, so if renders on top of it.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:39</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:44</a></div>
                             </td>
                         </tr>
 
@@ -234,7 +255,36 @@ map element</strong>, so if renders on top of it.</p>
         </table>
 </section>
 
-
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="useCustomClickFn"></a>
+                        <b>useCustomClickFn</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:39</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>If <code>true</code>, the button won&#39;t attempt to center the map on the user when clicked,
+but will emit the event <code>click</code> instead.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
     <section>
     <h3 id="outputs">Outputs</h3>
         <table class="table table-sm table-bordered">
@@ -253,7 +303,7 @@ map element</strong>, so if renders on top of it.</p>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:43</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -294,20 +344,176 @@ map element</strong>, so if renders on top of it.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:51</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Center map on user&#39;s location</p>
+                    <div class="io-description"><p>Get user&#39;s location and center map on it</p>
 </div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPosition"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            onPosition
+                        </b>
+                        <a href="#onPosition"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onPosition(position: Position)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>position</td>
+                                    <td>
+                                            <code>Position</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setUserPosition"></a>
+                    <span class="name">
+                        <b>
+                            setUserPosition
+                        </b>
+                        <a href="#setUserPosition"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setUserPosition(lat: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, lng: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Center the map on a specific position and draw the geoLocationMarker</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>lat</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>lng</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -340,7 +546,7 @@ map element</strong>, so if renders on top of it.</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:39</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">projects/ngx-googlemaps-tracking-view/src/lib/components/geolocation-button/geolocation-button.ts:44</a></div>
                             </td>
                         </tr>
 
@@ -353,7 +559,7 @@ map element</strong>, so if renders on top of it.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Output, EventEmitter } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Output, EventEmitter, Input } from &#x27;@angular/core&#x27;;
 import geolocationMarkrFn from &#x27;geolocation-marker&#x27;;
 import { GoogleMapsWrapper } from &#x27;../../services/googlemaps-wrapper&#x27;;
 geolocationMarkrFn;
@@ -387,6 +593,11 @@ declare class GeolocationMarker {
 })
 export class GeolocationButtonComponent {
   /**
+   * If &#x60;true&#x60;, the button won&#x27;t attempt to center the map on the user when clicked,
+   * but will emit the event &#x60;click&#x60; instead.
+   */
+  @Input() useCustomClickFn &#x3D; false;
+  /**
    * Emited after obtaining the user&#x27;s location
    */
   @Output() locate &#x3D; new EventEmitter&lt;google.maps.LatLng&gt;();
@@ -395,25 +606,39 @@ export class GeolocationButtonComponent {
   constructor(protected googlemapsWrapper: GoogleMapsWrapper) { }
 
   /**
-   * Center map on user&#x27;s location
+   * Get user&#x27;s location and center map on it
    */
   centerOnUser() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) &#x3D;&gt; {
-        const lng &#x3D; position.coords.longitude;
-        const lat &#x3D; position.coords.latitude;
-        this.googlemapsWrapper.map.setCenter({ lat, lng });
+    if (this.useCustomClickFn) {
+      return;
+    }
 
-        if (this._geoLocationMarker) this._geoLocationMarker.setMap(null);
-        this._geoLocationMarker &#x3D; new GeolocationMarker(this.googlemapsWrapper.map);
-        this.locate.emit(this._geoLocationMarker.position);
-      }, error &#x3D;&gt; {
-        console.error(error);
-      },
-        { enableHighAccuracy: true });
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.onPosition, console.error, { enableHighAccuracy: true });
     } else {
       console.error(&#x27;No support for geolocation&#x27;);
     }
+  }
+
+  /**
+   * Center the map on a specific position and draw the geoLocationMarker
+   */
+  setUserPosition(lat: number, lng: number) {
+    this.googlemapsWrapper.map.setCenter({ lat, lng });
+    if (this._geoLocationMarker) this._geoLocationMarker.setMap(null);
+    this._geoLocationMarker &#x3D; new GeolocationMarker(this.googlemapsWrapper.map);
+    this.locate.emit(this._geoLocationMarker.position);
+  }
+
+  private onPosition(position: Position) {
+    const lng &#x3D; position.coords.longitude;
+    const lat &#x3D; position.coords.latitude;
+    // this.googlemapsWrapper.map.setCenter({ lat, lng });
+
+    // if (this._geoLocationMarker) this._geoLocationMarker.setMap(null);
+    // this._geoLocationMarker &#x3D; new GeolocationMarker(this.googlemapsWrapper.map);
+    // this.locate.emit(this._geoLocationMarker.position);
+    this.setUserPosition(lat, lng);
   }
 }
 </code></pre>
@@ -452,7 +677,7 @@ export class GeolocationButtonComponent {
   background-position: 0 0;
 }
 .widget-mylocation-button .widget-mylocation-cookie {
-  background-image: url(//maps.gstatic.com/tactile/mylocation/mylocation-sprite-2x.png);
+  background-image: url(https://maps.gstatic.com/tactile/mylocation/mylocation-sprite-2x.png);
   background-size: 200px 20px;
   height: 100%;
   width: 21px;
@@ -468,7 +693,8 @@ export class GeolocationButtonComponent {
   position: absolute;
   top: 6px;
   width: 18px;
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">

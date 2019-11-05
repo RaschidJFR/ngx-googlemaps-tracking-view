@@ -4,14 +4,14 @@
 /*!*********************************************************************************!*\
   !*** ./dist/ngx-googlemaps-tracking-view/fesm5/ngx-googlemaps-tracking-view.js ***!
   \*********************************************************************************/
-/*! exports provided: NgxGooglemapsTrackingViewComponent, NgxGooglemapsTrackingViewModule, ɵd, ɵc, ɵb, ɵa */
+/*! exports provided: NgxGooglemapsTrackingViewComponent, NgxGooglemapsTrackingViewModule, GeolocationButtonComponent, ɵc, ɵb, ɵa */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NgxGooglemapsTrackingViewComponent", function() { return NgxGooglemapsTrackingViewComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NgxGooglemapsTrackingViewModule", function() { return NgxGooglemapsTrackingViewModule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return GeolocationButtonComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GeolocationButtonComponent", function() { return GeolocationButtonComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return InfowindowComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return TrackedObjectComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return GoogleMapsWrapper; });
@@ -1334,7 +1334,7 @@ var TrackedObjectComponent = /** @class */ (function () {
          * @protected
          * @return {?}
          */
-        function () { return !!this.trackedObject && this.trackedObject.speed !== 0; },
+        function () { return !!this.trackedObject && this.trackedObject.speed > 0; },
         enumerable: true,
         configurable: true
     });
@@ -1799,8 +1799,8 @@ var TrackedObjectComponent = /** @class */ (function () {
                 strokeColor: this.color,
                 strokeOpacity: showDot ? 0.9 : 0,
                 strokeWeight: 1,
-                scale: 5 * (this.trackedObject.scale || 1),
-                labelOrigin: new google.maps.Point(0, 5),
+                scale: 10 * (this.trackedObject.scale || 1),
+                labelOrigin: new google.maps.Point(0, 3),
                 anchor: new google.maps.Point(.5, .5),
             });
         this.dotMarker.setLabel(this.zoom >= LOD.nameLabels ? this.trackedObject.label : '');
@@ -1873,55 +1873,85 @@ var GeolocationButtonComponent = /** @class */ (function () {
     function GeolocationButtonComponent(googlemapsWrapper) {
         this.googlemapsWrapper = googlemapsWrapper;
         /**
+         * If `true`, the button won't attempt to center the map on the user when clicked,
+         * but will emit the event `click` instead.
+         */
+        this.useCustomClickFn = false;
+        /**
          * Emited after obtaining the user's location
          */
         this.locate = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
     }
     /**
-     * Center map on user's location
+     * Get user's location and center map on it
      */
     /**
-     * Center map on user's location
+     * Get user's location and center map on it
      * @return {?}
      */
     GeolocationButtonComponent.prototype.centerOnUser = /**
-     * Center map on user's location
+     * Get user's location and center map on it
      * @return {?}
      */
     function () {
-        var _this = this;
+        if (this.useCustomClickFn) {
+            return;
+        }
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((/**
-             * @param {?} position
-             * @return {?}
-             */
-            function (position) {
-                /** @type {?} */
-                var lng = position.coords.longitude;
-                /** @type {?} */
-                var lat = position.coords.latitude;
-                _this.googlemapsWrapper.map.setCenter({ lat: lat, lng: lng });
-                if (_this._geoLocationMarker)
-                    _this._geoLocationMarker.setMap(null);
-                _this._geoLocationMarker = new GeolocationMarker(_this.googlemapsWrapper.map);
-                _this.locate.emit(_this._geoLocationMarker.position);
-            }), (/**
-             * @param {?} error
-             * @return {?}
-             */
-            function (error) {
-                console.error(error);
-            }), { enableHighAccuracy: true });
+            navigator.geolocation.getCurrentPosition(this.onPosition, console.error, { enableHighAccuracy: true });
         }
         else {
             console.error('No support for geolocation');
         }
     };
+    /**
+     * Center the map on a specific position and draw the geoLocationMarker
+     */
+    /**
+     * Center the map on a specific position and draw the geoLocationMarker
+     * @param {?} lat
+     * @param {?} lng
+     * @return {?}
+     */
+    GeolocationButtonComponent.prototype.setUserPosition = /**
+     * Center the map on a specific position and draw the geoLocationMarker
+     * @param {?} lat
+     * @param {?} lng
+     * @return {?}
+     */
+    function (lat, lng) {
+        this.googlemapsWrapper.map.setCenter({ lat: lat, lng: lng });
+        if (this._geoLocationMarker)
+            this._geoLocationMarker.setMap(null);
+        this._geoLocationMarker = new GeolocationMarker(this.googlemapsWrapper.map);
+        this.locate.emit(this._geoLocationMarker.position);
+    };
+    /**
+     * @private
+     * @param {?} position
+     * @return {?}
+     */
+    GeolocationButtonComponent.prototype.onPosition = /**
+     * @private
+     * @param {?} position
+     * @return {?}
+     */
+    function (position) {
+        /** @type {?} */
+        var lng = position.coords.longitude;
+        /** @type {?} */
+        var lat = position.coords.latitude;
+        // this.googlemapsWrapper.map.setCenter({ lat, lng });
+        // if (this._geoLocationMarker) this._geoLocationMarker.setMap(null);
+        // this._geoLocationMarker = new GeolocationMarker(this.googlemapsWrapper.map);
+        // this.locate.emit(this._geoLocationMarker.position);
+        this.setUserPosition(lat, lng);
+    };
     GeolocationButtonComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
                     selector: 'gmtv-geolocation-button',
                     template: "<button aria-label=\"Show Your Location\" id=\"widget-mylocation\" class=\"widget-mylocation-button ripple-container\"\r\n  (click)=\"centerOnUser()\">\r\n  <div class=\"widget-mylocation-button-icon-common widget-mylocation-button-normal widget-mylocation-cookie\"></div>\r\n</button>",
-                    styles: ["#widget-mylocation{position:absolute;right:10px;bottom:110px;padding:0}.widget-mylocation-button{background-color:#fff;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.3);display:block;width:40px;height:40px;overflow:hidden;cursor:pointer;transition:background-color .16s ease-out}.widget-mylocation-button .widget-mylocation-button-normal{background-position:0 0}.widget-mylocation-button .widget-mylocation-cookie{background-image:url(//maps.gstatic.com/tactile/mylocation/mylocation-sprite-2x.png);background-size:200px 20px;height:100%;width:21px;background-position:2px 2px;background-repeat:no-repeat}.widget-mylocation-button-icon-common{display:block;height:18px;left:6px;margin:0;padding:0;position:absolute;top:6px;width:18px}"]
+                    styles: ["#widget-mylocation{position:absolute;right:10px;bottom:110px;padding:0}.widget-mylocation-button{background-color:#fff;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.3);display:block;width:40px;height:40px;overflow:hidden;cursor:pointer;transition:background-color .16s ease-out}.widget-mylocation-button .widget-mylocation-button-normal{background-position:0 0}.widget-mylocation-button .widget-mylocation-cookie{background-image:url(https://maps.gstatic.com/tactile/mylocation/mylocation-sprite-2x.png);background-size:200px 20px;height:100%;width:21px;background-position:2px 2px;background-repeat:no-repeat}.widget-mylocation-button-icon-common{display:block;height:18px;left:6px;margin:0;padding:0;position:absolute;top:6px;width:18px}"]
                 }] }
     ];
     /** @nocollapse */
@@ -1929,6 +1959,7 @@ var GeolocationButtonComponent = /** @class */ (function () {
         { type: GoogleMapsWrapper }
     ]; };
     GeolocationButtonComponent.propDecorators = {
+        useCustomClickFn: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
         locate: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"] }]
     };
     return GeolocationButtonComponent;
@@ -2126,7 +2157,7 @@ var AppComponent = /** @class */ (function () {
                         country: aircraft[2],
                         heading: aircraft[10],
                         icon: found && found.icon || _this.getIcon(aircraft[10]),
-                        // speed: 0,
+                        speed: 1,
                         label: {
                             text: aircraft[0].toLocaleUpperCase(),
                             color: 'white'
