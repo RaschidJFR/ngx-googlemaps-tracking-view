@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, TemplateRef, ViewContainerRef, ChangeDetectorRef } from '@angular/core';
 import { TrackedObject } from './models/tracked-object';
 import { GoogleMapsWrapper } from './services/googlemaps-wrapper';
 import { CenterMarker } from './components/center-marker/center-marker';
@@ -29,7 +29,7 @@ export class NgxGooglemapsTrackingViewComponent implements OnInit {
    * as a full address.
    * @see {@link CenterMarker}
    */
-  centerPin: CenterMarker = new CenterMarker(this.googlemapsWrapper, this.vc, this.http);
+  centerPin: CenterMarker = new CenterMarker(this.googlemapsWrapper, this.vc, this.cdr, this.http);
   protected _data: TrackedObject[] = [];
 
   /**
@@ -62,7 +62,11 @@ export class NgxGooglemapsTrackingViewComponent implements OnInit {
    */
   get map(): google.maps.Map { return this.googlemapsWrapper.map; }
 
-  constructor(protected googlemapsWrapper: GoogleMapsWrapper, protected vc: ViewContainerRef, private http: HttpClient) { }
+  constructor(
+    protected googlemapsWrapper: GoogleMapsWrapper,
+    protected vc: ViewContainerRef,
+    private http: HttpClient,
+    protected cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.googlemapsWrapper.initMap(this.mapDiv.nativeElement, this.mapOptions);
