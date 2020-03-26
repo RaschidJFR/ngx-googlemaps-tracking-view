@@ -60,6 +60,12 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
   @Input() template: TemplateRef<any>;
   drawSpeedVector = false;
 
+  /**
+   * Set this to `'hover'` to display the infowindow when hovering on the object.
+   * Set this to `'click'` to display the infowindow when clicking on the object.
+   */
+  @Input() triggerInfowindow: 'hover' | 'click' = 'hover';
+
   @ViewChild(InfowindowComponent) infowindow: InfowindowComponent;
   constructor(private googleMaps: GoogleMapsWrapper) { }
 
@@ -196,20 +202,34 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
       // Add listeners for polygon, not do
       if (this.hoverPolygonListeners.length < 1) {
         this.clearEventListeners();
-        this.hoverPolygonListeners.push(
-          this.polygon.addListener('mouseover', () => this.onMouseOver()),
-          this.polygon.addListener('mouseout', () => this.onMouseOut())
-        );
+        if (this.triggerInfowindow === 'click') {
+          this.hoverPolygonListeners.push(
+            this.polygon.addListener('click', () => this.onMouseOver()),
+          );
+        } else {
+          if (this.triggerInfowindow === 'hover') {
+            this.hoverPolygonListeners.push(
+              this.polygon.addListener('mouseover', () => this.onMouseOver()),
+              this.polygon.addListener('mouseout', () => this.onMouseOut()),
+            );
+          }
+        }
       }
     } else {
 
       // Add listeners for dot, not polygon
       if (this.hoverDotListeners.length < 1) {
         this.clearEventListeners();
-        this.hoverDotListeners.push(
-          this.dotMarker.addListener('mouseover', () => this.onMouseOver()),
-          this.dotMarker.addListener('mouseout', () => this.onMouseOut())
-        );
+        if (this.triggerInfowindow === 'click') {
+          this.hoverDotListeners.push(
+            this.dotMarker.addListener('click', () => this.onMouseOver()),
+          );
+        } else {
+          this.hoverDotListeners.push(
+            this.dotMarker.addListener('mouseover', () => this.onMouseOver()),
+            this.dotMarker.addListener('mouseout', () => this.onMouseOut()),
+          );
+        }
       }
     }
 
@@ -389,15 +409,15 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
     this.dotMarker.setVisible(true);
   }
 
-  onMouseOver() {
+  protected onMouseOver() {
     this.displayInfowindow(true);
   }
 
-  onMouseOut() {
+  protected onMouseOut() {
     this.displayInfowindow(false);
   }
 
-  onZoomChanged() {
+  protected onZoomChanged() {
     this.drawObject();
   }
 }
