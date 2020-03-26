@@ -1,4 +1,9 @@
 # Changelog
+## 1.5.0 (20-03-26)
+### Added
+* Added prop `triggerInfowindow` to `NgxGooglemapsTrackingViewComponent`.
+### Fixed
+* CenterMarker blinking or getting lost when dragging the map.
 
 ## 1.4.0 (19-11-04)
 ### Added
