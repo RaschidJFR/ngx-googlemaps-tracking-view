@@ -22,7 +22,11 @@
   </ng-template>
 
   <div id="parent">
-    <gmtv-map [data]="objectsToTrack" [template]="infowindow" [mapOptions]="mapOptions" [showLocationButton]="true"
+    <gmtv-map [data]="objectsToTrack"
+              [triggerInfowindow]="isMobile ? 'click' : 'hover'"
+              [template]="infowindow"
+              [mapOptions]="mapOptions"
+              [showLocationButton]="true"
               #map>
       <ng-template #infowindow let-o>
         <div>

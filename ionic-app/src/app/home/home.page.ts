@@ -7,6 +7,7 @@ import * as randomColor from 'randomcolor';
 import * as parseSvg from 'parse-svg-path';
 import * as extractSvg from 'extract-svg-path';
 import * as loadSvg from 'load-svg';
+import { Platform } from '@ionic/angular';
 
 // i18IsoCountries.registerLocale(require('i18n-iso-countries/langs/en.json'));
 interface Aircraft {
@@ -53,7 +54,9 @@ export class HomePage implements AfterContentInit {
     mapTypeId: google.maps.MapTypeId.SATELLITE,
   }
 
-  constructor(private http: HttpClient, public vc: ViewContainerRef) {
+  get isMobile() { return this.platform.is('mobile'); }
+
+  constructor(private http: HttpClient, public vc: ViewContainerRef, private platform: Platform) {
     // Load svg as symbol path
     loadSvg('assets/baseline-local_airport-24px.svg', (err, svg) => {
       const paths: any[][] = parseSvg(extractSvg.parse(svg));
