@@ -1,3 +1,11 @@
+* {
+  --header-height: 90px;
+}
+
+#header {
+  height: var(--header-height);
+}
+
 #parent {
   width: 100%;
   position: relative;

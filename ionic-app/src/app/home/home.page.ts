@@ -8,8 +8,7 @@ import * as parseSvg from 'parse-svg-path';
 import * as extractSvg from 'extract-svg-path';
 import * as loadSvg from 'load-svg';
 
-i18IsoCountries.registerLocale(require('i18n-iso-countries/langs/en.json'));
-
+// i18IsoCountries.registerLocale(require('i18n-iso-countries/langs/en.json'));
 interface Aircraft {
   /** icao24 */
   0: string,
@@ -34,15 +33,15 @@ interface TrackedAircraft extends TrackedObject {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
 })
-export class AppComponent implements AfterContentInit {
-  @ViewChild(NgxGooglemapsTrackingViewComponent) mapView: NgxGooglemapsTrackingViewComponent;
-  @ViewChild('infowindowLocation') infowindowLocation: TemplateRef<any>
+export class HomePage implements AfterContentInit {
+  @ViewChild(NgxGooglemapsTrackingViewComponent, { static: true }) mapView: NgxGooglemapsTrackingViewComponent;
+  @ViewChild('infowindowLocation', { static: false }) infowindowLocation: TemplateRef<any>
 
-  objectsToTrack: TrackedObject[] = [];
+  objectsToTrack: TrackedObject[] = [1,2,3,4,5] as any;
   symbolPath = '';
 
   mapOptions: google.maps.MapOptions = {
