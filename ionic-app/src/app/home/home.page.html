@@ -8,7 +8,7 @@
       </small></p>
   </div>
   <!-- Center Pin Example -->
-  <!-- <button (click)="map.centerPin.enable(infowindowLocation, '<yourApiKey>')">Add center Pin</button>
+  <button (click)="map.centerPin.enable(infowindowLocation, '<yourApiKey>')">Add center Pin</button>
   <button (click)="map.centerPin.disable()">Remove Pin</button>
   <ng-template #infowindowLocation let-address>
     <div style="min-height: 20px; min-width: 50px;">
@@ -19,7 +19,7 @@
         <button (click)="map.centerPin.fix = !map.centerPin.fix">{{map.centerPin.fix ? 'Unfix' : 'Fix'}}</button>
       </div>
     </div>
-  </ng-template> -->
+  </ng-template>
 
   <div id="parent">
     <gmtv-map [data]="objectsToTrack" [template]="infowindow" [mapOptions]="mapOptions" [showLocationButton]="true"
