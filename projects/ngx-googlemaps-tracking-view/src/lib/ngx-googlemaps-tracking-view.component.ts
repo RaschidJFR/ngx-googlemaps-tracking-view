@@ -51,6 +51,12 @@ export class NgxGooglemapsTrackingViewComponent implements OnInit {
   @Input() template: TemplateRef<any>;
 
   /**
+   * Set this to `'hover'` to display the infowindow when hovering on the objects.
+   * Set this to `'click'` to display the infowindow when clicking on the objects.
+   */
+  @Input() triggerInfowindow: 'hover' | 'click' = 'hover';
+
+  /**
    * Array of {@link TrackedObject} to draw on map
    */
   @Input()
