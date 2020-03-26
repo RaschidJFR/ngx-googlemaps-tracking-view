@@ -1,6 +1,6 @@
 //// <reference types="@types/googlemaps" />
 import { Subject, Subscription, of, timer } from 'rxjs';
-import { TemplateRef, EventEmitter } from '@angular/core';
+import { TemplateRef, EventEmitter, ChangeDetectorRef, ViewContainerRef } from '@angular/core';
 import { tap, switchMap, debounce } from 'rxjs/operators';
 import { GoogleMapsWrapper } from '../../services/googlemaps-wrapper';
 import { HttpClient } from '@angular/common/http';
@@ -66,7 +66,8 @@ export class CenterMarker {
 
   constructor(
     private googlemapsWrapper: GoogleMapsWrapper,
-    private viewContainer,
+    private viewContainer: ViewContainerRef,
+    private cdr: ChangeDetectorRef,
     private http: HttpClient) { }
 
   /**
@@ -96,6 +97,18 @@ export class CenterMarker {
    * @param infowindowTemplate A template for rendering the infowindow on top of the marker.
    * It must have a single root element. The address string will be passed as implicit context.
    * @param apiKey GoogleMaps API key. TODO: remove the need for this param in future versions.
+   * 
+   * @example
+   * 
+   * <button (click)="map.centerPin.enable(infowindowLocation, '<yourApiKey>')">
+   *   Add center Pin
+   * </button>
+   * 
+   * <ng-template #infowindowLocation let-address>
+   *   <div style="min-height: 20px; min-width: 50px;">
+   *     {{address}}
+   *   </div>
+   * </ng-template>
    */
   enable(infowindowTemplate: TemplateRef<any>, apiKey: string) {
     this.removeFixedMarker();
@@ -118,7 +131,7 @@ export class CenterMarker {
       width:20px;
       cursor: pointer;`;
 
-    mapDiv.appendChild(this._centerMarker);
+    mapDiv.parentElement.appendChild(this._centerMarker);
     this._centerMarker.onclick = () => this.displayInfowindowOverPin();
 
     this._mapEventSubscription = new Subscription();
@@ -141,6 +154,7 @@ export class CenterMarker {
           this.address = firstResult && firstResult.formatted_address || 'desconocido';
           this.addressChanges.emit(this.address);
           this.displayInfowindowOverPin();
+          this.cdr.detectChanges();
           // });
         })
     );
@@ -174,7 +188,8 @@ export class CenterMarker {
     const offset = this.googlemapsWrapper.getMetersPerPx(markerPosition.lat()) * 36;
     const pos = google.maps.geometry.spherical.computeOffset(markerPosition, offset, 0);
 
-    this.googlemapsWrapper.openInfowindow(pos, content, INFOWINDOW_ID)
+    this.googlemapsWrapper
+      .openInfowindow(pos, content, INFOWINDOW_ID)
       .setOptions({ disableAutoPan: true });
   }
 

@@ -35,6 +35,12 @@ export class GeolocationButtonComponent {
   /**
    * If `true`, the button won't attempt to center the map on the user when clicked,
    * but will emit the event `click` instead.
+   * 
+   * @example
+   * 
+   * <gmtv-geolocation-button 
+   *   [useCustomClickFn]="true" 
+   *   (click)="myCustomFunction()"></gmtv-geolocation-button>
    */
   @Input() useCustomClickFn = false;
   /**
@@ -54,7 +60,7 @@ export class GeolocationButtonComponent {
     }
 
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.onPosition, console.error, { enableHighAccuracy: true });
+      navigator.geolocation.getCurrentPosition((position) => this.onPosition(position), console.error, { enableHighAccuracy: true });
     } else {
       console.error('No support for geolocation');
     }
