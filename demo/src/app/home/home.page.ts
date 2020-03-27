@@ -9,28 +9,28 @@ import * as extractSvg from 'extract-svg-path';
 import * as loadSvg from 'load-svg';
 import { Platform } from '@ionic/angular';
 
-// i18IsoCountries.registerLocale(require('i18n-iso-countries/langs/en.json'));
+i18IsoCountries.registerLocale(require('i18n-iso-countries/langs/en.json'));
 interface Aircraft {
   /** icao24 */
-  0: string,
+  0: string;
   /** origin_country */
-  2: string,
+  2: string;
   /** longitude */
-  5: number,
+  5: number;
   /** latitude */
-  6: number,
+  6: number;
   /** on_ground */
-  8: boolean,
+  8: boolean;
   /** true_track */
-  10: number,
+  10: number;
   /** geo_altitude */
-  13: number,
+  13: number;
 }
 
 interface TrackedAircraft extends TrackedObject {
-  altitude: number,
-  country: string,
-  onGround: boolean,
+  altitude: number;
+  country: string;
+  onGround: boolean;
 }
 
 @Component({
@@ -40,9 +40,9 @@ interface TrackedAircraft extends TrackedObject {
 })
 export class HomePage implements AfterContentInit {
   @ViewChild(NgxGooglemapsTrackingViewComponent, { static: true }) mapView: NgxGooglemapsTrackingViewComponent;
-  @ViewChild('infowindowLocation', { static: false }) infowindowLocation: TemplateRef<any>
+  @ViewChild('infowindowLocation', { static: false }) infowindowLocation: TemplateRef<any>;
 
-  objectsToTrack: TrackedObject[] = [1,2,3,4,5] as any;
+  objectsToTrack: TrackedObject[] = [1, 2, 3, 4, 5] as any;
   symbolPath = '';
 
   mapOptions: google.maps.MapOptions = {
@@ -52,7 +52,7 @@ export class HomePage implements AfterContentInit {
     },
     zoom: 6,
     mapTypeId: google.maps.MapTypeId.SATELLITE,
-  }
+  };
 
   get isMobile() { return this.platform.is('mobile'); }
 
@@ -60,7 +60,7 @@ export class HomePage implements AfterContentInit {
     // Load svg as symbol path
     loadSvg('assets/baseline-local_airport-24px.svg', (err, svg) => {
       const paths: any[][] = parseSvg(extractSvg.parse(svg));
-      const i = paths.findIndex(p => p[0] == 'z');
+      const i = paths.findIndex(p => p[0] === 'z');
       this.symbolPath = paths
         .slice(0, i - 1)
         .map(p => p.join(' ')).join(' ');
@@ -81,7 +81,7 @@ export class HomePage implements AfterContentInit {
       .subscribe((response: { states: Aircraft[] }) => {
         this.objectsToTrack = response.states &&
           response.states.map(aircraft => {
-            const found = this.objectsToTrack.find(a => a.id == aircraft[0]);
+            const found = this.objectsToTrack.find(a => a.id === aircraft[0]);
             const trkObj: TrackedAircraft = {
               altitude: aircraft[13],
               id: aircraft[0],
@@ -98,7 +98,7 @@ export class HomePage implements AfterContentInit {
               onGround: aircraft[8],
               position: new google.maps.LatLng(aircraft[6], aircraft[5]),
               // scale: 2,
-            }
+            };
             return trkObj;
           })
             .filter(a => !a.onGround)
@@ -122,7 +122,11 @@ export class HomePage implements AfterContentInit {
       strokeOpacity: 1,
       strokeWeight: 2,
       scale: 2,
-      rotation: rotation
-    }
+      rotation
+    };
+  }
+
+  openDocumentation() {
+    open('https://raschidjfr.github.io/ngx-googlemaps-tracking-view/reference/', '_blank');
   }
 }
