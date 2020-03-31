@@ -1,34 +1,26 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "preserveSymlinks": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es5",
-    "types": [
-      "node"
-    ],
+    "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
       "es2018",
       "dom"
-    ],
-    "paths": {
-      "ngx-googlemaps-tracking-view": [
-        "dist/ngx-googlemaps-tracking-view"
-      ],
-      "ngx-googlemaps-tracking-view/*": [
-        "dist/ngx-googlemaps-tracking-view/*"
-      ]
-    }
+    ]
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }
