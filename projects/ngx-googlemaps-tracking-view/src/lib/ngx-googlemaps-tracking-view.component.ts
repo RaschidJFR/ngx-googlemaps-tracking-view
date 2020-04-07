@@ -23,7 +23,8 @@ import { HttpClient } from '@angular/common/http';
   // encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class NgxGooglemapsTrackingViewComponent implements OnInit {
-  @ViewChild('map') mapDiv: ElementRef;
+  // tslint:disable-next-line: no-any
+  @ViewChild('map', { static: true } as any) mapDiv: ElementRef;
   /**
    * A marker fixed to the center of the map which emits the geo-decoded location
    * as a full address.

@@ -1,0 +1,14 @@
+* {
+  --header-height: 90px;
+}
+
+#header {
+  height: var(--header-height);
+  overflow-y: auto;
+}
+
+#parent {
+  width: 100%;
+  position: relative;
+  height: calc(100% - var(--header-height));
+}

@@ -118,12 +118,16 @@ See [Full Documentation](https://raschidjfr.github.io/ngx-googlemaps-tracking-vi
 ## Contributing
 Feel free to improve the code.
 
-* The source code for the test app `/src`.
-* You'll find the library's source in `/projects/ngx-googlemaps-tracking-view/src`.
-* Run:
-    1. `$ npm run watch` to build in watch mode,
-    2. then `$npm run link:library` to install modules,
-    3. and then run `$ ng serve` to start the test app.
+* Find the source code for the demo app [`/demo`](https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/tree/master/demo/Readme.md).
+* You'll find the library's source in [`/projects/ngx-googlemaps-tracking-view`](https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/tree/master/projects/ngx-googlemaps-tracking-view).
+* Develop:
+  1. `$ npm run watch` to build in watch mode,
+  2. then `$ npm run link:library` to install modules.
+
+  3. To launch the demo app, make sure you've installed the dependencies inside the [`/demo`](https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/tree/master/demo/Readme.md) folder (check the [readme](https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/tree/master/demo/Readme.md)) and link the module by running `$ npm link ngx-googlemaps-tracking-view` (from within  the folder).
+
+  4. run `$ npm install` and `$ npm start` inside `/demo` to start the app.
+
 * Publish:
     1. Publish package: `$npm run publish`
     2. Deploy demo and docs: `$ npm run deploy`

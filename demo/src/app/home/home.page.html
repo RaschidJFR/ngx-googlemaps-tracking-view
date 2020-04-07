@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tracking View Demo</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button size="small" fill="clear" color="primary" (click)="openDocumentation()">Documentation</ion-button>
+      <ion-button size="small" fill="outline" (click)="map.centerPin.enable(infowindowLocation, '<yourApiKey>')">Add Pin
+      </ion-button>
+      <ion-button size="small" fill="outline" (click)="map.centerPin.disable()">Remove Pin</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+
+  <div class="container text-center bg-white" id="header">
+    <p class="ion-margin-vertical">
+      This demo shows 50 real-time aircrafts flying over the location, updated every 10 seconds.
+      <br>
+      The map includes geolocation functions. Click on the top right buttons to add a pick-location pin.
+    </p>
+  </div>
+
+  <!-- Address Infowindow Template -->
+  <ng-template #infowindowLocation let-address>
+    <div style="min-height: 20px; min-width: 50px;">
+      <span *ngIf="!address">Loading...</span>
+      <div *ngIf="!!address" class="ion-text-center">
+        (add your gMaps Api Key to call geolocation service)
+        <br>
+        <ion-button size="small" (click)="map.centerPin.fix = !map.centerPin.fix">
+          {{map.centerPin.fix ? 'Move' : 'Fix Pin'}}</ion-button>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- Map Component -->
+  <div id="parent">
+    <gmtv-map [data]="objectsToTrack"
+              [triggerInfowindow]="isMobile ? 'click' : 'hover'"
+              [template]="infowindow"
+              [mapOptions]="mapOptions"
+              [showLocationButton]="true"
+              #map>
+      <ng-template #infowindow let-o>
+        <div>
+          <h3>Flight #{{o.label?.text}} <span class="flag-icon flag-icon-{{getIsoCode(o.country)?.toLowerCase()}}"
+                  [title]="o.country"></span></h3>
+          <span><strong>Altitude: </strong>{{o.altitude | number: '1.0-0'}}m</span>
+        </div>
+      </ng-template>
+    </gmtv-map>
+
+    <gmtv-geolocation-button></gmtv-geolocation-button>
+
+  </div>
+
+</ion-content>

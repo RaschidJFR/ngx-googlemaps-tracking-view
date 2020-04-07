@@ -1,0 +1,7 @@
+{
+  "name": "Tracking View",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
