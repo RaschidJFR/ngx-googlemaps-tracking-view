@@ -1,4 +1,8 @@
 # Changelog
+# 1.5.1 (20-04-07)
+### Fixed
+* Error `Cannot read property 'nativeElement' of undefined` in Angular +8.
+
 ## 1.5.0 (20-03-26)
 ### Added
 * Added prop `triggerInfowindow` to `NgxGooglemapsTrackingViewComponent`.
