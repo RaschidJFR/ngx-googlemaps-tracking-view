@@ -1,10 +1,10 @@
 {
   "name": "ngx-googlemaps-tracking-view",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0",
-    "@types/googlemaps": "latest"
+    "@types/googlemaps": "^3.39.3"
   },
   "description": "A General-purpose embedded Angular map for tracking objects in real time using [Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial).",
   "main": "karma.conf.js",
