@@ -1,0 +1,243 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>googlemaps-tracking-view-demo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">googlemaps-tracking-view-demo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="angular-google-maps-tracking-view">Angular Google Maps Tracking View</h1>
+<p>A General-purpose embedded Angular map for tracking objects in real time using <a href="https://developers.google.com/maps/documentation/javascript/tutorial">Google Maps</a>. Helpful for Uber-like applications.</p>
+<ul>
+<li><a href="https://raschidjfr.github.io/ngx-googlemaps-tracking-view">Live Demo</a></li>
+<li><a href="https://raschidjfr.github.io/ngx-googlemaps-tracking-view/reference/components/NgxGooglemapsTrackingViewComponent.html">Documentation</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/RaschidJFR/ngx-googlemaps-tracking-view/master/img/demo1.jpg" alt="Demo 1" class="img-responsive"></p>
+<p><img src="https://raw.githubusercontent.com/RaschidJFR/ngx-googlemaps-tracking-view/master/img/demo2.jpg" alt="Demo 2" class="img-responsive"></p>
+<h2 id="🌎-usage">🌎 Usage</h2>
+<div><pre class="line-numbers"><code class="language-html">&lt;!-- component.html --&gt;
+&lt;gmtv-map [data]=&quot;objectsToTrack&quot;&gt;&lt;/gmtv-map&gt;</code></pre></div><div><pre class="line-numbers"><code class="language-ts">// component.ts
+import { TrackedObject } from &#39;ngx-googlemaps-tracking-view&#39;;
+
+const objectsToTrack: TrackedObject[] = [
+  {
+    id: &#39;1&#39;,
+    color: &#39;blue&#39;,
+    heading: 45,
+    label: {text: &#39;Test object #1&#39; },
+    position: new google.maps.LatLng(19.53124, -96.91589),
+  },
+  {
+    id: &#39;2&#39;,
+    color: &#39;red&#39;,
+    heading: -30,
+    label: {text: &#39;Test object #2&#39; },
+    position: new google.maps.LatLng(19.53144, -96.91523),
+  },
+  ...
+]</code></pre></div><div><pre class="line-numbers"><code class="language-scss">// styles.scss (Recomended)
+body {
+  margin: 0;
+  height: 100vh;
+}
+</code></pre></div><h2 id="🛠-set-up">🛠 Set Up</h2>
+<ol>
+<li><p>Install package: <code>$ npm i ngx-googlemaps-tracking-view</code></p>
+</li>
+<li><p>Import the directive into your desired module (usually <code>app.module.ts</code>):</p>
+<div><pre class="line-numbers"><code class="language-ts"> //app.module.ts
+ import { NgxGooglemapsTrackingViewModule } from &#39;ngx-googlemaps-tracking-view&#39;;
+
+ &#64;NgModule({
+   imports: [
+     NgxGooglemapsTrackingViewModule,
+     ...</code></pre></div></li>
+<li><p>Get an <a href="https://developers.google.com/maps/documentation/javascript/get-api-key">Google Maps API Key</a> and add the SDK to your <code>index.html</code> (just before closing <code>&lt;head&gt;</code> tag). Note the final part <code>&amp;libraries=geometry</code>, this is needed to load the Geometry library.</p>
+<div><pre class="line-numbers"><code class="language-html"> &lt;!-- index.html --&gt;
+ &lt;head&gt;
+   ...
+   &lt;script src=&quot;https://maps.googleapis.com/maps/api/js?key=**YOUR_API_KEY**&amp;libraries=geometry&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;</code></pre></div></li>
+</ol>
+<blockquote>
+<p>See <em><a href="https://developers.google.com/maps/gmp-get-started">
+Get Started with Google Maps Platform</a></em> for more info.</p>
+</blockquote>
+<h2 id="🧩-api">🧩 API</h2>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td><a href="https://raschidjfr.github.io/ngx-googlemaps-tracking-view/reference/interfaces/TrackedObject.html"><code>TrackedObject[]</code></a></td>
+<td>Required</td>
+<td>Array of objects to draw on the map. They must implement the interface <code>TrackedObject</code>: <br><br><ul><li><code>color?: string</code> The marker&#39;s color.</li><li><code>heading: number</code> Direction measured in degrees from true north.</li><li><code>id: string</code> Unique identifier assigned to this object.</li><li><code>icon?: google.maps.Icon / google.maps.Symbol</code> A google map&#39;s icon object.</li><li><code>isOffline?: boolean</code> If <code>true</code>, the default marker (circle or triangle) will be outlined instead of solid.</li><li><code>label?: label?: google.maps.MarkerLabel</code> A google maps label object to show near the marker.</li><li><code>position: google.maps.LatLng</code> Scale for default markers. This is overwritten when <code>icon</code> is provided.</li><li><code>scale?: number</code> The marker&#39;s color.</li><li><code>speed?: number</code> If this value is not provided or is greater than 0 a triangle oriented towards<code>heading</code> will be shown as marker, otherwise, a circle (if <code>icon</code> is not set).</li></ul></td>
+</tr>
+<tr>
+<td>mapOptions</td>
+<td><a href="https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions">MapOptions</a></td>
+<td>Optional</td>
+<td>GoogleMaps initialization options.</td>
+</tr>
+<tr>
+<td>template</td>
+<td><a href="https://angular.io/api/core/TemplateRef">TemplateRef</a></td>
+<td>Optional</td>
+<td>An Angular template for rendering the infowindow. If non provided, a default infowindow template will be used.</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="https://raschidjfr.github.io/ngx-googlemaps-tracking-view/reference/components/NgxGooglemapsTrackingViewComponent.html">Full Documentation</a></p>
+<h3 id="example">Example</h3>
+<div><pre class="line-numbers"><code class="language-html">&lt;!-- component.html --&gt;
+
+&lt;div id=&quot;parent&quot; style=&quot;height: 100%; width: 100%; position:relative&quot;&gt;
+
+  &lt;!-- Add the map component --&gt;
+  &lt;gmtv-map [data]=&quot;objectsToTrack&quot; [template]=&quot;infowindow&quot; [mapOptions]=&quot;mapOptions&quot; [showLocationButton]=&quot;true&quot;&gt;
+
+    &lt;!-- (Optional) Add a custom template for the infowindow --&gt;
+    &lt;ng-template #infowindow let-o&gt;
+      &lt;div id=&quot;rootNode&quot;&gt;
+        &lt;h3&gt;{{o.label?.text}}&lt;/h3&gt;
+        &lt;p&gt;
+          &lt;strong&gt;ID:&lt;/strong&gt; {{o.id}}&lt;br&gt;
+          &lt;strong&gt;Position:&lt;/strong&gt; {{o.position?.toJSON() | json}}&lt;br&gt;
+          &lt;strong&gt;Heading:&lt;/strong&gt; {{o.heading | number:&#39;1.0-1&#39;}}°&lt;br&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/ng-template&gt;
+  &lt;/gmtv-map&gt;
+
+  &lt;!-- (Optional) Add the geo-location button **AFTER** the map --&gt;
+  &lt;gmtv-geolocation-button (locate)=&quot;onLocation()&quot;&gt;&lt;/gmtv-geolocation-button&gt;
+
+&lt;/div&gt;</code></pre></div><h2 id="contributing">Contributing</h2>
+<p>Feel free to improve the code.</p>
+<ul>
+<li><p>Find the source code for the demo app <a href="https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/tree/master/demo/Readme.md"><code>/demo</code></a>.</p>
+</li>
+<li><p>You&#39;ll find the library&#39;s source in <a href="https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/tree/master/projects/ngx-googlemaps-tracking-view"><code>/projects/ngx-googlemaps-tracking-view</code></a>.</p>
+</li>
+<li><p>Develop:</p>
+<ol>
+<li><p><code>$ npm run watch</code> to build in watch mode,</p>
+</li>
+<li><p>then <code>$ npm run link:library</code> to install modules.</p>
+</li>
+<li><p>To launch the demo app, make sure you&#39;ve installed the dependencies inside the <a href="https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/tree/master/demo/Readme.md"><code>/demo</code></a> folder (check the <a href="https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/tree/master/demo/Readme.md">readme</a>) and link the module by running <code>$ npm link ngx-googlemaps-tracking-view</code> (from within  the folder).</p>
+</li>
+<li><p>run <code>$ npm install</code> and <code>$ npm start</code> inside <code>/demo</code> to start the app.</p>
+</li>
+</ol>
+</li>
+<li><p>Publish:</p>
+<ol>
+<li>Publish package: <code>$npm run publish</code></li>
+<li>Deploy demo and docs: <code>$ npm run deploy</code></li>
+</ol>
+</li>
+</ul>
+<h2 id="credits">Credits</h2>
+<p>Raschid JF. Rafaelly</p>
+<p><a href="mailto:&#x68;&#101;&#x6c;&#108;&#111;&#x40;&#x72;&#97;&#115;&#x63;&#104;&#x69;&#100;&#x6a;&#x66;&#114;&#x2e;&#x64;&#x65;&#x76;">&#x68;&#101;&#x6c;&#108;&#111;&#x40;&#x72;&#97;&#115;&#x63;&#104;&#x69;&#100;&#x6a;&#x66;&#114;&#x2e;&#x64;&#x65;&#x76;</a></p>
+<p><a href="https://raschidjfr.dev">https://raschidjfr.dev</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
