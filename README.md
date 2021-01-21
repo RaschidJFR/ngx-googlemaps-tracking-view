@@ -2,6 +2,8 @@
 
 A General-purpose embedded Angular map for tracking objects in real time using [Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial). Helpful for Uber-like applications.
 
+> For **Angular < 9.0** use version [@ng7](https://www.npmjs.com/package/ngx-googlemaps-tracking-view/v/1.5.0) of this package.
+
 * [Live Demo](https://raschidjfr.github.io/ngx-googlemaps-tracking-view)
 * [Documentation](https://raschidjfr.github.io/ngx-googlemaps-tracking-view/reference/components/NgxGooglemapsTrackingViewComponent.html)
 
@@ -13,7 +15,9 @@ A General-purpose embedded Angular map for tracking objects in real time using [
 
 ```html
 <!-- component.html -->
-<gmtv-map [data]="objectsToTrack"></gmtv-map>
+<div style="height: 100%;">
+  <gmtv-map [data]="objectsToTrack"></gmtv-map>
+</div>
 ```
 
 ```ts
@@ -25,27 +29,17 @@ const objectsToTrack: TrackedObject[] = [
     id: '1',
     color: 'blue',
     heading: 45,
-    label: {text: 'Test object #1' },
+    label: { text: 'Test object #1' },
     position: new google.maps.LatLng(19.53124, -96.91589),
   },
   {
     id: '2',
     color: 'red',
     heading: -30,
-    label: {text: 'Test object #2' },
+    label: { text: 'Test object #2' },
     position: new google.maps.LatLng(19.53144, -96.91523),
   },
-  ...
-]
-```
-
-```scss
-// styles.scss (Recomended)
-body {
-  margin: 0;
-  height: 100vh;
-}
-
+];
 ```
 
 ## 🛠 Set Up
@@ -116,21 +110,7 @@ See [Full Documentation](https://raschidjfr.github.io/ngx-googlemaps-tracking-vi
 ```
 
 ## Contributing
-Feel free to improve the code.
-
-* Find the source code for the demo app [`/demo`](https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/tree/master/demo/Readme.md).
-* You'll find the library's source in [`/projects/ngx-googlemaps-tracking-view`](https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/tree/master/projects/ngx-googlemaps-tracking-view).
-* Develop:
-  1. `$ npm run watch` to build in watch mode,
-  2. then `$ npm run link:library` to install modules.
-
-  3. To launch the demo app, make sure you've installed the dependencies inside the [`/demo`](https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/tree/master/demo/Readme.md) folder (check the [readme](https://github.com/RaschidJFR/ngx-googlemaps-tracking-view/tree/master/demo/Readme.md)) and link the module by running `$ npm link ngx-googlemaps-tracking-view` (from within  the folder).
-
-  4. run `$ npm install` and `$ npm start` inside `/demo` to start the app.
-
-* Publish:
-    1. Publish package: `$npm run publish`
-    2. Deploy demo and docs: `$ npm run deploy`
+Feel free to improve the code: [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Credits
 Raschid JF. Rafaelly
