@@ -31,10 +31,10 @@ import { GoogleMapsWrapper } from '../../services/googlemaps-wrapper';
               </div>`
 })
 export class InfowindowComponent implements AfterContentInit, OnDestroy {
-  @ViewChild('root') root: ElementRef;
+  @ViewChild('root', { static: true }) root: ElementRef;
   // tslint:disable-next-line: no-any
-  @ViewChild('defaultTemplate') defaultTemplateRef: TemplateRef<any>;
-  @ViewChild('vc', { read: ViewContainerRef }) vc: ViewContainerRef;
+  @ViewChild('defaultTemplate', { static: true }) defaultTemplateRef: TemplateRef<any>;
+  @ViewChild('vc', { static: true, read: ViewContainerRef }) vc: ViewContainerRef;
   /** When infowindow has closed */
   @Output() closed = new EventEmitter<void>();
   /** Triggered on clicking on the X button */
