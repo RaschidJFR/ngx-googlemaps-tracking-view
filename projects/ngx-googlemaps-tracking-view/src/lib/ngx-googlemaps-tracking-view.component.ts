@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef, Input, TemplateRef, ViewConta
 import { TrackedObject } from './models/tracked-object';
 import { GoogleMapsWrapper } from './services/googlemaps-wrapper';
 import { CenterMarker } from './components/center-marker/center-marker';
-import { HttpClient } from '@angular/common/http';
 
 /**
  * Creates an embeded google map with polygons representing the tracked objects.
@@ -29,7 +28,7 @@ export class NgxGooglemapsTrackingViewComponent implements OnInit {
    * as a full address.
    * @see {@link CenterMarker}
    */
-  centerPin: CenterMarker = new CenterMarker(this.googlemapsWrapper, this.vc, this.cdr, this.http);
+  centerPin: CenterMarker = new CenterMarker(this.googlemapsWrapper, this.vc, this.cdr);
   protected _data: TrackedObject[] = [];
 
   /**
@@ -71,7 +70,6 @@ export class NgxGooglemapsTrackingViewComponent implements OnInit {
   constructor(
     protected googlemapsWrapper: GoogleMapsWrapper,
     protected vc: ViewContainerRef,
-    private http: HttpClient,
     protected cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
