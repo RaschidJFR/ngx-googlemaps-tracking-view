@@ -1,9 +1,8 @@
-//// <reference types="@types/googlemaps" />
-import { Subject, Subscription, of, timer } from 'rxjs';
+/// <reference types="@types/googlemaps" />
+import { Subject, Subscription, of, timer, bindCallback } from 'rxjs';
 import { TemplateRef, EventEmitter, ChangeDetectorRef, ViewContainerRef } from '@angular/core';
-import { tap, switchMap, debounce } from 'rxjs/operators';
+import { tap, switchMap, debounce, map } from 'rxjs/operators';
 import { GoogleMapsWrapper } from '../../services/googlemaps-wrapper';
-import { HttpClient } from '@angular/common/http';
 
 let API_KEY = '';
 const INFOWINDOW_ID = 'center-pin';
@@ -67,8 +66,7 @@ export class CenterMarker {
   constructor(
     private googlemapsWrapper: GoogleMapsWrapper,
     private viewContainer: ViewContainerRef,
-    private cdr: ChangeDetectorRef,
-    private http: HttpClient) { }
+    private cdr: ChangeDetectorRef) { }
 
   /**
    * Fix the pin to its current position on map instead of floating over it.
@@ -89,21 +87,18 @@ export class CenterMarker {
     }
   }
 
-  /** @ignore */
-  private get REVERSE_GEOCODING_URL() { return `https://maps.googleapis.com/maps/api/geocode/json?key=${API_KEY}&latlng=`; }
-
   /**
    * Activates the pin to show at the map's center
    * @param infowindowTemplate A template for rendering the infowindow on top of the marker.
    * It must have a single root element. The address string will be passed as implicit context.
    * @param apiKey GoogleMaps API key. TODO: remove the need for this param in future versions.
-   * 
+   *
    * @example
-   * 
+   *
    * <button (click)="map.centerPin.enable(infowindowLocation, '<yourApiKey>')">
    *   Add center Pin
    * </button>
-   * 
+   *
    * <ng-template #infowindowLocation let-address>
    *   <div style="min-height: 20px; min-width: 50px;">
    *     {{address}}
@@ -144,18 +139,21 @@ export class CenterMarker {
           }),
           switchMap(latLng => of(latLng)),
           debounce(() => timer(1000)),
-          switchMap(latLng => this.http.get(`${this.REVERSE_GEOCODING_URL}${latLng.toUrlValue()}`) as any)
+          switchMap((location) => {
+            const geoCoder = new google.maps.Geocoder();
+            const geocodeFn$ = bindCallback(geoCoder.geocode);
+            return geocodeFn$({ location });
+          }),
         )
-        // .subscribe((latLng) => {
-        .subscribe(response => {
-          // this._geocoder.geocode({ location: latLng }, (response) => {
-          const results = response[0] || (response as any).results;
-          const firstResult: google.maps.GeocoderResult = results[0] || results;
+        .subscribe(([results, status]) => {
+          if (status !== google.maps.GeocoderStatus.OK) {
+            console.error(status);
+          }
+          const firstResult: google.maps.GeocoderResult = results && results[0];
           this.address = firstResult && firstResult.formatted_address || 'desconocido';
           this.addressChanges.emit(this.address);
           this.displayInfowindowOverPin();
           this.cdr.detectChanges();
-          // });
         })
     );
 

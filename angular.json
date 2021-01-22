@@ -39,5 +39,8 @@
       }
     }
   },
-  "defaultProject": "ngx-googlemaps-tracking-view"
+  "defaultProject": "ngx-googlemaps-tracking-view",
+  "cli": {
+    "analytics": false
+  }
 }

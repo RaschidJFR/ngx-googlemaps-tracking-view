@@ -66,7 +66,7 @@ export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDe
    */
   @Input() triggerInfowindow: 'hover' | 'click' = 'hover';
 
-  @ViewChild(InfowindowComponent) infowindow: InfowindowComponent;
+  @ViewChild(InfowindowComponent, { static: true }) infowindow: InfowindowComponent;
   constructor(private googleMaps: GoogleMapsWrapper) { }
 
   async ngAfterContentInit() {
