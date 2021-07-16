@@ -1,21 +1,27 @@
-//// <reference types="@types/googlemaps" />
+/// <reference types="@types/googlemaps" />
 import { Injectable, EventEmitter } from '@angular/core';
 
 /**
- * Helper class for handling common GoogleMaps SDK functions
+ * Helper service for handling common GoogleMaps SDK functions
  */
 @Injectable()
 export class GoogleMapsWrapper {
 
   protected _infowindows: { [id: string]: google.maps.InfoWindow } = { default: null };
-  protected _map: google.maps.Map;
-  protected markers: google.maps.Marker[] = [];
-  protected polylines: google.maps.Polyline[] = [];
-  protected polygons: google.maps.Polygon[] = [];
   private _isReady = false;
   private _ready: Promise<void>;
   // tslint:disable-next-line: no-any
   private resolver: { resolve: () => void, reject: (err: any) => void };
+
+  /** Current map instance */
+  _map: google.maps.Map;
+  /** Current array of polylines */
+  _polylines: google.maps.Polyline[] = [];
+  /** Current array of polygons */
+  _polygons: google.maps.Polygon[] = [];
+
+  /** Current marker array */
+  markers: google.maps.Marker[] = [];
 
   /** If `true` the infowindows will close on clicking on any point on the map */
   closeInfowindowOnClick = true;
@@ -106,10 +112,10 @@ export class GoogleMapsWrapper {
   }
 
   /**
-	 * Formula taken from:
-	 * [What ratio scales do Google Maps zoom levels correspond to?
+   * Formula taken from:
+   * [What ratio scales do Google Maps zoom levels correspond to?
    * ](https://gis.stackexchange.com/questions/7430/what-ratio-scales-do-google-maps-zoom-levels-correspond-to)
-	 */
+   */
   getMetersPerPx(latitude: number) {
     if (!latitude || !this.map) return 0;
     const zoom = this.map.getZoom();
@@ -117,30 +123,31 @@ export class GoogleMapsWrapper {
   }
 
   /**
-	 * Subscribe to map event
-	 */
+   * Subscribe to map event
+   */
   // tslint:disable-next-line: no-any
   subscribe(eventName: string, callback: (event: any) => void) {
     this.map.addListener(eventName, callback);
   }
 
   /**
-	 * Unsubscribe from map event
-	 */
+   * Unsubscribe from map event
+   */
   unsubscribe(eventName: string) {
     google.maps.event.clearListeners(this.map, eventName);
   }
 
   /**
-	 * Unsubscribe from all map events
-	 */
+   * Unsubscribe from all map events
+   */
   unsubcribeAll() {
     google.maps.event.clearInstanceListeners(this.map);
   }
 
   /**
-	 * Add a marker and show it on the map
-	 */
+   * Add a marker and show it on the map.
+   * If the marker has already been added, this function will have no effect.
+   */
   addMarker(params: google.maps.MarkerOptions | google.maps.Marker) {
     let marker: google.maps.Marker;
 
@@ -151,8 +158,14 @@ export class GoogleMapsWrapper {
       marker = params;
       marker.setMap(this.map);
     }
-    this.markers.push(marker);
+    if (!this.markers.includes(marker)) {
+      this.markers.push(marker);
+    }
     return marker;
+  }
+
+  removeMarker(marker: google.maps.Marker) {
+    return this.removeObject(marker, this.markers);
   }
 
   addPolyline(params: google.maps.PolylineOptions | google.maps.Polyline) {
@@ -166,8 +179,14 @@ export class GoogleMapsWrapper {
       line.setMap(this.map);
     }
 
-    this.polylines.push(line);
+    if (!this._polylines.includes(line)) {
+      this._polylines.push(line);
+    }
     return line;
+  }
+
+  removePolyline(line: google.maps.Polyline) {
+    return this.removeObject(line, this._polylines);
   }
 
   addPolygone(params: google.maps.PolygonOptions | google.maps.Polygon) {
@@ -181,8 +200,14 @@ export class GoogleMapsWrapper {
       polygon.setMap(this.map);
     }
 
-    this.polygons.push(polygon);
+    if (!this._polygons.includes(polygon)) {
+      this._polygons.push(polygon);
+    }
     return polygon;
+  }
+
+  removePolygon(polygon: google.maps.Polygon) {
+    return this.removeObject(polygon, this._polygons);
   }
 
   clearMarkers() {
@@ -193,22 +218,22 @@ export class GoogleMapsWrapper {
   }
 
   clearPolylines() {
-    this.polylines.forEach(l => {
+    this._polylines.forEach(l => {
       l.setMap(null);
     });
-    this.polylines = [];
+    this._polylines = [];
   }
 
   clearPolygones() {
-    this.polygons.forEach(l => {
+    this._polygons.forEach(l => {
       l.setMap(null);
     });
-    this.polygons = [];
+    this._polygons = [];
   }
 
   /**
-	 * Removes current markers an copies all the markers of an array into the map
-	 */
+   * Removes current markers an copies all the markers of an array into the map
+   */
   setMarkers(array: google.maps.Marker[]) {
     this.clearMarkers();
     array.forEach(m => {
@@ -280,6 +305,17 @@ export class GoogleMapsWrapper {
       infowindow.set('map', null);
       google.maps.event.clearInstanceListeners(infowindow);
       delete this._infowindows[id];
+    }
+  }
+
+  protected removeObject<T extends { setMap: (map) => any }>(object: T, array: T[]) { // tslint:disable-line:no-any
+    const i = array.indexOf(object);
+    if (i > -1) {
+      array.splice(i, 1);
+      object.setMap(null);
+      return true;
+    } else {
+      return false;
     }
   }
 }
