@@ -1,19 +1,20 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["stencil-ion-progress-bar-md-entry-js"],{
+"use strict";
+(self["webpackChunktracking_view"] = self["webpackChunktracking_view"] || []).push([["stencil-ion-progress-bar-md-entry-js"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/ion-progress-bar-md.entry.js":
+/***/ 44009:
 /*!************************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/ion-progress-bar-md.entry.js ***!
   \************************************************************************/
-/*! exports provided: ion_progress_bar */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_progress_bar", function() { return ProgressBar; });
-/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ "./node_modules/@ionic/core/dist/esm/index-2cd7e630.js");
-/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-a175fa73.js");
-/* harmony import */ var _helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-d8b49b57.js */ "./node_modules/@ionic/core/dist/esm/helpers-d8b49b57.js");
-/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ion_progress_bar": function() { return /* binding */ ProgressBar; }
+/* harmony export */ });
+/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ 14007);
+/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ 77362);
+/* harmony import */ var _helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-d8b49b57.js */ 36173);
+/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ 39551);
 
 
 
@@ -25,7 +26,7 @@ const progressBarMdCss = ":host{--background:rgba(var(--ion-color-primary-rgb, 5
 
 const ProgressBar = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         /**
          * The state of the progress bar, based on if the time the process takes is known or not.
          * Default options are: `"determinate"` (no animation), `"indeterminate"` (animate from left to right).
@@ -49,26 +50,26 @@ const ProgressBar = class {
     }
     render() {
         const { color, type, reversed, value, buffer } = this;
-        const paused = _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('_testing');
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "progressbar", "aria-valuenow": type === 'determinate' ? value : null, "aria-valuemin": "0", "aria-valuemax": "1", class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["c"])(color)), { [mode]: true, [`progress-bar-${type}`]: true, 'progress-paused': paused, 'progress-bar-reversed': document.dir === 'rtl' ? !reversed : reversed }) }, type === 'indeterminate'
+        const paused = _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.c.getBoolean('_testing');
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { role: "progressbar", "aria-valuenow": type === 'determinate' ? value : null, "aria-valuemin": "0", "aria-valuemax": "1", class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__.c)(color)), { [mode]: true, [`progress-bar-${type}`]: true, 'progress-paused': paused, 'progress-bar-reversed': document.dir === 'rtl' ? !reversed : reversed }) }, type === 'indeterminate'
             ? renderIndeterminate()
             : renderProgress(value, buffer)));
     }
 };
 const renderIndeterminate = () => {
     return [
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "indeterminate-bar-primary" }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", { class: "progress-indeterminate" })),
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "indeterminate-bar-secondary" }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", { class: "progress-indeterminate" }))
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "indeterminate-bar-primary" }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("span", { class: "progress-indeterminate" })),
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "indeterminate-bar-secondary" }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("span", { class: "progress-indeterminate" }))
     ];
 };
 const renderProgress = (value, buffer) => {
-    const finalValue = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, value, 1);
-    const finalBuffer = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, buffer, 1);
+    const finalValue = (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.c)(0, value, 1);
+    const finalBuffer = (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.c)(0, buffer, 1);
     return [
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "progress", style: { transform: `scaleX(${finalValue})` } }),
-        finalBuffer !== 1 && Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "buffer-circles" }),
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "progress-buffer-bar", style: { transform: `scaleX(${finalBuffer})` } }),
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "progress", style: { transform: `scaleX(${finalValue})` } }),
+        finalBuffer !== 1 && (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "buffer-circles" }),
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "progress-buffer-bar", style: { transform: `scaleX(${finalBuffer})` } }),
     ];
 };
 ProgressBar.style = {

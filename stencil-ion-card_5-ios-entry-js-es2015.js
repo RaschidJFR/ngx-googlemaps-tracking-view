@@ -1,22 +1,23 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["stencil-ion-card_5-ios-entry-js"],{
+"use strict";
+(self["webpackChunktracking_view"] = self["webpackChunktracking_view"] || []).push([["stencil-ion-card_5-ios-entry-js"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/ion-card_5-ios.entry.js":
+/***/ 494:
 /*!*******************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/ion-card_5-ios.entry.js ***!
   \*******************************************************************/
-/*! exports provided: ion_card, ion_card_content, ion_card_header, ion_card_subtitle, ion_card_title */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_card", function() { return Card; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_card_content", function() { return CardContent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_card_header", function() { return CardHeader; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_card_subtitle", function() { return CardSubtitle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_card_title", function() { return CardTitle; });
-/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ "./node_modules/@ionic/core/dist/esm/index-2cd7e630.js");
-/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-a175fa73.js");
-/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ion_card": function() { return /* binding */ Card; },
+/* harmony export */   "ion_card_content": function() { return /* binding */ CardContent; },
+/* harmony export */   "ion_card_header": function() { return /* binding */ CardHeader; },
+/* harmony export */   "ion_card_subtitle": function() { return /* binding */ CardSubtitle; },
+/* harmony export */   "ion_card_title": function() { return /* binding */ CardTitle; }
+/* harmony export */ });
+/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ 14007);
+/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ 77362);
+/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ 39551);
 
 
 
@@ -27,7 +28,7 @@ const cardMdCss = ":host{--ion-safe-area-left:0px;--ion-safe-area-right:0px;-moz
 
 const Card = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         /**
          * If `true`, a button tag will be rendered and the card will be tappable.
          */
@@ -53,7 +54,7 @@ const Card = class {
         const clickable = this.isClickable();
         if (!clickable) {
             return [
-                Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)
+                (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null)
             ];
         }
         const { href, routerDirection } = this;
@@ -66,11 +67,11 @@ const Card = class {
                 rel: this.rel,
                 target: this.target
             };
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(TagType, Object.assign({}, attrs, { class: "card-native", disabled: this.disabled, onClick: (ev) => Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["o"])(href, ev, routerDirection) }), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null), clickable && mode === 'md' && Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", null)));
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(TagType, Object.assign({}, attrs, { class: "card-native", disabled: this.disabled, onClick: (ev) => (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.o)(href, ev, routerDirection) }), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null), clickable && mode === 'md' && (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("ion-ripple-effect", null)));
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: Object.assign(Object.assign({ [mode]: true }, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), { 'card-disabled': this.disabled, 'ion-activatable': this.isClickable() }) }, this.renderCard(mode)));
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: Object.assign(Object.assign({ [mode]: true }, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.c)(this.color)), { 'card-disabled': this.disabled, 'ion-activatable': this.isClickable() }) }, this.renderCard(mode)));
     }
 };
 Card.style = {
@@ -84,11 +85,11 @@ const cardContentMdCss = "ion-card-content{display:block;position:relative}.card
 
 const CardContent = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: {
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: {
                 [mode]: true,
                 // Used internally for styling
                 [`card-content-${mode}`]: true
@@ -106,7 +107,7 @@ const cardHeaderMdCss = ":host{--background:transparent;--color:inherit;display:
 
 const CardHeader = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         /**
          * If `true`, the card header will be translucent.
          * Only applies when the mode is `"ios"` and the device supports
@@ -115,8 +116,8 @@ const CardHeader = class {
         this.translucent = false;
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), { 'card-header-translucent': this.translucent, 'ion-inherit-color': true, [mode]: true }) }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.c)(this.color)), { 'card-header-translucent': this.translucent, 'ion-inherit-color': true, [mode]: true }) }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null)));
     }
 };
 CardHeader.style = {
@@ -130,11 +131,11 @@ const cardSubtitleMdCss = ":host{display:block;position:relative;color:var(--col
 
 const CardSubtitle = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "heading", "aria-level": "3", class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), { 'ion-inherit-color': true, [mode]: true }) }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { role: "heading", "aria-level": "3", class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.c)(this.color)), { 'ion-inherit-color': true, [mode]: true }) }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null)));
     }
 };
 CardSubtitle.style = {
@@ -148,11 +149,11 @@ const cardTitleMdCss = ":host{display:block;position:relative;color:var(--color)
 
 const CardTitle = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "heading", "aria-level": "2", class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), { 'ion-inherit-color': true, [mode]: true }) }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { role: "heading", "aria-level": "2", class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.c)(this.color)), { 'ion-inherit-color': true, [mode]: true }) }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null)));
     }
 };
 CardTitle.style = {

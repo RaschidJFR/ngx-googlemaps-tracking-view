@@ -1,18 +1,19 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["stencil-ion-back-button-md-entry-js"],{
+"use strict";
+(self["webpackChunktracking_view"] = self["webpackChunktracking_view"] || []).push([["stencil-ion-back-button-md-entry-js"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/ion-back-button-md.entry.js":
+/***/ 78655:
 /*!***********************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/ion-back-button-md.entry.js ***!
   \***********************************************************************/
-/*! exports provided: ion_back_button */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_back_button", function() { return BackButton; });
-/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ "./node_modules/@ionic/core/dist/esm/index-2cd7e630.js");
-/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-a175fa73.js");
-/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ion_back_button": function() { return /* binding */ BackButton; }
+/* harmony export */ });
+/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ 14007);
+/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ 77362);
+/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ 39551);
 
 
 
@@ -23,7 +24,7 @@ const backButtonMdCss = ":host{--background:transparent;--color-focused:currentC
 
 const BackButton = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         /**
          * If `true`, the user cannot interact with the button.
          */
@@ -38,7 +39,7 @@ const BackButton = class {
             if (nav && await nav.canGoBack()) {
                 return nav.pop({ skipIfBusy: true });
             }
-            return Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["o"])(this.defaultHref, ev, 'back');
+            return (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.o)(this.defaultHref, ev, 'back');
         };
     }
     get backButtonIcon() {
@@ -47,16 +48,16 @@ const BackButton = class {
             // icon is set on the component or by the config
             return icon;
         }
-        if (Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this) === 'ios') {
+        if ((0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this) === 'ios') {
             // default ios back button icon
-            return _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('backButtonIcon', 'chevron-back');
+            return _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.c.get('backButtonIcon', 'chevron-back');
         }
         // default md back button icon
-        return _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('backButtonIcon', 'arrow-back-sharp');
+        return _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.c.get('backButtonIcon', 'arrow-back-sharp');
     }
     get backButtonText() {
-        const defaultBackButtonText = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this) === 'ios' ? 'Back' : null;
-        return this.text != null ? this.text : _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('backButtonText', defaultBackButtonText);
+        const defaultBackButtonText = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this) === 'ios' ? 'Back' : null;
+        return this.text != null ? this.text : _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.c.get('backButtonText', defaultBackButtonText);
     }
     get hasIconOnly() {
         return this.backButtonIcon && !this.backButtonText;
@@ -72,10 +73,10 @@ const BackButton = class {
     render() {
         const { color, defaultHref, disabled, type, hasIconOnly, backButtonIcon, backButtonText } = this;
         const showBackButton = defaultHref !== undefined;
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { onClick: this.onClick, class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["c"])(color)), { [mode]: true, 'button': true, 'back-button-disabled': disabled, 'back-button-has-icon-only': hasIconOnly, 'in-toolbar': Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["h"])('ion-toolbar', this.el), 'in-toolbar-color': Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["h"])('ion-toolbar[color]', this.el), 'ion-activatable': true, 'ion-focusable': true, 'show-back-button': showBackButton }) }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("button", { type: type, disabled: disabled, class: "button-native", part: "button" }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", { class: "button-inner" }, backButtonIcon && Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-icon", { icon: backButtonIcon, lazy: false, part: "icon" }), backButtonText && Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", { class: "button-text", part: "text" }, backButtonText)), mode === 'md' && Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", { type: this.rippleType }))));
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { onClick: this.onClick, class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.c)(color)), { [mode]: true, 'button': true, 'back-button-disabled': disabled, 'back-button-has-icon-only': hasIconOnly, 'in-toolbar': (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.h)('ion-toolbar', this.el), 'in-toolbar-color': (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.h)('ion-toolbar[color]', this.el), 'ion-activatable': true, 'ion-focusable': true, 'show-back-button': showBackButton }) }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("button", { type: type, disabled: disabled, class: "button-native", part: "button" }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("span", { class: "button-inner" }, backButtonIcon && (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("ion-icon", { icon: backButtonIcon, lazy: false, part: "icon" }), backButtonText && (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("span", { class: "button-text", part: "text" }, backButtonText)), mode === 'md' && (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("ion-ripple-effect", { type: this.rippleType }))));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
 };
 BackButton.style = {
     /*STENCIL:MODE:ios*/ ios: backButtonIosCss,

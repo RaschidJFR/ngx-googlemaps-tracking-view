@@ -1,16 +1,17 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["stencil-ion-virtual-scroll-entry-js"],{
+"use strict";
+(self["webpackChunktracking_view"] = self["webpackChunktracking_view"] || []).push([["stencil-ion-virtual-scroll-entry-js"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/ion-virtual-scroll.entry.js":
+/***/ 84606:
 /*!***********************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/ion-virtual-scroll.entry.js ***!
   \***********************************************************************/
-/*! exports provided: ion_virtual_scroll */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_virtual_scroll", function() { return VirtualScroll; });
-/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ "./node_modules/@ionic/core/dist/esm/index-2cd7e630.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ion_virtual_scroll": function() { return /* binding */ VirtualScroll; }
+/* harmony export */ });
+/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ 14007);
 
 
 const CELL_TYPE_ITEM = 'item';
@@ -268,7 +269,7 @@ const virtualScrollCss = "ion-virtual-scroll{display:block;position:relative;wid
 
 const VirtualScroll = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         this.range = { offset: 0, length: 0 };
         this.viewportHeight = 0;
         this.cells = [];
@@ -393,8 +394,8 @@ const VirtualScroll = class {
             this.timerUpdate = undefined;
         }
         // schedule DOM operations into the stencil queue
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["f"])(this.readVS.bind(this));
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["w"])(this.writeVS.bind(this));
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.f)(this.readVS.bind(this));
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.w)(this.writeVS.bind(this));
     }
     readVS() {
         const { contentEl, scrollEl, el } = this;
@@ -436,7 +437,7 @@ const VirtualScroll = class {
             this.domRender(this.virtualDom);
         }
         else if (this.renderItem) {
-            Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this);
+            (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.i)(this);
         }
     }
     updateCellHeight(cell, node) {
@@ -524,11 +525,11 @@ const VirtualScroll = class {
         }
     }
     render() {
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { style: {
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { style: {
                 height: `${this.totalHeight}px`
-            } }, this.renderItem && (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(VirtualProxy, { dom: this.virtualDom }, this.virtualDom.map(node => this.renderVirtualNode(node))))));
+            } }, this.renderItem && ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(VirtualProxy, { dom: this.virtualDom }, this.virtualDom.map(node => this.renderVirtualNode(node))))));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
     static get watchers() { return {
         "itemHeight": ["itemsChanged"],
         "headerHeight": ["itemsChanged"],

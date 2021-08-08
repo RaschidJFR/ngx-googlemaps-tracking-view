@@ -1,20 +1,21 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["stencil-ion-segment_2-md-entry-js"],{
+"use strict";
+(self["webpackChunktracking_view"] = self["webpackChunktracking_view"] || []).push([["stencil-ion-segment_2-md-entry-js"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/ion-segment_2-md.entry.js":
+/***/ 30566:
 /*!*********************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/ion-segment_2-md.entry.js ***!
   \*********************************************************************/
-/*! exports provided: ion_segment, ion_segment_button */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_segment", function() { return Segment; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_segment_button", function() { return SegmentButton; });
-/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ "./node_modules/@ionic/core/dist/esm/index-2cd7e630.js");
-/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-a175fa73.js");
-/* harmony import */ var _helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-d8b49b57.js */ "./node_modules/@ionic/core/dist/esm/helpers-d8b49b57.js");
-/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ion_segment": function() { return /* binding */ Segment; },
+/* harmony export */   "ion_segment_button": function() { return /* binding */ SegmentButton; }
+/* harmony export */ });
+/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ 14007);
+/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ 77362);
+/* harmony import */ var _helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-d8b49b57.js */ 36173);
+/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ 39551);
 
 
 
@@ -26,7 +27,7 @@ const segmentMdCss = ":host{--ripple-color:currentColor;-moz-osx-font-smoothing:
 
 const Segment = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         this.didInit = false;
         this.activated = false;
         /**
@@ -48,9 +49,9 @@ const Segment = class {
             }
             this.checked = current;
         };
-        this.ionChange = Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionChange", 7);
-        this.ionSelect = Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionSelect", 7);
-        this.ionStyle = Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionStyle", 7);
+        this.ionChange = (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.d)(this, "ionChange", 7);
+        this.ionSelect = (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.d)(this, "ionSelect", 7);
+        this.ionStyle = (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.d)(this, "ionStyle", 7);
     }
     valueChanged(value, oldValue) {
         this.ionSelect.emit({ value });
@@ -83,7 +84,7 @@ const Segment = class {
     }
     async componentDidLoad() {
         this.setCheckedClasses();
-        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-e44ebcc6.js */ "./node_modules/@ionic/core/dist/esm/index-e44ebcc6.js"))).createGesture({
+        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(__webpack_require__, /*! ./index-e44ebcc6.js */ 23719))).createGesture({
             el: this.el,
             gestureName: 'segment',
             gesturePriority: 100,
@@ -128,7 +129,7 @@ const Segment = class {
      * and where the cursor ended.
      */
     addRipple(detail) {
-        const useRippleEffect = _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('animated', true) && _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('rippleEffect', true);
+        const useRippleEffect = _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.c.getBoolean('animated', true) && _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.c.getBoolean('rippleEffect', true);
         if (!useRippleEffect) {
             return;
         }
@@ -139,7 +140,7 @@ const Segment = class {
         if (!ripple) {
             return;
         }
-        const { x, y } = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["p"])(detail.event);
+        const { x, y } = (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.p)(detail.event);
         ripple.addRipple(x, y).then(remove => remove());
     }
     /*
@@ -194,7 +195,7 @@ const Segment = class {
         // Scale the indicator width to match the previous indicator width
         // and translate it on top of the previous indicator
         const transform = `translate3d(${xPosition}px, 0, 0) scaleX(${widthDelta})`;
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.w)(() => {
             // Remove the transition before positioning on top of the previous indicator
             currentIndicator.classList.remove('segment-button-indicator-animated');
             currentIndicator.style.setProperty('transform', transform);
@@ -296,10 +297,10 @@ const Segment = class {
         });
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { onClick: this.onClick, class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["c"])(this.color)), { [mode]: true, 'in-toolbar': Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-toolbar', this.el), 'in-toolbar-color': Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-toolbar[color]', this.el), 'segment-activated': this.activated, 'segment-disabled': this.disabled, 'segment-scrollable': this.scrollable }) }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { onClick: this.onClick, class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__.c)(this.color)), { [mode]: true, 'in-toolbar': (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__.h)('ion-toolbar', this.el), 'in-toolbar-color': (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__.h)('ion-toolbar[color]', this.el), 'segment-activated': this.activated, 'segment-disabled': this.disabled, 'segment-scrollable': this.scrollable }) }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null)));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
     static get watchers() { return {
         "value": ["valueChanged"],
         "disabled": ["disabledChanged"]
@@ -317,7 +318,7 @@ const segmentButtonMdCss = ":host{--color:initial;--color-hover:var(--color);--c
 let ids = 0;
 const SegmentButton = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         this.segmentEl = null;
         this.checked = false;
         /**
@@ -364,13 +365,13 @@ const SegmentButton = class {
     }
     render() {
         const { checked, type, disabled, hasIcon, hasLabel, layout } = this;
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { "aria-disabled": disabled ? 'true' : null, class: {
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { "aria-disabled": disabled ? 'true' : null, class: {
                 [mode]: true,
-                'in-toolbar': Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-toolbar', this.el),
-                'in-toolbar-color': Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-toolbar[color]', this.el),
-                'in-segment': Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-segment', this.el),
-                'in-segment-color': Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-segment[color]', this.el),
+                'in-toolbar': (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__.h)('ion-toolbar', this.el),
+                'in-toolbar-color': (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__.h)('ion-toolbar[color]', this.el),
+                'in-segment': (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__.h)('ion-segment', this.el),
+                'in-segment-color': (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__.h)('ion-segment[color]', this.el),
                 'segment-button-has-label': hasLabel,
                 'segment-button-has-icon': hasIcon,
                 'segment-button-has-label-only': hasLabel && !hasIcon,
@@ -381,12 +382,12 @@ const SegmentButton = class {
                 'ion-activatable': true,
                 'ion-activatable-instant': true,
                 'ion-focusable': true,
-            } }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("button", { type: type, "aria-pressed": checked ? 'true' : null, class: "button-native", disabled: disabled }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", { class: "button-inner" }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)), mode === 'md' && Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", null)), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { part: "indicator", class: {
+            } }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("button", { type: type, "aria-pressed": checked ? 'true' : null, class: "button-native", disabled: disabled }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("span", { class: "button-inner" }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null)), mode === 'md' && (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("ion-ripple-effect", null)), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { part: "indicator", class: {
                 'segment-button-indicator': true,
                 'segment-button-indicator-animated': true
-            } }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { part: "indicator-background", class: "segment-button-indicator-background" }))));
+            } }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { part: "indicator-background", class: "segment-button-indicator-background" }))));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
 };
 SegmentButton.style = {
     /*STENCIL:MODE:ios*/ ios: segmentButtonIosCss,

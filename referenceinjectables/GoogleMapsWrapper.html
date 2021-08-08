@@ -1,0 +1,1682 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>googlemaps-tracking-view-demo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">googlemaps-tracking-view-demo documentation</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">googlemaps-tracking-view-demo documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/NgxGooglemapsTrackingViewModule.html" >NgxGooglemapsTrackingViewModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/GeolocationButtonComponent.html" >GeolocationButtonComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/InfowindowComponent.html" >InfowindowComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NgxGooglemapsTrackingViewComponent.html" >NgxGooglemapsTrackingViewComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TrackedObjectComponent.html" >TrackedObjectComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/CenterMarker.html" >CenterMarker</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/GeolocationMarker.html" >GeolocationMarker</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/GoogleMapsWrapper.html"  class="active" >GoogleMapsWrapper</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-interfaces-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/TrackedObject.html" >TrackedObject</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">googlemaps-tracking-view-demo documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/NgxGooglemapsTrackingViewModule.html" >NgxGooglemapsTrackingViewModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/GeolocationButtonComponent.html" >GeolocationButtonComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/InfowindowComponent.html" >InfowindowComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NgxGooglemapsTrackingViewComponent.html" >NgxGooglemapsTrackingViewComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TrackedObjectComponent.html" >TrackedObjectComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/CenterMarker.html" >CenterMarker</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/GeolocationMarker.html" >GeolocationMarker</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/GoogleMapsWrapper.html"  class="active" >GoogleMapsWrapper</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#interfaces-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/TrackedObject.html" >TrackedObject</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>GoogleMapsWrapper</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+    </li>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="infos">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/ngx-googlemaps-tracking-view/src/lib/services/googlemaps-wrapper.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Helper service for handling common GoogleMaps SDK functions</p>
+
+            </p>
+
+            <section>
+                <h3 id="constructor">Constructor</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>constructor()</code>
+                                </td>
+                            </tr>
+            
+                        </tbody>
+                    </table>
+            </section>
+
+            <section>
+                <h3 id="methods">Methods</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> isReady</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>isReady()</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p><code>True</code> if the map has been inited by calling <code>GoogleMapsWrapper.init()</code></p>
+            </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>boolean</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> ready</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>ready()</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Resolves when the map has been inited by calling <code>GoogleMapsWrapper.init()</code></p>
+            </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>any</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> isInfowindowOpen</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>isInfowindowOpen(tag: string)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>boolean</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier"></span> initMap</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play ">
+                                            <span class="fa fa-"></span>
+                                        </span>
+                                    <code>initMap(element: HTMLElement, options: MapOptions)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Call this before using any other function</p>
+            </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>any</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> getMetersPerPx</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>getMetersPerPx(latitude: number)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Formula taken from:<br><a href="https://gis.stackexchange.com/questions/7430/what-ratio-scales-do-google-maps-zoom-levels-correspond-to">What ratio scales do Google Maps zoom levels correspond to?
+            </a></p>
+            </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> subscribe</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>subscribe(eventName: string, callback: (event: any) => void)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Subscribe to map event</p>
+            </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> unsubscribe</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>unsubscribe(eventName: string)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Unsubscribe from map event</p>
+            </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> unsubcribeAll</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>unsubcribeAll()</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Unsubscribe from all map events</p>
+            </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> addMarker</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>addMarker(params: Marker | MarkerOptions)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Add a marker and show it on the map.<br>If the marker has already been added, this function will have no effect.</p>
+            </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> removeMarker</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>removeMarker(marker: Marker)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> addPolyline</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>addPolyline(params: Polyline | PolylineOptions)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> removePolyline</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>removePolyline(line: Polyline)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> addPolygone</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>addPolygone(params: Polygon | PolygonOptions)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> removePolygon</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>removePolygon(polygon: Polygon)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> clearMarkers</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>clearMarkers()</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> clearPolylines</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>clearPolylines()</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> clearPolygones</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>clearPolygones()</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> setMarkers</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>setMarkers(array: Marker[])</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Removes current markers an copies all the markers of an array into the map</p>
+            </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> openInfowindow</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>openInfowindow(anchor: LatLng | MVCObject, content: string | Node, id: string)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>id</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>In case more than one infowindows are required to be shown. If no parameter is passed,<br>the default infowindow will be opened. If a string is passed, a new infowindow will be created<br>with that specifier.</p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> closeInfowindow</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>closeInfowindow(id: string)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>id</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>Unique identifier for an infowindow in case more than one exist</p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> getInfowindow</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>getInfowindow(id: string)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Retrieve a reference to a specific infowindow</p>
+            </div>
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>id</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>Infowindow uniquer identifier (set by having called <code>openInfowindow()</code>). If no<br>string is passed, the defoult infowindow will be returned.</p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> destroyInfowindow</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>destroyInfowindow(id: string)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Destroy a reference to a specific infowindow.</p>
+            </div>
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>id</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>Infowindow uniquer identifier (set by having called <code>openInfowindow()</code>). If no<br>string is passed, the defoult infowindow will be returned.</p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Protected</span> removeObject</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play lock">
+                                            <span class="fa fa-lock"></span>
+                                        </span>
+                                    <code>removeObject(object: T, array: T[])</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Protected</span> _infowindows</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-lock"></span><code>_infowindows:     <code>{ [id: string]: InfoWindow; }</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> _isReady</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-lock"></span><code>_isReady:     <code>boolean</code>
+            </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Default value: </i><code>false</code>
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> _map</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>_map:     <code>any</code>
+            </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Current map instance </p>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> _polygons</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>_polygons:     <code>Polygon[]</code>
+            </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Current array of polygons </p>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> _polylines</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>_polylines:     <code>Polyline[]</code>
+            </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Current array of polylines </p>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> _ready</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-lock"></span><code>_ready:     <code>any</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> boundsChanged</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>boundsChanged:     <code>EventEmitter&lt;LatLngBounds&gt;</code>
+            </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>When visible maps change but zooming or dragging the map </p>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> click</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>click:     <code>EventEmitter&lt;LatLng&gt;</code>
+            </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><ul>
+            <li>When the user clicks on the map </li>
+            </ul>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> closeInfowindowOnClick</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>closeInfowindowOnClick:     <code>boolean</code>
+            </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Default value: </i><code>true</code>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>If <code>true</code> the infowindows will close on clicking on any point on the map </p>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> infowindow</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>infowindow:     <code>InfoWindow</code>
+            </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The default infowindow object </p>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> map</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>map:     <code>any</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> markers</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>markers:     <code>Marker[]</code>
+            </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Current marker array </p>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> onReady</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>onReady:     <code>EventEmitter&lt;void&gt;</code>
+            </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><ul>
+            <li>Emits when the map has been inited by calling <code>GoogleMapsWrapper.init()</code> </li>
+            </ul>
+            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> resolver</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-lock"></span><code>resolver:     <code>{ resolve: () &#x3D;&gt; void; reject: (err: any) &#x3D;&gt; void; }</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre><code class="hljs javascript">import { Injectable, EventEmitter } from &#x27;@angular/core&#x27;;
+
+/**
+ * Helper service for handling common GoogleMaps SDK functions
+ */
+@Injectable()
+export class GoogleMapsWrapper {
+
+  protected _infowindows: { [id: string]: google.maps.InfoWindow } &#x3D; { default: null };
+  private _isReady &#x3D; false;
+  private _ready: Promise&lt;void&gt;;
+  // tslint:disable-next-line: no-any
+  private resolver: { resolve: () &#x3D;&gt; void, reject: (err: any) &#x3D;&gt; void };
+
+  /** Current map instance */
+  _map: google.maps.Map;
+  /** Current array of polylines */
+  _polylines: google.maps.Polyline[] &#x3D; [];
+  /** Current array of polygons */
+  _polygons: google.maps.Polygon[] &#x3D; [];
+
+  /** Current marker array */
+  markers: google.maps.Marker[] &#x3D; [];
+
+  /** If &#x60;true&#x60; the infowindows will close on clicking on any point on the map */
+  closeInfowindowOnClick &#x3D; true;
+
+  /** * Emits when the map has been inited by calling &#x60;GoogleMapsWrapper.init()&#x60; */
+  onReady: EventEmitter&lt;void&gt; &#x3D; new EventEmitter&lt;void&gt;();
+
+  /** * When the user clicks on the map */
+  click: EventEmitter&lt;google.maps.LatLng&gt; &#x3D; new EventEmitter&lt;google.maps.LatLng&gt;();
+
+  /** When visible maps change but zooming or dragging the map */
+  boundsChanged: EventEmitter&lt;google.maps.LatLngBounds&gt; &#x3D; new EventEmitter&lt;google.maps.LatLngBounds&gt;();
+
+  /** The default infowindow object */
+  get infowindow(): google.maps.InfoWindow { return this.getInfowindow(&#x27;default&#x27;); }
+  set infowindow(val: google.maps.InfoWindow) { this._infowindows[&#x27;default&#x27;] &#x3D; val; }
+
+  constructor() {
+    this._ready &#x3D; new Promise((resolve, reject) &#x3D;&gt; {
+      this.resolver &#x3D; { resolve: resolve, reject: reject };
+    });
+  }
+
+  /**
+   * &#x60;True&#x60; if the map has been inited by calling &#x60;GoogleMapsWrapper.init()&#x60;
+   */
+  isReady(): boolean { return this._isReady; }
+
+  /**
+   * Resolves when the map has been inited by calling &#x60;GoogleMapsWrapper.init()&#x60;
+   */
+  ready(): Promise&lt;void&gt; { return this._ready; }
+
+  get map(): google.maps.Map {
+    return this._map;
+  }
+
+  isInfowindowOpen(tag?: string): boolean {
+    return this.getInfowindow(tag)[&#x27;isOpen&#x27;];
+  }
+
+  /**
+   * Call this before using any other function
+   */
+  async initMap(element: HTMLElement, options?: google.maps.MapOptions): Promise&lt;google.maps.Map&gt; {
+    try {
+
+      this._map &#x3D; new google.maps.Map(element, {
+        center: new google.maps.LatLng(19.53124, -96.91589),
+        zoom: 14,
+        clickableIcons: false,
+        disableDefaultUI: false,
+        zoomControl: true,
+        streetViewControl: false,
+        scaleControl: true,
+        rotateControl: true,
+        fullscreenControl: true,
+        mapTypeControlOptions: {
+          mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.SATELLITE]
+        },
+        ...options
+      });
+
+      // Add listeners
+      this.map.addListener(&#x27;click&#x27;, (e) &#x3D;&gt; {
+        if (this.closeInfowindowOnClick) this.closeInfowindow();
+        this.click.emit(e.latLng);
+      });
+      this.map.addListener(&#x27;bounds_changed&#x27;, () &#x3D;&gt; {
+        const bounds &#x3D; this.map.getBounds();
+        this.boundsChanged.emit(bounds);
+      });
+
+      console.debug(&#x27;map created &#x27;);
+
+      // Wait for SDK to load
+      setTimeout(() &#x3D;&gt; {
+        this._isReady &#x3D; true;
+        this.resolver.resolve();
+        this.onReady.emit();
+      }, 1000);
+
+      await this._isReady;
+      return this.map;
+    } catch (e) {
+      this.resolver.reject(e);
+    }
+  }
+
+  /**
+   * Formula taken from:
+   * [What ratio scales do Google Maps zoom levels correspond to?
+   * ](https://gis.stackexchange.com/questions/7430/what-ratio-scales-do-google-maps-zoom-levels-correspond-to)
+   */
+  getMetersPerPx(latitude: number) {
+    if (!latitude || !this.map) return 0;
+    const zoom &#x3D; this.map.getZoom();
+    return 156543.03392 * Math.cos(latitude * Math.PI / 180) / Math.pow(2, zoom);
+  }
+
+  /**
+   * Subscribe to map event
+   */
+  // tslint:disable-next-line: no-any
+  subscribe(eventName: string, callback: (event: any) &#x3D;&gt; void) {
+    this.map.addListener(eventName, callback);
+  }
+
+  /**
+   * Unsubscribe from map event
+   */
+  unsubscribe(eventName: string) {
+    google.maps.event.clearListeners(this.map, eventName);
+  }
+
+  /**
+   * Unsubscribe from all map events
+   */
+  unsubcribeAll() {
+    google.maps.event.clearInstanceListeners(this.map);
+  }
+
+  /**
+   * Add a marker and show it on the map.
+   * If the marker has already been added, this function will have no effect.
+   */
+  addMarker(params: google.maps.MarkerOptions | google.maps.Marker) {
+    let marker: google.maps.Marker;
+
+    if (!(params instanceof google.maps.Marker)) {
+      params.map &#x3D; this.map;
+      marker &#x3D; new google.maps.Marker(params);
+    } else {
+      marker &#x3D; params;
+      marker.setMap(this.map);
+    }
+    if (!this.markers.includes(marker)) {
+      this.markers.push(marker);
+    }
+    return marker;
+  }
+
+  removeMarker(marker: google.maps.Marker) {
+    return this.removeObject(marker, this.markers);
+  }
+
+  addPolyline(params: google.maps.PolylineOptions | google.maps.Polyline) {
+    let line: google.maps.Polyline;
+
+    if (!(params instanceof google.maps.Polyline)) {
+      params.map &#x3D; this.map;
+      line &#x3D; new google.maps.Polyline(params);
+    } else {
+      line &#x3D; params;
+      line.setMap(this.map);
+    }
+
+    if (!this._polylines.includes(line)) {
+      this._polylines.push(line);
+    }
+    return line;
+  }
+
+  removePolyline(line: google.maps.Polyline) {
+    return this.removeObject(line, this._polylines);
+  }
+
+  addPolygone(params: google.maps.PolygonOptions | google.maps.Polygon) {
+    let polygon: google.maps.Polygon;
+
+    if (!(params instanceof google.maps.Polygon)) {
+      params.map &#x3D; this.map;
+      polygon &#x3D; new google.maps.Polygon(params);
+    } else {
+      polygon &#x3D; params;
+      polygon.setMap(this.map);
+    }
+
+    if (!this._polygons.includes(polygon)) {
+      this._polygons.push(polygon);
+    }
+    return polygon;
+  }
+
+  removePolygon(polygon: google.maps.Polygon) {
+    return this.removeObject(polygon, this._polygons);
+  }
+
+  clearMarkers() {
+    this.markers.forEach(m &#x3D;&gt; {
+      m.setMap(null);
+    });
+    this.markers &#x3D; [];
+  }
+
+  clearPolylines() {
+    this._polylines.forEach(l &#x3D;&gt; {
+      l.setMap(null);
+    });
+    this._polylines &#x3D; [];
+  }
+
+  clearPolygones() {
+    this._polygons.forEach(l &#x3D;&gt; {
+      l.setMap(null);
+    });
+    this._polygons &#x3D; [];
+  }
+
+  /**
+   * Removes current markers an copies all the markers of an array into the map
+   */
+  setMarkers(array: google.maps.Marker[]) {
+    this.clearMarkers();
+    array.forEach(m &#x3D;&gt; {
+      m.setMap(this.map);
+    });
+    this.markers &#x3D; [...array];
+  }
+
+  /**
+   * @param id In case more than one infowindows are required to be shown. If no parameter is passed,
+   * the default infowindow will be opened. If a string is passed, a new infowindow will be created
+   * with that specifier.
+   */
+  openInfowindow(anchor?: google.maps.MVCObject | google.maps.LatLng, content?: string | Node, id?: string) {
+    const infowindow &#x3D; id ? this.getInfowindow(id) : this.infowindow;
+    if (content) infowindow.setContent(content)
+
+    if (anchor instanceof google.maps.LatLng) {
+      infowindow.setPosition(anchor);
+      infowindow.open(this.map);
+    } else {
+      infowindow.open(this.map, anchor);
+    }
+    infowindow[&#x27;isOpen&#x27;] &#x3D; true;
+    return infowindow;
+  }
+
+  /**
+   * @param id Unique identifier for an infowindow in case more than one exist
+   */
+  closeInfowindow(id?: string) {
+    const infowindow &#x3D; id ? this.getInfowindow(id) : this.infowindow;
+    if (infowindow) {
+      infowindow.close();
+      infowindow[&#x27;isOpen&#x27;] &#x3D; false;
+    }
+  }
+
+  /**
+   * Retrieve a reference to a specific infowindow
+   * @param id Infowindow uniquer identifier (set by having called &#x60;openInfowindow()&#x60;). If no
+   * string is passed, the defoult infowindow will be returned.
+   */
+  getInfowindow(id &#x3D; &#x27;default&#x27;) {
+    let infowindow &#x3D; this._infowindows[id];
+
+    if (!infowindow) {
+      infowindow &#x3D; new google.maps.InfoWindow({
+        content: &#x27;[info]&#x27;,
+        position: this.map.getCenter()
+      });
+      infowindow[&#x27;closeclick&#x27;] &#x3D; new EventEmitter&lt;void&gt;();
+      infowindow.addListener(&#x27;closeclick&#x27;, () &#x3D;&gt; infowindow[&#x27;closeclick&#x27;].emit());
+      this._infowindows[id] &#x3D; infowindow;
+    }
+    return infowindow;
+  }
+
+  /**
+   * Destroy a reference to a specific infowindow.
+   * @param id Infowindow uniquer identifier (set by having called &#x60;openInfowindow()&#x60;). If no
+   * string is passed, the defoult infowindow will be returned.
+   */
+  destroyInfowindow(id: string) {
+    if (!id) return;
+    const infowindow &#x3D; this._infowindows[id]
+    if (infowindow) {
+      infowindow.close();
+      infowindow.set(&#x27;map&#x27;, null);
+      google.maps.event.clearInstanceListeners(infowindow);
+      delete this._infowindows[id];
+    }
+  }
+
+  protected removeObject&lt;T extends { setMap: (map) &#x3D;&gt; any }&gt;(object: T, array: T[]) { // tslint:disable-line:no-any
+    const i &#x3D; array.indexOf(object);
+    if (i &gt; -1) {
+      array.splice(i, 1);
+      object.setMap(null);
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
+
+    </body>
+</html>

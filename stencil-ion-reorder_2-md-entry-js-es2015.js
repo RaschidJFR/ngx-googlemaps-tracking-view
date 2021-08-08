@@ -1,19 +1,20 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["stencil-ion-reorder_2-md-entry-js"],{
+"use strict";
+(self["webpackChunktracking_view"] = self["webpackChunktracking_view"] || []).push([["stencil-ion-reorder_2-md-entry-js"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/ion-reorder_2-md.entry.js":
+/***/ 14476:
 /*!*********************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/ion-reorder_2-md.entry.js ***!
   \*********************************************************************/
-/*! exports provided: ion_reorder, ion_reorder_group */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_reorder", function() { return Reorder; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_reorder_group", function() { return ReorderGroup; });
-/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ "./node_modules/@ionic/core/dist/esm/index-2cd7e630.js");
-/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-a175fa73.js");
-/* harmony import */ var _haptic_ccbda579_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./haptic-ccbda579.js */ "./node_modules/@ionic/core/dist/esm/haptic-ccbda579.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ion_reorder": function() { return /* binding */ Reorder; },
+/* harmony export */   "ion_reorder_group": function() { return /* binding */ ReorderGroup; }
+/* harmony export */ });
+/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ 14007);
+/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ 77362);
+/* harmony import */ var _haptic_ccbda579_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./haptic-ccbda579.js */ 85169);
 
 
 
@@ -24,16 +25,16 @@ const reorderMdCss = ":host([slot]){display:none;line-height:0;z-index:100}.reor
 
 const Reorder = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
     }
     onClick(ev) {
         ev.preventDefault();
         ev.stopImmediatePropagation();
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
         const reorderIcon = mode === 'ios' ? 'reorder-three-outline' : 'reorder-two-sharp';
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: mode }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-icon", { name: reorderIcon, lazy: false, class: "reorder-icon" }))));
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: mode }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("ion-icon", { name: reorderIcon, lazy: false, class: "reorder-icon" }))));
     }
 };
 Reorder.style = {
@@ -45,7 +46,7 @@ const reorderGroupCss = ".reorder-list-active>*{-webkit-transition:-webkit-trans
 
 const ReorderGroup = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         this.lastToIndex = -1;
         this.cachedHeights = [];
         this.scrollElTop = 0;
@@ -58,7 +59,7 @@ const ReorderGroup = class {
          * If `true`, the reorder will be hidden.
          */
         this.disabled = true;
-        this.ionItemReorder = Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionItemReorder", 7);
+        this.ionItemReorder = (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.d)(this, "ionItemReorder", 7);
     }
     disabledChanged() {
         if (this.gesture) {
@@ -70,7 +71,7 @@ const ReorderGroup = class {
         if (contentEl) {
             this.scrollEl = await contentEl.getScrollElement();
         }
-        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-e44ebcc6.js */ "./node_modules/@ionic/core/dist/esm/index-e44ebcc6.js"))).createGesture({
+        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(__webpack_require__, /*! ./index-e44ebcc6.js */ 23719))).createGesture({
             el: this.el,
             gestureName: 'reorder',
             gesturePriority: 110,
@@ -158,7 +159,7 @@ const ReorderGroup = class {
         this.selectedItemHeight = item.offsetHeight;
         this.state = 1 /* Active */;
         item.classList.add(ITEM_REORDER_SELECTED);
-        Object(_haptic_ccbda579_js__WEBPACK_IMPORTED_MODULE_2__["a"])();
+        (0,_haptic_ccbda579_js__WEBPACK_IMPORTED_MODULE_2__.a)();
     }
     onMove(ev) {
         const selectedItem = this.selectedItemEl;
@@ -177,7 +178,7 @@ const ReorderGroup = class {
         if (toIndex !== this.lastToIndex) {
             const fromIndex = indexForItem(selectedItem);
             this.lastToIndex = toIndex;
-            Object(_haptic_ccbda579_js__WEBPACK_IMPORTED_MODULE_2__["b"])();
+            (0,_haptic_ccbda579_js__WEBPACK_IMPORTED_MODULE_2__.b)();
             this.reorderMove(fromIndex, toIndex);
         }
         // Update selected item position
@@ -202,7 +203,7 @@ const ReorderGroup = class {
                 complete: this.completeSync.bind(this)
             });
         }
-        Object(_haptic_ccbda579_js__WEBPACK_IMPORTED_MODULE_2__["c"])();
+        (0,_haptic_ccbda579_js__WEBPACK_IMPORTED_MODULE_2__.c)();
     }
     completeSync(listOrReorder) {
         const selectedItemEl = this.selectedItemEl;
@@ -276,14 +277,14 @@ const ReorderGroup = class {
         return this.scrollEl.scrollTop - this.scrollElInitial;
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: {
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: {
                 [mode]: true,
                 'reorder-enabled': !this.disabled,
                 'reorder-list-active': this.state !== 0 /* Idle */,
             } }));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
     static get watchers() { return {
         "disabled": ["disabledChanged"]
     }; }

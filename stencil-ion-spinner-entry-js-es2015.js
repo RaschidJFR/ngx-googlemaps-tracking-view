@@ -1,19 +1,20 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["stencil-ion-spinner-entry-js"],{
+"use strict";
+(self["webpackChunktracking_view"] = self["webpackChunktracking_view"] || []).push([["stencil-ion-spinner-entry-js"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/ion-spinner.entry.js":
+/***/ 2161:
 /*!****************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/ion-spinner.entry.js ***!
   \****************************************************************/
-/*! exports provided: ion_spinner */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_spinner", function() { return Spinner; });
-/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ "./node_modules/@ionic/core/dist/esm/index-2cd7e630.js");
-/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-a175fa73.js");
-/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js");
-/* harmony import */ var _spinner_configs_c78e170e_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./spinner-configs-c78e170e.js */ "./node_modules/@ionic/core/dist/esm/spinner-configs-c78e170e.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ion_spinner": function() { return /* binding */ Spinner; }
+/* harmony export */ });
+/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ 14007);
+/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ 77362);
+/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ 39551);
+/* harmony import */ var _spinner_configs_c78e170e_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./spinner-configs-c78e170e.js */ 46220);
 
 
 
@@ -23,15 +24,15 @@ const spinnerCss = ":host{display:inline-block;position:relative;width:28px;heig
 
 const Spinner = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         /**
          * If `true`, the spinner's animation will be paused.
          */
         this.paused = false;
     }
     getName() {
-        const spinnerName = this.name || _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('spinner');
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        const spinnerName = this.name || _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.c.get('spinner');
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
         if (spinnerName) {
             return spinnerName;
         }
@@ -39,9 +40,9 @@ const Spinner = class {
     }
     render() {
         const self = this;
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(self);
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(self);
         const spinnerName = self.getName();
-        const spinner = _spinner_configs_c78e170e_js__WEBPACK_IMPORTED_MODULE_3__["S"][spinnerName] || _spinner_configs_c78e170e_js__WEBPACK_IMPORTED_MODULE_3__["S"]['lines'];
+        const spinner = _spinner_configs_c78e170e_js__WEBPACK_IMPORTED_MODULE_3__.S[spinnerName] || _spinner_configs_c78e170e_js__WEBPACK_IMPORTED_MODULE_3__.S.lines;
         const duration = (typeof self.duration === 'number' && self.duration > 10 ? self.duration : spinner.dur);
         const svgs = [];
         if (spinner.circles !== undefined) {
@@ -54,18 +55,18 @@ const Spinner = class {
                 svgs.push(buildLine(spinner, duration, i, spinner.lines));
             }
         }
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["c"])(self.color)), { [mode]: true, [`spinner-${spinnerName}`]: true, 'spinner-paused': !!self.paused || _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('_testing') }), role: "progressbar", style: spinner.elmDuration ? { animationDuration: duration + 'ms' } : {} }, svgs));
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.c)(self.color)), { [mode]: true, [`spinner-${spinnerName}`]: true, 'spinner-paused': !!self.paused || _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.c.getBoolean('_testing') }), role: "progressbar", style: spinner.elmDuration ? { animationDuration: duration + 'ms' } : {} }, svgs));
     }
 };
 const buildCircle = (spinner, duration, index, total) => {
     const data = spinner.fn(duration, index, total);
     data.style['animation-duration'] = duration + 'ms';
-    return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("svg", { viewBox: data.viewBox || '0 0 64 64', style: data.style }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("circle", { transform: data.transform || 'translate(32,32)', cx: data.cx, cy: data.cy, r: data.r, style: spinner.elmDuration ? { animationDuration: duration + 'ms' } : {} })));
+    return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("svg", { viewBox: data.viewBox || '0 0 64 64', style: data.style }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("circle", { transform: data.transform || 'translate(32,32)', cx: data.cx, cy: data.cy, r: data.r, style: spinner.elmDuration ? { animationDuration: duration + 'ms' } : {} })));
 };
 const buildLine = (spinner, duration, index, total) => {
     const data = spinner.fn(duration, index, total);
     data.style['animation-duration'] = duration + 'ms';
-    return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("svg", { viewBox: data.viewBox || '0 0 64 64', style: data.style }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("line", { transform: "translate(32,32)", y1: data.y1, y2: data.y2 })));
+    return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("svg", { viewBox: data.viewBox || '0 0 64 64', style: data.style }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("line", { transform: "translate(32,32)", y1: data.y1, y2: data.y2 })));
 };
 Spinner.style = spinnerCss;
 

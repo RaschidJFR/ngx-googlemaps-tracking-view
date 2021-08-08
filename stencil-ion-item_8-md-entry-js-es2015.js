@@ -1,25 +1,26 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["stencil-ion-item_8-md-entry-js"],{
+"use strict";
+(self["webpackChunktracking_view"] = self["webpackChunktracking_view"] || []).push([["stencil-ion-item_8-md-entry-js"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/ion-item_8-md.entry.js":
+/***/ 41193:
 /*!******************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/ion-item_8-md.entry.js ***!
   \******************************************************************/
-/*! exports provided: ion_item, ion_item_divider, ion_item_group, ion_label, ion_list, ion_list_header, ion_note, ion_skeleton_text */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_item", function() { return Item; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_item_divider", function() { return ItemDivider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_item_group", function() { return ItemGroup; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_label", function() { return Label; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_list", function() { return List; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_list_header", function() { return ListHeader; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_note", function() { return Note; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_skeleton_text", function() { return SkeletonText; });
-/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ "./node_modules/@ionic/core/dist/esm/index-2cd7e630.js");
-/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-a175fa73.js");
-/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ion_item": function() { return /* binding */ Item; },
+/* harmony export */   "ion_item_divider": function() { return /* binding */ ItemDivider; },
+/* harmony export */   "ion_item_group": function() { return /* binding */ ItemGroup; },
+/* harmony export */   "ion_label": function() { return /* binding */ Label; },
+/* harmony export */   "ion_list": function() { return /* binding */ List; },
+/* harmony export */   "ion_list_header": function() { return /* binding */ ListHeader; },
+/* harmony export */   "ion_note": function() { return /* binding */ Note; },
+/* harmony export */   "ion_skeleton_text": function() { return /* binding */ SkeletonText; }
+/* harmony export */ });
+/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ 14007);
+/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ 77362);
+/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ 39551);
 
 
 
@@ -30,7 +31,7 @@ const itemMdCss = ":host{--border-radius:0px;--border-width:0px;--border-style:s
 
 const Item = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         this.itemStyles = new Map();
         this.multipleInputs = false;
         /**
@@ -76,7 +77,7 @@ const Item = class {
         }
         if (hasStyleChange) {
             this.itemStyles.set(tagName, newStyles);
-            Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this);
+            (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.i)(this);
         }
     }
     componentDidLoad() {
@@ -113,7 +114,7 @@ const Item = class {
     render() {
         const { detail, detailIcon, download, lines, disabled, href, rel, target, routerDirection } = this;
         const childStyles = {};
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
         const clickable = this.isClickable();
         const canActivate = this.canActivate();
         const TagType = clickable ? (href === undefined ? 'button' : 'a') : 'div';
@@ -129,9 +130,9 @@ const Item = class {
         this.itemStyles.forEach(value => {
             Object.assign(childStyles, value);
         });
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { "aria-disabled": disabled ? 'true' : null, class: Object.assign(Object.assign(Object.assign({}, childStyles), Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), { 'item': true, [mode]: true, [`item-lines-${lines}`]: lines !== undefined, 'item-disabled': disabled, 'in-list': Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["h"])('ion-list', this.el), 'item-multiple-inputs': this.multipleInputs, 'ion-activatable': canActivate, 'ion-focusable': true }) }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(TagType, Object.assign({}, attrs, { class: "item-native", disabled: disabled, onClick: (ev) => Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["o"])(href, ev, routerDirection) }), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "start" }), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "item-inner" }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "input-wrapper" }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "end" }), showDetail && Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-icon", { icon: detailIcon, lazy: false, class: "item-detail-icon" }), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "item-inner-highlight" })), canActivate && mode === 'md' && Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", null)), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "item-highlight" })));
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { "aria-disabled": disabled ? 'true' : null, class: Object.assign(Object.assign(Object.assign({}, childStyles), (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.c)(this.color)), { 'item': true, [mode]: true, [`item-lines-${lines}`]: lines !== undefined, 'item-disabled': disabled, 'in-list': (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.h)('ion-list', this.el), 'item-multiple-inputs': this.multipleInputs, 'ion-activatable': canActivate, 'ion-focusable': true }) }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(TagType, Object.assign({}, attrs, { class: "item-native", disabled: disabled, onClick: (ev) => (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.o)(href, ev, routerDirection) }), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", { name: "start" }), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "item-inner" }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "input-wrapper" }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null)), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", { name: "end" }), showDetail && (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("ion-icon", { icon: detailIcon, lazy: false, class: "item-detail-icon" }), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "item-inner-highlight" })), canActivate && mode === 'md' && (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("ion-ripple-effect", null)), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "item-highlight" })));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
 };
 Item.style = {
     /*STENCIL:MODE:ios*/ ios: itemIosCss,
@@ -144,7 +145,7 @@ const itemDividerMdCss = ":host{--padding-top:0px;--padding-end:0px;--padding-bo
 
 const ItemDivider = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         /**
          * When it's set to `true`, the item-divider will stay visible when it reaches the top
          * of the viewport until the next `ion-item-divider` replaces it.
@@ -155,10 +156,10 @@ const ItemDivider = class {
         this.sticky = false;
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), { [mode]: true, 'item-divider-sticky': this.sticky, 'item': true }) }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "start" }), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "item-divider-inner" }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "item-divider-wrapper" }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "end" }))));
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.c)(this.color)), { [mode]: true, 'item-divider-sticky': this.sticky, 'item': true }) }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", { name: "start" }), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "item-divider-inner" }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "item-divider-wrapper" }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null)), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", { name: "end" }))));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
 };
 ItemDivider.style = {
     /*STENCIL:MODE:ios*/ ios: itemDividerIosCss,
@@ -171,11 +172,11 @@ const itemGroupMdCss = "ion-item-group{display:block}";
 
 const ItemGroup = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "group", class: {
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { role: "group", class: {
                 [mode]: true,
                 // Used internally for styling
                 [`item-group-${mode}`]: true,
@@ -194,9 +195,9 @@ const labelMdCss = ".item.sc-ion-label-md-h,.item .sc-ion-label-md-h{--color:ini
 
 const Label = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         this.noAnimate = false;
-        this.ionStyle = Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionStyle", 7);
+        this.ionStyle = (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.d)(this, "ionStyle", 7);
     }
     componentWillLoad() {
         this.noAnimate = (this.position === 'floating');
@@ -221,10 +222,10 @@ const Label = class {
     }
     render() {
         const position = this.position;
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), { [mode]: true, [`label-${position}`]: position !== undefined, [`label-no-animate`]: (this.noAnimate) }) }));
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.c)(this.color)), { [mode]: true, [`label-${position}`]: position !== undefined, [`label-no-animate`]: (this.noAnimate) }) }));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
     static get watchers() { return {
         "position": ["positionChanged"]
     }; }
@@ -240,7 +241,7 @@ const listMdCss = "ion-list{margin-left:0;margin-right:0;margin-top:0;margin-bot
 
 const List = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         /**
          * If `true`, the list will have margin around it and rounded corners.
          */
@@ -260,9 +261,9 @@ const List = class {
         return false;
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
         const { lines, inset } = this;
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: {
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: {
                 [mode]: true,
                 // Used internally for styling
                 [`list-${mode}`]: true,
@@ -271,7 +272,7 @@ const List = class {
                 [`list-${mode}-lines-${lines}`]: lines !== undefined
             } }));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
 };
 List.style = {
     /*STENCIL:MODE:ios*/ ios: listIosCss,
@@ -284,12 +285,12 @@ const listHeaderMdCss = ":host{--border-style:solid;--border-width:0;--inner-bor
 
 const ListHeader = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
     }
     render() {
         const { lines } = this;
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), { [mode]: true, [`list-header-lines-${lines}`]: lines !== undefined }) }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "list-header-inner" }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null))));
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.c)(this.color)), { [mode]: true, [`list-header-lines-${lines}`]: lines !== undefined }) }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "list-header-inner" }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null))));
     }
 };
 ListHeader.style = {
@@ -303,11 +304,11 @@ const noteMdCss = ":host{color:var(--color);font-family:var(--ion-font-family, i
 
 const Note = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), { [mode]: true }) }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.c)(this.color)), { [mode]: true }) }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null)));
     }
 };
 Note.style = {
@@ -319,23 +320,23 @@ const skeletonTextCss = ":host{--background:rgba(var(--background-rgb, var(--ion
 
 const SkeletonText = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         /**
          * If `true`, the skeleton text will animate.
          */
         this.animated = false;
     }
     render() {
-        const animated = this.animated && _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('animated', true);
-        const inMedia = Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["h"])('ion-avatar', this.el) || Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["h"])('ion-thumbnail', this.el);
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: {
+        const animated = this.animated && _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.c.getBoolean('animated', true);
+        const inMedia = (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.h)('ion-avatar', this.el) || (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__.h)('ion-thumbnail', this.el);
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: {
                 [mode]: true,
                 'skeleton-text-animated': animated,
                 'in-media': inMedia
-            } }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", null, "\u00A0")));
+            } }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("span", null, "\u00A0")));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
 };
 SkeletonText.style = skeletonTextCss;
 

@@ -1,19 +1,20 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["stencil-ion-range-md-entry-js"],{
+"use strict";
+(self["webpackChunktracking_view"] = self["webpackChunktracking_view"] || []).push([["stencil-ion-range-md-entry-js"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/ion-range-md.entry.js":
+/***/ 91712:
 /*!*****************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/ion-range-md.entry.js ***!
   \*****************************************************************/
-/*! exports provided: ion_range */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_range", function() { return Range; });
-/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ "./node_modules/@ionic/core/dist/esm/index-2cd7e630.js");
-/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-a175fa73.js");
-/* harmony import */ var _helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-d8b49b57.js */ "./node_modules/@ionic/core/dist/esm/helpers-d8b49b57.js");
-/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ion_range": function() { return /* binding */ Range; }
+/* harmony export */ });
+/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ 14007);
+/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ 77362);
+/* harmony import */ var _helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-d8b49b57.js */ 36173);
+/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ 39551);
 
 
 
@@ -25,7 +26,7 @@ const rangeMdCss = ":host{--knob-handle-size:calc(var(--knob-size) * 2);display:
 
 const Range = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         this.noUpdate = false;
         this.hasFocus = false;
         this.ratioA = 0;
@@ -79,7 +80,7 @@ const Range = class {
          */
         this.value = 0;
         this.clampBounds = (value) => {
-            return Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.min, value, this.max);
+            return (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.c)(this.min, value, this.max);
         };
         this.ensureValueInBounds = (value) => {
             if (this.dualKnobs) {
@@ -100,10 +101,10 @@ const Range = class {
                 step *= -1;
             }
             if (knob === 'A') {
-                this.ratioA = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, this.ratioA + step, 1);
+                this.ratioA = (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.c)(0, this.ratioA + step, 1);
             }
             else {
-                this.ratioB = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, this.ratioB + step, 1);
+                this.ratioB = (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.c)(0, this.ratioB + step, 1);
             }
             this.updateValue();
         };
@@ -121,13 +122,13 @@ const Range = class {
                 this.emitStyle();
             }
         };
-        this.ionChange = Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionChange", 7);
-        this.ionStyle = Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionStyle", 7);
-        this.ionFocus = Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionFocus", 7);
-        this.ionBlur = Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionBlur", 7);
+        this.ionChange = (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.d)(this, "ionChange", 7);
+        this.ionStyle = (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.d)(this, "ionStyle", 7);
+        this.ionFocus = (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.d)(this, "ionFocus", 7);
+        this.ionBlur = (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.d)(this, "ionBlur", 7);
     }
     debounceChanged() {
-        this.ionChange = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["d"])(this.ionChange, this.debounce);
+        this.ionChange = (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.d)(this.ionChange, this.debounce);
     }
     minChanged() {
         if (!this.noUpdate) {
@@ -166,7 +167,7 @@ const Range = class {
     async componentDidLoad() {
         const rangeSlider = this.rangeSlider;
         if (rangeSlider) {
-            this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-e44ebcc6.js */ "./node_modules/@ionic/core/dist/esm/index-e44ebcc6.js"))).createGesture({
+            this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(__webpack_require__, /*! ./index-e44ebcc6.js */ 23719))).createGesture({
                 el: rangeSlider,
                 gestureName: 'range',
                 gesturePriority: 100,
@@ -206,7 +207,7 @@ const Range = class {
         const rect = this.rect = this.rangeSlider.getBoundingClientRect();
         const currentX = detail.currentX;
         // figure out which knob they started closer to
-        let ratio = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, (currentX - rect.left) / rect.width, 1);
+        let ratio = (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.c)(0, (currentX - rect.left) / rect.width, 1);
         if (document.dir === 'rtl') {
             ratio = 1 - ratio;
         }
@@ -230,7 +231,7 @@ const Range = class {
         // figure out where the pointer is currently at
         // update the knob being interacted with
         const rect = this.rect;
-        let ratio = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, (currentX - rect.left) / rect.width, 1);
+        let ratio = (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.c)(0, (currentX - rect.left) / rect.width, 1);
         if (document.dir === 'rtl') {
             ratio = 1 - ratio;
         }
@@ -298,7 +299,7 @@ const Range = class {
     }
     render() {
         const { min, max, step, el, handleKeyboard, pressedKnob, disabled, pin, ratioLower, ratioUpper } = this;
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
         const barStart = `${ratioLower * 100}%`;
         const barEnd = `${100 - ratioUpper * 100}%`;
         const doc = document;
@@ -326,11 +327,11 @@ const Range = class {
                 ticks.push(tick);
             }
         }
-        Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["a"])(true, el, this.name, JSON.stringify(this.getValue()), disabled);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { onFocusin: this.onFocus, onFocusout: this.onBlur, class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["c"])(this.color)), { [mode]: true, 'in-item': Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-item', el), 'range-disabled': disabled, 'range-pressed': pressedKnob !== undefined, 'range-has-pin': pin }) }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "start" }), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "range-slider", ref: rangeEl => this.rangeSlider = rangeEl }, ticks.map(tick => (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { style: tickStyle(tick), role: "presentation", class: {
+        (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.a)(true, el, this.name, JSON.stringify(this.getValue()), disabled);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { onFocusin: this.onFocus, onFocusout: this.onBlur, class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__.c)(this.color)), { [mode]: true, 'in-item': (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__.h)('ion-item', el), 'range-disabled': disabled, 'range-pressed': pressedKnob !== undefined, 'range-has-pin': pin }) }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", { name: "start" }), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "range-slider", ref: rangeEl => this.rangeSlider = rangeEl }, ticks.map(tick => ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { style: tickStyle(tick), role: "presentation", class: {
                 'range-tick': true,
                 'range-tick-active': tick.active
-            } }))), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "range-bar", role: "presentation" }), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "range-bar range-bar-active", role: "presentation", style: barStyle }), renderKnob(isRTL, {
+            } }))), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "range-bar", role: "presentation" }), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "range-bar range-bar-active", role: "presentation", style: barStyle }), renderKnob(isRTL, {
             knob: 'A',
             pressed: pressedKnob === 'A',
             value: this.valA,
@@ -350,9 +351,9 @@ const Range = class {
             handleKeyboard,
             min,
             max
-        })), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "end" })));
+        })), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", { name: "end" })));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
     static get watchers() { return {
         "debounce": ["debounceChanged"],
         "min": ["minChanged"],
@@ -368,7 +369,7 @@ const renderKnob = (isRTL, { knob, value, ratio, min, max, disabled, pressed, pi
         style[start] = `${ratio * 100}%`;
         return style;
     };
-    return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { onKeyDown: (ev) => {
+    return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { onKeyDown: (ev) => {
             const key = ev.key;
             if (key === 'ArrowLeft' || key === 'ArrowDown') {
                 handleKeyboard(knob, false);
@@ -387,17 +388,17 @@ const renderKnob = (isRTL, { knob, value, ratio, min, max, disabled, pressed, pi
             'range-knob-pressed': pressed,
             'range-knob-min': value === min,
             'range-knob-max': value === max
-        }, style: knobStyle(), role: "slider", tabindex: disabled ? -1 : 0, "aria-valuemin": min, "aria-valuemax": max, "aria-disabled": disabled ? 'true' : null, "aria-valuenow": value }, pin && Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "range-pin", role: "presentation" }, Math.round(value)), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "range-knob", role: "presentation" })));
+        }, style: knobStyle(), role: "slider", tabindex: disabled ? -1 : 0, "aria-valuemin": min, "aria-valuemax": max, "aria-disabled": disabled ? 'true' : null, "aria-valuenow": value }, pin && (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "range-pin", role: "presentation" }, Math.round(value)), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "range-knob", role: "presentation" })));
 };
 const ratioToValue = (ratio, min, max, step) => {
     let value = (max - min) * ratio;
     if (step > 0) {
         value = Math.round(value / step) * step + min;
     }
-    return Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["c"])(min, value, max);
+    return (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.c)(min, value, max);
 };
 const valueToRatio = (value, min, max) => {
-    return Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, (value - min) / (max - min), 1);
+    return (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.c)(0, (value - min) / (max - min), 1);
 };
 Range.style = {
     /*STENCIL:MODE:ios*/ ios: rangeIosCss,

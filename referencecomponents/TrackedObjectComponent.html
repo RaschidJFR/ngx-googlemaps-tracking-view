@@ -1,0 +1,1668 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>googlemaps-tracking-view-demo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">googlemaps-tracking-view-demo documentation</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">googlemaps-tracking-view-demo documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/NgxGooglemapsTrackingViewModule.html" >NgxGooglemapsTrackingViewModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/GeolocationButtonComponent.html" >GeolocationButtonComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/InfowindowComponent.html" >InfowindowComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NgxGooglemapsTrackingViewComponent.html" >NgxGooglemapsTrackingViewComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TrackedObjectComponent.html"  class="active" >TrackedObjectComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/CenterMarker.html" >CenterMarker</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/GeolocationMarker.html" >GeolocationMarker</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/GoogleMapsWrapper.html" >GoogleMapsWrapper</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-interfaces-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/TrackedObject.html" >TrackedObject</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">googlemaps-tracking-view-demo documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/NgxGooglemapsTrackingViewModule.html" >NgxGooglemapsTrackingViewModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/GeolocationButtonComponent.html" >GeolocationButtonComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/InfowindowComponent.html" >InfowindowComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NgxGooglemapsTrackingViewComponent.html" >NgxGooglemapsTrackingViewComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TrackedObjectComponent.html"  class="active" >TrackedObjectComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/CenterMarker.html" >CenterMarker</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/GeolocationMarker.html" >GeolocationMarker</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/GoogleMapsWrapper.html" >GoogleMapsWrapper</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#interfaces-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/TrackedObject.html" >TrackedObject</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content component">
+                   <div class="content-data">
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>TrackedObjectComponent</li>
+</ol>
+
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        </li>
+        <li>
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="infos"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/ngx-googlemaps-tracking-view/src/lib/components/tracked-object/tracked-object.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>This class renders a trackable object on the map</p>
+
+    </p>
+
+    <p class="comment">
+        <h3>Example</h3>
+    </p>
+    <div class="io-description">
+                <div>
+                    <pre><code class="hljs html">// component.ts
+const objectsToTrack: TrackedObject[] = [{
+id: '1',
+color: 'blue',
+heading: 45,
+label: {text: 'Test object #1' },
+position: new google.maps.LatLng(19.53124, -96.91589),
+}]
+
+// component.html
+&lt;gmtv-map [data]=&quot;objectsToTrack&quot;&gt;&lt;/gmtv-map&gt;</code></pre>
+                </div>
+    </div>
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>gmtv-tracked-object</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>tracked-object.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+        <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>template</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>TemplateRef&lt;any&gt;</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>trackedObject</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>TrackedObject</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>triggerInfowindow</code>
+                        </td>
+                        <td class="col-md-10">
+                            <div><p>Set this to <code>&#39;hover&#39;</code> to display the infowindow when hovering on the object.<br>Set this to <code>&#39;click&#39;</code> to display the infowindow when clicking on the object.</p>
+</div>
+                              <p>
+                                <em>Type:</em>    <code>&quot;hover&quot; | &quot;click&quot;</code>
+
+                              </p>
+                            <p>
+                              <em>Default value: </em><code>hover</code>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(googleMaps: <a href="../injectables/GoogleMapsWrapper.html" >GoogleMapsWrapper</a>)</code>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> getMetersPerPx</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>getMetersPerPx()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Current relation to convert pixels to meters on the map</p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> checkRenderObject</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>checkRenderObject()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Checks if object is on screen and renders/unrenders it</p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> clearEventListeners</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>clearEventListeners()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> setupEventListeners</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>setupEventListeners()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> getSpeedLineIcons</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>getSpeedLineIcons()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Returns the series of icons according to the current zoom level</p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> initSpeedPolyline</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>initSpeedPolyline()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Inits/updates polyline with icons according to current zoom level</p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> initDotaMarker</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>initDotaMarker()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> getTrianglePath</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>getTrianglePath()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> getVectorLinePath</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>getVectorLinePath(start: LatLng)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> displayInfowindow</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>displayInfowindow(show: boolean)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> drawObject</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>drawObject()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> onMouseOver</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>onMouseOver()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> onMouseOut</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>onMouseOut()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> onZoomChanged</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>onZoomChanged()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> canDrawPolygon</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-lock"></span><code>canDrawPolygon:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> color</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>color:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Current color for the current tracked object</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> defaultColor</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>defaultColor:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value: </i><code>red</code>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> drawSpeedVector</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>drawSpeedVector:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value: </i><code>false</code>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> hasValidMeasures</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-lock"></span><code>hasValidMeasures:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> hoverDotListeners</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>hoverDotListeners:     <code>MapsEventListener[]</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> hoverPolygonListeners</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>hoverPolygonListeners:     <code>MapsEventListener[]</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> infowindow</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>infowindow:     <code>InfowindowComponent</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> isMoving</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-lock"></span><code>isMoving:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> marker</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>marker:     <code>Marker</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> offline</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-lock"></span><code>offline:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> polygon</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>polygon:     <code>Polygon</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> rearLatLng</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>rearLatLng:     <code>LatLng</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Rear point</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> scale</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-lock"></span><code>scale:     <code>number</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Adaptive scale according to current zoom</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> subscription</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>subscription:     <code>Subscription</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> tipLatLng</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>tipLatLng:     <code>LatLng</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Tip point</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> vectorLine</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>vectorLine:     <code>Polyline</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Protected</span> zoom</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-lock"></span><code>zoom:     <code>number</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Current map&#39;s zoom</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> zoomListener</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>zoomListener:     <code>MapsEventListener</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+</div>
+        <div class="tab-pane fade tab-source-code" id="source">
+            <pre><code class="hljs javascript">import { Component, OnDestroy, Input, ViewChild, AfterContentInit, OnChanges, TemplateRef } from &#x27;@angular/core&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { InfowindowComponent } from &#x27;../infowindow/infowindow.component&#x27;;
+import { TrackedObject } from &#x27;../../models/tracked-object&#x27;;
+import { GoogleMapsWrapper } from &#x27;../../services/googlemaps-wrapper&#x27;;
+
+/** Size in meters to draw each unity speed on map in a dashed line */
+const SPEED_UNIT_LENGTH_M &#x3D; 20;
+
+/**
+ * Level of detail.
+ * Minimal zoom to start drawing objects
+ * */
+const LOD &#x3D; {
+  speed: 15,
+  scaleTriangle: 15,
+  nameLabels: 0
+}
+
+/**
+ * This class renders a trackable object on the map
+ *
+ * @example
+ * // component.ts
+ * const objectsToTrack: TrackedObject[] &#x3D; [{
+ *   id: &#x27;1&#x27;,
+ *   color: &#x27;blue&#x27;,
+ *   heading: 45,
+ *   label: {text: &#x27;Test object #1&#x27; },
+ *   position: new google.maps.LatLng(19.53124, -96.91589),
+ * }]
+ *
+ * // component.html
+ * &lt;gmtv-map [data]&#x3D;&quot;objectsToTrack&quot;&gt;&lt;/gmtv-map&gt;
+ */
+@Component({
+  selector: &#x27;gmtv-tracked-object&#x27;,
+  templateUrl: &#x27;./tracked-object.component.html&#x27;,
+})
+export class TrackedObjectComponent implements AfterContentInit, OnChanges, OnDestroy {
+  vectorLine: google.maps.Polyline;
+  marker &#x3D; new google.maps.Marker({ position: { lat: NaN, lng: NaN } });
+  hoverDotListeners: google.maps.MapsEventListener[] &#x3D; [];
+  hoverPolygonListeners: google.maps.MapsEventListener[] &#x3D; [];
+  zoomListener: google.maps.MapsEventListener;
+  subscription &#x3D; new Subscription();
+  defaultColor &#x3D; &#x27;red&#x27;;
+  polygon &#x3D; new google.maps.Polygon({
+    strokeColor: this.color,
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: this.color,
+    fillOpacity: !this.offline ? .55 : 0,
+    draggable: false
+  });
+
+  @Input() trackedObject: TrackedObject;
+  // tslint:disable-next-line: no-any
+  @Input() template: TemplateRef&lt;any&gt;;
+  drawSpeedVector &#x3D; false;
+
+  /**
+   * Set this to &#x60;&#x27;hover&#x27;&#x60; to display the infowindow when hovering on the object.
+   * Set this to &#x60;&#x27;click&#x27;&#x60; to display the infowindow when clicking on the object.
+   */
+  @Input() triggerInfowindow: &#x27;hover&#x27; | &#x27;click&#x27; &#x3D; &#x27;hover&#x27;;
+
+  @ViewChild(InfowindowComponent, { static: true }) infowindow: InfowindowComponent;
+  constructor(private googleMaps: GoogleMapsWrapper) { }
+
+  async ngAfterContentInit() {
+    await this.googleMaps.ready();
+
+    // Add bounds changed event
+    this.checkRenderObject();
+    this.subscription.add(
+      this.googleMaps.boundsChanged
+        .subscribe(() &#x3D;&gt; this.checkRenderObject())
+    );
+
+    this.drawObject();
+  }
+
+  ngOnChanges() {
+    if (!this.trackedObject) return;
+    this.drawObject();
+  }
+
+  ngOnDestroy() {
+    this.googleMaps.removePolygon(this.polygon);
+    this.googleMaps.removePolyline(this.vectorLine);
+    this.googleMaps.removeMarker(this.marker);
+    this.subscription.unsubscribe();
+    if (this.zoomListener) this.zoomListener.remove();
+  }
+
+  /**
+   * Current color for the current tracked object
+   */
+  get color(): string { return this.trackedObject &amp;&amp; this.trackedObject.color || this.defaultColor; }
+
+  protected get isMoving(): boolean { return !!this.trackedObject &amp;&amp; this.trackedObject.speed &gt; 0; }
+  protected get offline(): boolean { return this.trackedObject &amp;&amp; this.trackedObject.isOffline; }
+  protected get hasValidMeasures(): boolean { return true; }
+
+
+  /**
+   * Adaptive scale according to current zoom
+   */
+  protected get scale(): number {
+    const zoom &#x3D; this.googleMaps &amp;&amp; this.googleMaps.map &amp;&amp; this.googleMaps.map.getZoom() || 1;
+    const s &#x3D; Math.ceil(LOD.scaleTriangle - zoom);
+    return Math.pow(2, s) * (this.trackedObject.scale &amp;&amp; this.trackedObject.scale || 1);
+  }
+
+  /**
+   * Tip point
+   */
+  get tipLatLng(): google.maps.LatLng {
+    if (this.hasValidMeasures)
+      return this.polygon &amp;&amp; this.polygon.getPath().getAt(3);
+    else
+      return this.trackedObject.position;
+  }
+
+  /**
+   * Rear point
+   */
+  get rearLatLng(): google.maps.LatLng {
+    if (this.hasValidMeasures)
+      return this.polygon &amp;&amp; this.polygon.getPath().getAt(0);
+    else
+      return this.trackedObject.position;
+  }
+
+  protected get canDrawPolygon(): boolean {
+    return this.hasValidMeasures;
+  }
+
+  /**
+   * Current map&#x27;s zoom
+   */
+  protected get zoom(): number {
+    return this.googleMaps.map &amp;&amp; this.googleMaps.map.getZoom();
+  }
+
+  /**
+   * Current relation to convert pixels to meters on the map
+   */
+  getMetersPerPx() {
+    if (!this.trackedObject.position || !this.googleMaps.map) return 0;
+    return this.googleMaps.getMetersPerPx(this.trackedObject.position.lat());
+  }
+
+  /**
+   * Checks if object is on screen and renders/unrenders it
+   */
+  protected checkRenderObject() {
+    const path &#x3D; this.polygon &amp;&amp; this.polygon.getPath();
+
+    // If showing a polygon
+    if (path &amp;&amp; !!path.getLength()) {
+      let isPolygonOnScreen &#x3D; false;
+      if (path.getArray().length) {
+        const bounds &#x3D; this.googleMaps.map.getBounds();
+        path.forEach(p &#x3D;&gt; isPolygonOnScreen &#x3D; isPolygonOnScreen || bounds &amp;&amp; bounds.contains(p));
+      }
+
+      if (isPolygonOnScreen) {
+        this.marker.setVisible(true);
+        this.polygon.setVisible(true);
+        this.vectorLine.setVisible(true);
+      } else {
+        this.marker.setVisible(false);
+        this.polygon.setVisible(false);
+        this.vectorLine.setVisible(false);
+      }
+    }
+    // If using the dot marker
+    else if (this.marker) {
+      const bounds &#x3D; this.googleMaps.map.getBounds();
+      const visible &#x3D; !!bounds &amp;&amp; bounds.contains(this.marker.getPosition());
+      this.marker.setVisible(visible);
+      this.polygon.setVisible(visible);
+      this.vectorLine.setVisible(visible);
+    }
+  }
+
+  protected clearEventListeners() {
+    this.hoverPolygonListeners.forEach(l &#x3D;&gt; l.remove());
+    this.hoverPolygonListeners &#x3D; [];
+    this.hoverDotListeners.forEach(l &#x3D;&gt; l.remove());
+    this.hoverDotListeners &#x3D; [];
+  }
+
+  protected setupEventListeners() {
+    const showPolygon &#x3D; (this.canDrawPolygon &amp;&amp; this.zoom &gt;&#x3D; LOD.scaleTriangle) || (this.isMoving &amp;&amp; this.zoom &lt; LOD.scaleTriangle);
+
+    if (showPolygon &amp;&amp; !this.trackedObject.icon) {
+
+      // Add listeners for polygon, not do
+      if (this.hoverPolygonListeners.length &lt; 1) {
+        this.clearEventListeners();
+        if (this.triggerInfowindow &#x3D;&#x3D;&#x3D; &#x27;click&#x27;) {
+          this.hoverPolygonListeners.push(
+            this.polygon.addListener(&#x27;click&#x27;, () &#x3D;&gt; this.onMouseOver()),
+          );
+        } else {
+          if (this.triggerInfowindow &#x3D;&#x3D;&#x3D; &#x27;hover&#x27;) {
+            this.hoverPolygonListeners.push(
+              this.polygon.addListener(&#x27;mouseover&#x27;, () &#x3D;&gt; this.onMouseOver()),
+              this.polygon.addListener(&#x27;mouseout&#x27;, () &#x3D;&gt; this.onMouseOut()),
+            );
+          }
+        }
+      }
+    } else {
+
+      // Add listeners for dot, not polygon
+      if (this.hoverDotListeners.length &lt; 1) {
+        this.clearEventListeners();
+        if (this.triggerInfowindow &#x3D;&#x3D;&#x3D; &#x27;click&#x27;) {
+          this.hoverDotListeners.push(
+            this.marker.addListener(&#x27;click&#x27;, () &#x3D;&gt; this.onMouseOver()),
+          );
+        } else {
+          this.hoverDotListeners.push(
+            this.marker.addListener(&#x27;mouseover&#x27;, () &#x3D;&gt; this.onMouseOver()),
+            this.marker.addListener(&#x27;mouseout&#x27;, () &#x3D;&gt; this.onMouseOut()),
+          );
+        }
+      }
+    }
+
+    // Listen for zoom change
+    if (!this.zoomListener)
+      this.zoomListener &#x3D; this.googleMaps.map.addListener(&#x27;zoom_changed&#x27;, () &#x3D;&gt; this.onZoomChanged());
+  }
+
+  /**
+   * Returns the series of icons according to the current zoom level
+   */
+  protected getSpeedLineIcons() {
+    const s &#x3D; Math.ceil(this.zoom - LOD.scaleTriangle);
+    s &lt;&#x3D; 0 ? 1 : Math.pow(2, s);
+
+    const icons: google.maps.IconSequence[] &#x3D; [];
+    const l &#x3D; SPEED_UNIT_LENGTH_M * this.scale;
+    const dashLength &#x3D; Math.round(l / this.getMetersPerPx() * .5);
+    const skipIconOnFifth &#x3D; false;
+
+    // Units
+
+    const iconUnits &#x3D; {
+      path: &#x60;M 0 0 L 0 ${dashLength}&#x60;,
+      scale: 1,
+      strokeWeight: 2,
+      fillOpacity: 1
+    };
+
+    const units &#x3D; Math.round(this.trackedObject.speed);
+    for (let i &#x3D; 1; i &lt;&#x3D; units; i++) {
+      const percent &#x3D; Math.round(100 / units * i);
+      icons.push({
+        icon: (i % 5 &#x3D;&#x3D; 0 &amp;&amp; skipIconOnFifth) ? null : iconUnits,
+        offset: &#x60;${percent}%&#x60;
+      });
+    }
+
+    // Fifths
+
+    const iconFifths &#x3D; {
+      path: &#x60;M ${dashLength} ${dashLength / 2} L -${dashLength} ${dashLength / 2}&#x60;,
+      scale: 1,
+      strokeWeight: 2,
+    }
+
+    const fifths &#x3D; Math.floor(units / 5);
+    for (let i &#x3D; 1; i &lt;&#x3D; fifths; i++) {
+      const percent &#x3D; Math.round(100 / units * 5 * i);
+      icons.push({
+        icon: iconFifths,
+        offset: &#x60;${percent}%&#x60;
+      });
+    }
+
+    return icons;
+  }
+
+  /**
+   * Inits/updates polyline with icons according to current zoom level
+   */
+  protected initSpeedPolyline() {
+    if (this.vectorLine) this.googleMaps.removePolyline(this.vectorLine);
+
+    this.vectorLine &#x3D; new google.maps.Polyline({
+      strokeColor: &#x27;green&#x27;,
+      strokeWeight: 0,
+      draggable: false,
+      editable: false,
+      path: [],
+      icons: this.getSpeedLineIcons(),
+    });
+
+    this.googleMaps.addPolyline(this.vectorLine);
+    this.vectorLine.setVisible(false);
+  }
+
+  protected initDotaMarker() {
+    if (this.marker) this.googleMaps.removeMarker(this.marker);
+    this.googleMaps.addMarker(this.marker);
+  }
+
+  protected getTrianglePath() {
+    if (!this.polygon) return [];
+
+    const positionDot &#x3D; this.trackedObject.position;
+    const center &#x3D; positionDot;
+    const h &#x3D; this.trackedObject.heading || 0;
+    const w &#x3D; 50;
+    const l &#x3D; 100;
+
+    const rear &#x3D; google.maps.geometry.spherical.computeOffset(center, l / 2 * this.scale, h + 180);
+    const rearLeft &#x3D; google.maps.geometry.spherical.computeOffset(rear, w / 2 * this.scale, h - 90);
+    const rearRight &#x3D; google.maps.geometry.spherical.computeOffset(rear, w / 2 * this.scale, h + 90);
+    const tip &#x3D; google.maps.geometry.spherical.computeOffset(rear, l * this.scale, h);
+
+    return [rear, rearLeft, tip, rearRight];
+  }
+
+  protected getVectorLinePath(start: google.maps.LatLng) {
+    const l &#x3D; SPEED_UNIT_LENGTH_M * this.trackedObject.speed;
+    const end &#x3D; google.maps.geometry.spherical.computeOffset(start, l, this.trackedObject.speed);
+    return [start, end];
+  }
+
+  displayInfowindow(show: boolean) {
+    if (!this.infowindow) return;
+
+    if (show) {
+      const o &#x3D; this.trackedObject.position;
+      this.infowindow.open(o);
+    } else {
+      this.infowindow.close();
+    }
+  }
+
+  drawObject() {
+    if (!this.marker) this.initDotaMarker();
+    this.initSpeedPolyline();
+
+    if (!this.trackedObject.position) return;
+
+    this.setupEventListeners();
+    const showDot &#x3D; !this.isMoving;
+    const showTriangle &#x3D; this.isMoving &amp;&amp; !this.trackedObject.icon;
+    const showSpeedLine &#x3D; this.drawSpeedVector &amp;&amp; this.isMoving &amp;&amp; this.zoom &gt;&#x3D; LOD.speed;
+
+    // Show triangle
+    if (showTriangle) {
+      const polygonPath &#x3D; this.getTrianglePath();
+      if (polygonPath.length) {
+        this.polygon.setOptions({
+          fillOpacity: !this.offline ? .55 : 0,
+          fillColor: this.color,
+          strokeColor: this.color,
+        });
+        this.polygon.setPath(polygonPath);
+        this.polygon.setVisible(true);
+        this.googleMaps.addPolygone(this.polygon);
+      }
+    }
+    else {
+      this.polygon.setVisible(false);
+      this.googleMaps.removePolygon(this.polygon);
+    }
+
+    // Draw speed vector
+    if (showSpeedLine) {
+      const o &#x3D; this.trackedObject.position;
+      const linePath &#x3D; this.getVectorLinePath(o);
+      this.vectorLine.setPath(linePath);
+      this.vectorLine.setVisible(true);
+      this.googleMaps.addPolyline(this.vectorLine);
+    } else {
+      this.vectorLine.setVisible(false);
+      this.googleMaps.removePolyline(this.vectorLine);
+    }
+
+    // Update dot icon
+    this.marker.setIcon(
+      this.trackedObject.icon ||
+      {
+        path: google.maps.SymbolPath.CIRCLE,
+        fillColor: this.color,
+        fillOpacity: !this.offline &amp;&amp; showDot ? 0.6 : 0,
+        strokeColor: this.color,
+        strokeOpacity: showDot ? 0.9 : 0,
+        strokeWeight: 1,
+        scale: 10 * (this.trackedObject.scale || 1),
+        labelOrigin: new google.maps.Point(0, 3),
+        anchor: new google.maps.Point(.5, .5),
+      }
+    );
+    this.marker.setLabel(this.zoom &gt;&#x3D; LOD.nameLabels ? this.trackedObject.label : &#x27;&#x27;);
+    this.marker.setPosition(this.trackedObject.position);
+    this.marker.setVisible(true);
+    this.googleMaps.addMarker(this.marker);
+  }
+
+  protected onMouseOver() {
+    this.displayInfowindow(true);
+  }
+
+  protected onMouseOut() {
+    this.displayInfowindow(false);
+  }
+
+  protected onZoomChanged() {
+    this.drawObject();
+  }
+}
+</code></pre>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
+
+    </body>
+</html>

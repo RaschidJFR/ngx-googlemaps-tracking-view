@@ -1,17 +1,18 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["stencil-ion-ripple-effect-entry-js"],{
+"use strict";
+(self["webpackChunktracking_view"] = self["webpackChunktracking_view"] || []).push([["stencil-ion-ripple-effect-entry-js"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/ion-ripple-effect.entry.js":
+/***/ 33561:
 /*!**********************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/ion-ripple-effect.entry.js ***!
   \**********************************************************************/
-/*! exports provided: ion_ripple_effect */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_ripple_effect", function() { return RippleEffect; });
-/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ "./node_modules/@ionic/core/dist/esm/index-2cd7e630.js");
-/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-a175fa73.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ion_ripple_effect": function() { return /* binding */ RippleEffect; }
+/* harmony export */ });
+/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ 14007);
+/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ 77362);
 
 
 
@@ -19,7 +20,7 @@ const rippleEffectCss = ":host{left:0;right:0;top:0;bottom:0;position:absolute;c
 
 const RippleEffect = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         /**
          * Sets the type of ripple-effect:
          *
@@ -39,7 +40,7 @@ const RippleEffect = class {
      */
     async addRipple(x, y) {
         return new Promise(resolve => {
-            Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["f"])(() => {
+            (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.f)(() => {
                 const rect = this.el.getBoundingClientRect();
                 const width = rect.width;
                 const height = rect.height;
@@ -58,7 +59,7 @@ const RippleEffect = class {
                 const styleY = posY - initialSize * 0.5;
                 const moveX = width * 0.5 - posX;
                 const moveY = height * 0.5 - posY;
-                Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
+                (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.w)(() => {
                     const div = document.createElement('div');
                     div.classList.add('ripple-effect');
                     const style = div.style;
@@ -82,13 +83,13 @@ const RippleEffect = class {
         return this.type === 'unbounded';
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "presentation", class: {
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { role: "presentation", class: {
                 [mode]: true,
                 'unbounded': this.unbounded
             } }));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
 };
 const removeRipple = (ripple) => {
     ripple.classList.add('fade-out');

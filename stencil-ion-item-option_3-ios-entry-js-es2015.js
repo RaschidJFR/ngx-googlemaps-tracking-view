@@ -1,21 +1,22 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["stencil-ion-item-option_3-ios-entry-js"],{
+"use strict";
+(self["webpackChunktracking_view"] = self["webpackChunktracking_view"] || []).push([["stencil-ion-item-option_3-ios-entry-js"],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/ion-item-option_3-ios.entry.js":
+/***/ 44871:
 /*!**************************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/ion-item-option_3-ios.entry.js ***!
   \**************************************************************************/
-/*! exports provided: ion_item_option, ion_item_options, ion_item_sliding */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_item_option", function() { return ItemOption; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_item_options", function() { return ItemOptions; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_item_sliding", function() { return ItemSliding; });
-/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ "./node_modules/@ionic/core/dist/esm/index-2cd7e630.js");
-/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-a175fa73.js");
-/* harmony import */ var _helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-d8b49b57.js */ "./node_modules/@ionic/core/dist/esm/helpers-d8b49b57.js");
-/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ion_item_option": function() { return /* binding */ ItemOption; },
+/* harmony export */   "ion_item_options": function() { return /* binding */ ItemOptions; },
+/* harmony export */   "ion_item_sliding": function() { return /* binding */ ItemSliding; }
+/* harmony export */ });
+/* harmony import */ var _index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-2cd7e630.js */ 14007);
+/* harmony import */ var _ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-a175fa73.js */ 77362);
+/* harmony import */ var _helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-d8b49b57.js */ 36173);
+/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ 39551);
 
 
 
@@ -27,7 +28,7 @@ const itemOptionMdCss = ":host{--background:var(--ion-color-primary, #3880ff);--
 
 const ItemOption = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         /**
          * If `true`, the user cannot interact with the item option.
          */
@@ -50,7 +51,7 @@ const ItemOption = class {
     render() {
         const { disabled, expandable, href } = this;
         const TagType = href === undefined ? 'button' : 'a';
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
         const attrs = (TagType === 'button')
             ? { type: this.type }
             : {
@@ -58,9 +59,9 @@ const ItemOption = class {
                 href: this.href,
                 target: this.target
             };
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { onClick: this.onClick, class: Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["c"])(this.color)), { [mode]: true, 'item-option-disabled': disabled, 'item-option-expandable': expandable, 'ion-activatable': true }) }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(TagType, Object.assign({}, attrs, { class: "button-native", disabled: disabled }), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", { class: "button-inner" }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "top" }), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "horizontal-wrapper" }, Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "start" }), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "icon-only" }), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "end" })), Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "bottom" })), mode === 'md' && Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", null))));
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { onClick: this.onClick, class: Object.assign(Object.assign({}, (0,_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__.c)(this.color)), { [mode]: true, 'item-option-disabled': disabled, 'item-option-expandable': expandable, 'ion-activatable': true }) }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(TagType, Object.assign({}, attrs, { class: "button-native", disabled: disabled }), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("span", { class: "button-inner" }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", { name: "top" }), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("div", { class: "horizontal-wrapper" }, (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", { name: "start" }), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", { name: "icon-only" }), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", null), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", { name: "end" })), (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("slot", { name: "bottom" })), mode === 'md' && (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)("ion-ripple-effect", null))));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
 };
 ItemOption.style = {
     /*STENCIL:MODE:ios*/ ios: itemOptionIosCss,
@@ -73,13 +74,13 @@ const itemOptionsMdCss = "ion-item-options{top:0;right:0;-ms-flex-pack:end;justi
 
 const ItemOptions = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         /**
          * The side the option button should be on. Possible values: `"start"` and `"end"`. If you have multiple `ion-item-options`, a side must be provided for each.
          *
          */
         this.side = 'end';
-        this.ionSwipe = Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionSwipe", 7);
+        this.ionSwipe = (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.d)(this, "ionSwipe", 7);
     }
     /** @internal */
     async fireSwipeEvent() {
@@ -88,9 +89,9 @@ const ItemOptions = class {
         });
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        const isEnd = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["i"])(this.side);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: {
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        const isEnd = (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.i)(this.side);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: {
                 [mode]: true,
                 // Used internally for styling
                 [`item-options-${mode}`]: true,
@@ -98,7 +99,7 @@ const ItemOptions = class {
                 'item-options-end': isEnd
             } }));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
 };
 ItemOptions.style = {
     /*STENCIL:MODE:ios*/ ios: itemOptionsIosCss,
@@ -112,7 +113,7 @@ const ELASTIC_FACTOR = 0.55;
 let openSlidingItem;
 const ItemSliding = class {
     constructor(hostRef) {
-        Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.r)(this, hostRef);
         this.item = null;
         this.openAmount = 0;
         this.initialOpenAmount = 0;
@@ -125,7 +126,7 @@ const ItemSliding = class {
          * If `true`, the user cannot interact with the sliding item.
          */
         this.disabled = false;
-        this.ionDrag = Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionDrag", 7);
+        this.ionDrag = (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.d)(this, "ionDrag", 7);
     }
     disabledChanged() {
         if (this.gesture) {
@@ -135,7 +136,7 @@ const ItemSliding = class {
     async connectedCallback() {
         this.item = this.el.querySelector('ion-item');
         await this.updateOptions();
-        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-e44ebcc6.js */ "./node_modules/@ionic/core/dist/esm/index-e44ebcc6.js"))).createGesture({
+        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(__webpack_require__, /*! ./index-e44ebcc6.js */ 23719))).createGesture({
             el: this.el,
             gestureName: 'item-swipe',
             gesturePriority: 100,
@@ -195,7 +196,7 @@ const ItemSliding = class {
             side = (optionsToOpen === this.leftOptions) ? 'start' : 'end';
         }
         // In RTL we want to switch the sides
-        side = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["i"])(side) ? 'end' : 'start';
+        side = (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.i)(side) ? 'end' : 'start';
         const isStartOpen = this.openAmount < 0;
         const isEndOpen = this.openAmount > 0;
         /**
@@ -259,7 +260,7 @@ const ItemSliding = class {
         this.leftOptions = this.rightOptions = undefined;
         for (let i = 0; i < options.length; i++) {
             const option = await options.item(i).componentOnReady();
-            const side = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["i"])(option.side) ? 'end' : 'start';
+            const side = (0,_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__.i)(option.side) ? 'end' : 'start';
             if (side === 'start') {
                 this.leftOptions = option;
                 sides |= 1 /* Start */;
@@ -421,8 +422,8 @@ const ItemSliding = class {
         }
     }
     render() {
-        const mode = Object(_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: {
+        const mode = (0,_ionic_global_a175fa73_js__WEBPACK_IMPORTED_MODULE_1__.b)(this);
+        return ((0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.h)(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.H, { class: {
                 [mode]: true,
                 'item-sliding-active-slide': (this.state !== 2 /* Disabled */),
                 'item-sliding-active-options-end': (this.state & 8 /* End */) !== 0,
@@ -431,7 +432,7 @@ const ItemSliding = class {
                 'item-sliding-active-swipe-start': (this.state & 64 /* SwipeStart */) !== 0
             } }));
     }
-    get el() { return Object(_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return (0,_index_2cd7e630_js__WEBPACK_IMPORTED_MODULE_0__.e)(this); }
     static get watchers() { return {
         "disabled": ["disabledChanged"]
     }; }
