@@ -40,7 +40,7 @@ interface TrackedAircraft extends TrackedObject {
 })
 export class HomePage implements AfterContentInit {
   @ViewChild(NgxGooglemapsTrackingViewComponent, { static: true }) mapView: NgxGooglemapsTrackingViewComponent;
-  @ViewChild('infowindowLocation', { static: false }) infowindowLocation: TemplateRef<any>;
+  @ViewChild('infowindowLocation') infowindowLocation: TemplateRef<any>;
 
   objectsToTrack: TrackedObject[] = [1, 2, 3, 4, 5] as any;
   symbolPath = '';
