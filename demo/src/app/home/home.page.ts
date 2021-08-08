@@ -10,6 +10,23 @@ import * as loadSvg from 'load-svg';
 import { Platform } from '@ionic/angular';
 
 i18IsoCountries.registerLocale(require('i18n-iso-countries/langs/en.json'));
+
+const SAMPLE_OBJECT = (icon: google.maps.Symbol) => ({
+  id: randomColor(),
+  position: new google.maps.LatLng({
+    lat: 42.504154,
+    lng: 12.646361
+  }),
+  color: randomColor(),
+  heading: 33,
+  icon,
+  speed: 1,
+  label: {
+    text: 'Sample Aircraft',
+    color: 'white'
+  },
+})
+
 interface Aircraft {
   /** icao24 */
   0: string;
@@ -42,7 +59,7 @@ export class HomePage implements AfterContentInit {
   @ViewChild(NgxGooglemapsTrackingViewComponent, { static: true }) mapView: NgxGooglemapsTrackingViewComponent;
   @ViewChild('infowindowLocation') infowindowLocation: TemplateRef<any>;
 
-  objectsToTrack: TrackedObject[] = [1, 2, 3, 4, 5] as any;
+  objectsToTrack: TrackedObject[] = [];
   symbolPath = '';
 
   mapOptions: google.maps.MapOptions = {
@@ -64,6 +81,7 @@ export class HomePage implements AfterContentInit {
       this.symbolPath = paths
         .slice(0, i - 1)
         .map(p => p.join(' ')).join(' ');
+      this.objectsToTrack = [SAMPLE_OBJECT(this.getIcon(33))];
     });
   }
 
