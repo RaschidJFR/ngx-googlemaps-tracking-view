@@ -1,4 +1,12 @@
 # Changelog
+# 2.1.0 (21-08-08)
+## Added
+* Export service `GoogleMapsWrapper`
+
+# 2.0.0 (21-01-21)
+## Changes
+* Upgraded to Angular 10
+
 # 1.5.1 (20-04-07)
 ### Fixed
 * Error `Cannot read property 'nativeElement' of undefined` in Angular +8.
