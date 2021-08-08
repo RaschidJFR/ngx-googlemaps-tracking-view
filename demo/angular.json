@@ -15,7 +15,6 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
-            "vendorSourceMap": true,
             "preserveSymlinks": true,
             "outputPath": "www",
             "index": "src/index.html",
@@ -42,7 +41,12 @@
                 "input": "src/global.scss"
               }
             ],
-            "scripts": []
+            "scripts": [],
+            "sourceMap": {
+              "styles": true,
+              "scripts": true,
+              "vendor": true
+            }
           },
           "configurations": {
             "production": {
